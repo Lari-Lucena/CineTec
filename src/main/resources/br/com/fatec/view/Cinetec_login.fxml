@@ -7,8 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_loginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.com.fatec.controller.Cinetec_loginController">
     <stylesheets>
-        <URL value="@/br/com/fatec/styles/cinetec_login.css"/>
+        <URL value="@/br/com/fatec/styles/cinetec_login.css" />
     </stylesheets>
+   <children>
+      <Button layoutX="250.0" layoutY="240.0" mnemonicParsing="false" text="LOG IN" />
+   </children>
 </AnchorPane>
