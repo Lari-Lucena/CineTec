@@ -21,7 +21,7 @@
       <TextField fx:id="txt_email" layoutX="145.0" layoutY="221.0" prefHeight="25.0" prefWidth="328.0" promptText="E-MAIL (ESTE SERÁ SEU LOGIN)*" />
       <PasswordField fx:id="txt_senha" layoutX="145.0" layoutY="255.0" promptText="SENHA*" />
       <PasswordField fx:id="txt_rsenha" layoutX="300.0" layoutY="255.0" promptText="CONFIRMAR SENHA*" />
-      <CheckBox layoutX="461.0" layoutY="259.0" mnemonicParsing="false" />
+      <CheckBox fx:id="chk_visualizar" layoutX="461.0" layoutY="259.0" mnemonicParsing="false" onAction="#visualizar" />
       <DatePicker fx:id="txt_bday" layoutX="145.0" layoutY="188.0" prefHeight="25.0" prefWidth="162.0" />
    </children>
 </AnchorPane>

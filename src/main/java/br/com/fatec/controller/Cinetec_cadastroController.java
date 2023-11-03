@@ -4,7 +4,12 @@
  */
 package br.com.fatec.controller;
 
+import br.com.fatec.database.Database;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +53,8 @@ public class Cinetec_cadastroController implements Initializable {
     private PasswordField txt_senha;
     @FXML
     private PasswordField txt_rsenha;
+    @FXML
+    private CheckBox chk_visualizar;
 
     /**
      * Initializes the controller class.
@@ -60,7 +67,7 @@ public class Cinetec_cadastroController implements Initializable {
     }    
     
     @FXML
-    private void btn_cadastro(ActionEvent event) {
+    private void btn_cadastro(ActionEvent event) throws SQLException {
         
       String nome = txt_nome.getText();
       String apelido = txt_apelido.getText();
@@ -88,6 +95,11 @@ public class Cinetec_cadastroController implements Initializable {
         } if (senha != rsenha){
             msg_alert("Os campos de senha são diferentes.");
       }   
+        
+        
+        Database.insertUserDatas(senha, email);
+        
+
       
       // cb_regiao.getValue() != "REGIÃO") 
         
@@ -113,5 +125,13 @@ public class Cinetec_cadastroController implements Initializable {
 
     @FXML
     private void options(ActionEvent event) {
+    }
+
+    @FXML
+    private void visualizar(ActionEvent event) {
+        if (chk_visualizar.isSelected()) {
+           
+           
+        }
     }
 }
