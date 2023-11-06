@@ -13,7 +13,7 @@
         <URL value="@/br/com/fatec/styles/cinetec_login.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btn_login" layoutX="254.0" layoutY="245.0" mnemonicParsing="false" onAction="#logar" text="LOG IN" />
+      <Button fx:id="btn_login" layoutX="254.0" layoutY="245.0" mnemonicParsing="false" onAction="#btn_login" text="LOG IN" />
       <TextField fx:id="txt_user" layoutX="207.0" layoutY="133.0" />
       <PasswordField fx:id="txt_senha" layoutX="207.0" layoutY="173.0" />
       <Hyperlink fx:id="linkCadastro" layoutX="319.0" layoutY="208.0" onAction="#linkCad" text="Cadastre-se aqui!" />

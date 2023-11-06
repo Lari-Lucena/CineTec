@@ -32,10 +32,28 @@ public class Database {
         return conn;
     }
     
-    public static void insertUserDatas(String senha, String email) throws SQLException{
+    public static void insertlogin(String senha, String email) throws SQLException{
         try (Connection conn = connect()) {
             
             String SQL = "INSERT INTO login(password, email) "
+                    + "VALUES(?,?)";
+            
+            PreparedStatement pstmt = conn.prepareStatement(SQL,
+                    Statement.RETURN_GENERATED_KEYS);
+            
+            pstmt.setString(1, senha);
+            pstmt.setString(2, email);
+            
+            pstmt.executeUpdate();
+            
+            conn.close();
+        }
+    }
+    
+        public static void verificaLogin(String senha, String email) throws SQLException{
+        try (Connection conn = connect()) {
+            
+            String SQL = "SELECT email FROM login WHERE SENHA LIKE 'senha' "
                     + "VALUES(?,?)";
             
             PreparedStatement pstmt = conn.prepareStatement(SQL,

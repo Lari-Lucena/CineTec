@@ -10,13 +10,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,41 +67,56 @@ public class Cinetec_cadastroController implements Initializable {
     
     @FXML
     private void btn_cadastro(ActionEvent event) throws SQLException {
-        
-      String nome = txt_nome.getText();
-      String apelido = txt_apelido.getText();
-      String cpf = txt_cpf.getText();
-      String celular = txt_celular.getText();
-      java.time.LocalDate selectedDate = txt_bday.getValue();
-      String regiao = cb_regiao.getValue();
-      String email = txt_email.getText();
-      String senha = txt_senha.getText();
-      String rsenha = txt_rsenha.getText();
       
-      
-      if (nome.isEmpty()){
-          msg_alert("Preencha o campo nome.");
-      } else if (apelido.isEmpty()){
-          msg_alert("Preencha o campo apelido.");
-      } else if (cpf.length() != 11){
-          msg_alert("O campo CPF deve ter exatamente 11 dígitos.");
-      } else if (celular.length() != 13){
-          msg_alert("O campo número de celular deve ter exatamente 13 dígitos.");
-      //} else if (selectedDate.isBefore()){
-      //    msg_alert("A data deve ser anterior ao dia de hoje.");
-      } else if (senha.isEmpty()){
-        msg_alert("Preencha o campo senha.");  
-        } if (senha != rsenha){
-            msg_alert("Os campos de senha são diferentes.");
-      }   
-        
-        
-        Database.insertUserDatas(senha, email);
-        
+        String nome = txt_nome.getText();
+        String apelido = txt_apelido.getText();
+        String cpf = txt_cpf.getText();
+        String celular = txt_celular.getText();
+        java.time.LocalDate selectedDate = txt_bday.getValue();
+        LocalDate hoje = LocalDate.now();
+        String regiao = cb_regiao.getValue();
+        String email = txt_email.getText();
+        String senha = txt_senha.getText();
+        String rsenha = txt_rsenha.getText();
 
-      
-      // cb_regiao.getValue() != "REGIÃO") 
+        EmailValidator emailValidator = new EmailValidator();
+        if (nome.isEmpty()) {
+            msg_alert("Preencha o campo nome.");
+            txt_nome.requestFocus();
+        } else if (apelido.isEmpty()) {
+            msg_alert("Preencha o campo apelido.");
+            txt_apelido.requestFocus();
+        } else if (!cpf.matches("\\d{11}")) {
+            msg_alert("O campo CPF deve ter exatamente 11 dígitos numéricos.");
+            txt_cpf.requestFocus();
+        } else if (!celular.matches("\\d{13}")) {
+            msg_alert("O campo número de celular deve ter exatamente 13 dígitos numéricos.");
+            txt_celular.requestFocus();
+        } else if (!emailValidator.isValidEmail(email)) {         
+            msg_alert("Email inválido.");
+            txt_email.requestFocus();
+        } else if (senha.isEmpty()) {
+            msg_alert("Preencha o campo senha.");
+            txt_senha.requestFocus();
+        } else if (!senha.equals(rsenha)) {
+            msg_alert("Os campos de senha são diferentes.");
+            txt_rsenha.requestFocus();
+        }
         
+        
+        if(!emailValidator.isValidEmail(email)) {
+            //verificar se existe o email no banco senao
+        //SELECT COUNT(EMAIL)  FROM TBL_CADASTRO WHERE EMAIL LIKE 'email'
+        //if retorno da query > 0 entao essa conta já existe
+        //msg_info("email já cadastrada.");
+        //else
+        //msg_info("conta cadastrada.");
+       
+        
+        //Database.insertlogin(senha, email);
+        }
+        
+ 
     }
     
     private void msg_info(String msg){    
@@ -125,6 +139,15 @@ public class Cinetec_cadastroController implements Initializable {
 
     @FXML
     private void options(ActionEvent event) {
+    }
+    
+     public class EmailValidator {
+        public boolean isValidEmail(String txt_email) {
+            String regexPattern = "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$";
+            Pattern pattern = Pattern.compile(regexPattern);
+            Matcher matcher = pattern.matcher(txt_email);
+            return matcher.matches();
+        }
     }
 
     @FXML

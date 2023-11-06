@@ -7,12 +7,14 @@ package br.com.fatec.controller;
 import br.com.fatec.Principal;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
@@ -42,15 +44,41 @@ public class Cinetec_loginController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void logar(ActionEvent event) {
-    }
 
     @FXML
     private void linkCad(ActionEvent event) throws IOException {
        
     }
     
+    @FXML
+    private void btn_login(ActionEvent event) throws SQLException {
+        String email = txt_user.getText();
+        String senha = txt_senha.getText();
+        
+        //veriicar se existe
+        //chama outra tela
+        //else
+        //msg_alert("Conta não cadastrada.");
+    
+    }
+    
+    private void msg_info(String msg){    
+        Alert alerta = new Alert (Alert.AlertType.INFORMATION);
+        alerta.setTitle("Mensagem");
+        alerta.setHeaderText(msg);
+        alerta.setContentText("");
+               
+        alerta.showAndWait(); //exibe mensagem
+    }
+    
+    private void msg_alert(String msg){     
+        Alert alerta = new Alert (Alert.AlertType.WARNING);
+        alerta.setTitle("Atenção!");
+        alerta.setHeaderText(msg);
+        //alerta.setContentText("");
+               
+        alerta.showAndWait(); //exibe mensagem
+    }
  }
 
 
