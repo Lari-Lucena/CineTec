@@ -56,8 +56,7 @@ public class Database {
     
         public static void verificaLogin(String senha, String email) throws SQLException{
         try (Connection conn = connect()) {
-            
-       
+           
             
             String SQL = "SELECT email FROM login WHERE SENHA LIKE 'senha' "
                     + "VALUES(?,?)";
