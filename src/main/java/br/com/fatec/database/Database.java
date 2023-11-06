@@ -34,6 +34,7 @@ public class Database {
     
     public static void insertlogin(String senha, String email) throws SQLException{
         try (Connection conn = connect()) {
+             
             
             String SQL = "INSERT INTO login(password, email) "
                     + "VALUES(?,?)";
@@ -41,11 +42,14 @@ public class Database {
             PreparedStatement pstmt = conn.prepareStatement(SQL,
                     Statement.RETURN_GENERATED_KEYS);
             
+            //dados a serem inseridos
             pstmt.setString(1, senha);
             pstmt.setString(2, email);
             
+            //executa comando
             pstmt.executeUpdate();
             
+            //fecha conexão
             conn.close();
         }
     }
@@ -53,17 +57,19 @@ public class Database {
         public static void verificaLogin(String senha, String email) throws SQLException{
         try (Connection conn = connect()) {
             
+       
+            
             String SQL = "SELECT email FROM login WHERE SENHA LIKE 'senha' "
                     + "VALUES(?,?)";
             
             PreparedStatement pstmt = conn.prepareStatement(SQL,
                     Statement.RETURN_GENERATED_KEYS);
             
-            pstmt.setString(1, senha);
-            pstmt.setString(2, email);
-            
+            //executa comando
             pstmt.executeUpdate();
+ 
             
+            //fecha conexão
             conn.close();
         }
     }

@@ -78,6 +78,7 @@ public class Cinetec_cadastroController implements Initializable {
         String email = txt_email.getText();
         String senha = txt_senha.getText();
         String rsenha = txt_rsenha.getText();
+        
 
         EmailValidator emailValidator = new EmailValidator();
         if (nome.isEmpty()) {
@@ -89,7 +90,7 @@ public class Cinetec_cadastroController implements Initializable {
         } else if (!cpf.matches("\\d{11}")) {
             msg_alert("O campo CPF deve ter exatamente 11 dígitos numéricos.");
             txt_cpf.requestFocus();
-        } else if (!celular.matches("\\d{13}")) {
+        } else if (!celular.matches("\\d{11}")) {
             msg_alert("O campo número de celular deve ter exatamente 13 dígitos numéricos.");
             txt_celular.requestFocus();
         } else if (!emailValidator.isValidEmail(email)) {         
@@ -104,19 +105,20 @@ public class Cinetec_cadastroController implements Initializable {
         }
         
         
-        if(!emailValidator.isValidEmail(email)) {
-            //verificar se existe o email no banco senao
-        //SELECT COUNT(EMAIL)  FROM TBL_CADASTRO WHERE EMAIL LIKE 'email'
-        //if retorno da query > 0 entao essa conta já existe
-        //msg_info("email já cadastrada.");
-        //else
-        //msg_info("conta cadastrada.");
-       
+//        if(!emailValidator.isValidEmail(email)) {
+//            //verificar se existe o email no banco senao
+//        //SELECT COUNT(EMAIL)  FROM TBL_CADASTRO WHERE EMAIL LIKE 'email'
+//        //if retorno da query > 0 entao essa conta já existe
+//        //msg_info("email já cadastrada.");
+//        //else
+//        //msg_info("conta cadastrada.");
+//       
+//        msg_alert("frty");
+//        
+//        
+//        }
         
-        //Database.insertlogin(senha, email);
-        }
-        
- 
+        Database.insertlogin(senha, email);
     }
     
     private void msg_info(String msg){    
