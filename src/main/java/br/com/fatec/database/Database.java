@@ -15,9 +15,9 @@ import java.sql.Statement;
  * @author Leonardo
  */
 public class Database {
-    private static final String url = "jdbc:postgresql://localhost:5433/cinetec";
-    private static final String user = "postgres";
-    private static final String password = "postgres";
+    private static final String url = "jdbc:postgresql://ep-divine-bonus-64985368.us-east-2.aws.neon.tech/cinetec";
+    private static final String user = "larissa";
+    private static final String password = "aQM26xyNgVns";
     
     public static Connection connect() {
         Connection conn = null;
@@ -36,15 +36,15 @@ public class Database {
         try (Connection conn = connect()) {
              
             
-            String SQL = "INSERT INTO login(password, email) "
+            String SQL = "INSERT INTO TBL_LOGIN (email, senha) "
                     + "VALUES(?,?)";
             
             PreparedStatement pstmt = conn.prepareStatement(SQL,
                     Statement.RETURN_GENERATED_KEYS);
             
             //dados a serem inseridos
-            pstmt.setString(1, senha);
-            pstmt.setString(2, email);
+            pstmt.setString(1, email);
+            pstmt.setString(2, senha);
             
             //executa comando
             pstmt.executeUpdate();

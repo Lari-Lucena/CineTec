@@ -91,7 +91,7 @@ public class Cinetec_cadastroController implements Initializable {
             msg_alert("O campo CPF deve ter exatamente 11 dígitos numéricos.");
             txt_cpf.requestFocus();
         } else if (!celular.matches("\\d{11}")) {
-            msg_alert("O campo número de celular deve ter exatamente 13 dígitos numéricos.");
+            msg_alert("O campo número de celular deve ter exatamente 11 dígitos numéricos.");
             txt_celular.requestFocus();
         } else if (!emailValidator.isValidEmail(email)) {         
             msg_alert("Email inválido.");
@@ -118,7 +118,7 @@ public class Cinetec_cadastroController implements Initializable {
 //        
 //        }
         
-        Database.insertlogin(senha, email);
+        Database.insertlogin(email, senha);
     }
     
     private void msg_info(String msg){    
