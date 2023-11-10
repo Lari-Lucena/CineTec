@@ -4,7 +4,10 @@
  */
 package br.com.fatec.controller;
 
+import br.com.fatec.DAO.CadastrarDAO;
+import br.com.fatec.DAO.LoginDAO;
 import br.com.fatec.database.Database;
+import br.com.fatec.model.Cadastrar;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,7 +57,10 @@ public class Cinetec_cadastroController implements Initializable {
     private PasswordField txt_rsenha;
     @FXML
     private CheckBox chk_visualizar;
-
+    
+    
+    private Cadastrar cadastro = new Cadastrar(); //indica nosso model
+    
     /**
      * Initializes the controller class.
      */
@@ -67,60 +73,43 @@ public class Cinetec_cadastroController implements Initializable {
     
     @FXML
     private void btn_cadastro(ActionEvent event) throws SQLException {
-      
-        String nome = txt_nome.getText();
-        String apelido = txt_apelido.getText();
-        String cpf = txt_cpf.getText();
-        String celular = txt_celular.getText();
-        java.time.LocalDate selectedDate = txt_bday.getValue();
-        LocalDate hoje = LocalDate.now();
-        String regiao = cb_regiao.getValue();
-        String email = txt_email.getText();
-        String senha = txt_senha.getText();
-        String rsenha = txt_rsenha.getText();
-        
+            
+        cadastro = moveViewToModel();
 
-        EmailValidator emailValidator = new EmailValidator();
-        if (nome.isEmpty()) {
-            msg_alert("Preencha o campo nome.");
-            txt_nome.requestFocus();
-        } else if (apelido.isEmpty()) {
-            msg_alert("Preencha o campo apelido.");
-            txt_apelido.requestFocus();
-        } else if (!cpf.matches("\\d{11}")) {
-            msg_alert("O campo CPF deve ter exatamente 11 dígitos numéricos.");
-            txt_cpf.requestFocus();
-        } else if (!celular.matches("\\d{11}")) {
-            msg_alert("O campo número de celular deve ter exatamente 11 dígitos numéricos.");
-            txt_celular.requestFocus();
-        } else if (!emailValidator.isValidEmail(email)) {         
-            msg_alert("Email inválido.");
-            txt_email.requestFocus();
-        } else if (senha.isEmpty()) {
-            msg_alert("Preencha o campo senha.");
-            txt_senha.requestFocus();
-        } else if (!senha.equals(rsenha)) {
-            msg_alert("Os campos de senha são diferentes.");
-            txt_rsenha.requestFocus();
+        // Verifica se todos os campos estão preenchidos
+        if (!todosCamposPreenchidos()) {
+            msg_alert("Preencha todos os campos antes de cadastrar.");
+            return;  // Interrompe a execução do método
+        }
+
+        // Verifica se o e-mail é válido
+        if (!isValidEmail(txt_email.getText())) {
+            msg_alert("O e-mail informado não é válido.");
+            return;  // Interrompe a execução do método
         }
         
-        
-//        if(!emailValidator.isValidEmail(email)) {
-//            //verificar se existe o email no banco senao
-//        //SELECT COUNT(EMAIL)  FROM TBL_CADASTRO WHERE EMAIL LIKE 'email'
-//        //if retorno da query > 0 entao essa conta já existe
-//        //msg_info("email já cadastrada.");
-//        //else
-//        //msg_info("conta cadastrada.");
-//       
-//        msg_alert("frty");
-//        
-//        
+        //VERIFICANDO
+//        LoginDAO LogDAO = new LoginDAO();
+//        boolean contaJaExiste = LogDAO.contaExiste(cadastro);
+//        if(contaExiste){
+//            msg_alert("Já existe uma conta cadastrada com esse e-mail.");
+//        } else{
+//            //GRAVANDO
+//            CadastrarDAO CadDAO = new CadastrarDAO();
+//
+//            try {
+//                if(CadDAO.insertCadastro(cadastro)){
+//                    msg_info("Cadastro concluido com sucesso!");               
+//                    LogDAO.insertlogin(cadastro);
+//                }
+//            } catch (SQLException ex) {
+//                System.out.println("Deu erro: " + 
+//                        ex.getMessage());
+//            }
 //        }
-        Database.insertlogin(email, senha);
-        Database.insertCadastro(nome, apelido, cpf, celular, regiao, email, senha);
-        
-    }
+//        
+             
+    }     
     
     private void msg_info(String msg){    
         Alert alerta = new Alert (Alert.AlertType.INFORMATION);
@@ -135,7 +124,6 @@ public class Cinetec_cadastroController implements Initializable {
         Alert alerta = new Alert (Alert.AlertType.WARNING);
         alerta.setTitle("Atenção!");
         alerta.setHeaderText(msg);
-        //alerta.setContentText("");
                
         alerta.showAndWait(); //exibe mensagem
     }
@@ -143,21 +131,58 @@ public class Cinetec_cadastroController implements Initializable {
     @FXML
     private void options(ActionEvent event) {
     }
-    
-     public class EmailValidator {
-        public boolean isValidEmail(String txt_email) {
-            String regexPattern = "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$";
-            Pattern pattern = Pattern.compile(regexPattern);
-            Matcher matcher = pattern.matcher(txt_email);
-            return matcher.matches();
-        }
-    }
 
     @FXML
     private void visualizar(ActionEvent event) {
-        if (chk_visualizar.isSelected()) {
-           
-           
-        }
+    }
+    
+    public boolean isValidEmail(String txt_email) {
+        String regexPattern = "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$";
+        Pattern pattern = Pattern.compile(regexPattern);
+        Matcher matcher = pattern.matcher(txt_email);
+        return matcher.matches();
+    }
+
+
+    private Cadastrar moveViewToModel(){
+        
+        //CRIA O OBJETO CADASTRO - (MODEL)
+        cadastro = new Cadastrar();
+        cadastro.setNome(txt_nome.getText());
+        cadastro.setApelido(txt_apelido.getText());
+        cadastro.setCpf(txt_cpf.getText());
+        cadastro.setCelular(txt_celular.getText());
+        cadastro.setRegiao(cb_regiao.getValue());
+        cadastro.setEmail(txt_email.getText());
+        cadastro.setSenha(txt_senha.getText());
+        cadastro.setRsenha(txt_rsenha.getText());
+             
+        //Devolve o model
+        return cadastro;     
+    }
+    
+    private boolean todosCamposPreenchidos() {
+    // Adicione todos os campos que você deseja verificar
+    return !txt_nome.getText().isEmpty() &&
+           !txt_apelido.getText().isEmpty() &&
+           !txt_cpf.getText().isEmpty() &&
+           !txt_celular.getText().isEmpty() &&
+           txt_bday.getValue() != null &&  // Verifica se a data de nascimento foi selecionada
+           cb_regiao.getValue() != null &&
+           !txt_email.getText().isEmpty() &&
+           !txt_senha.getText().isEmpty() &&
+           !txt_rsenha.getText().isEmpty();
     }
 }
+
+        
+//        LoginDAO loginDAO = new LoginDAO();
+//int rowCount = loginDAO.verificaLogin(senhaDigitada, emailDigitado);
+//
+//if (rowCount > 0) {
+//    // Login bem-sucedido, redirecione para outra tela
+//    // ...
+//} else {
+//    // Login inválido, exiba uma mensagem de erro ou faça o que for necessário
+//    // ...
+//}

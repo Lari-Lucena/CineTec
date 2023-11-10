@@ -74,31 +74,6 @@ public class Database {
         }
         
     }
-        
-    public static void insertCadastro(String nome, String apelido, String cpf, String celular, String regiao, String email, String senha) throws SQLException{
-        try (Connection conn = connect()) {
-             
-            
-            String SQL = "INSERT INTO TBL_CADASTRO (nome, apelido, cpf, celular, regiao, email, senha) "
-                    + "VALUES(?, ?, ?, ?, ?, ?, ?)";
-            
-            PreparedStatement pstmt = conn.prepareStatement(SQL,
-                    Statement.RETURN_GENERATED_KEYS);
-            
-            //dados a serem inseridos
-            pstmt.setString(1, nome);
-            pstmt.setString(2, apelido);
-            pstmt.setString(3, cpf);
-            pstmt.setString(4, celular);
-            pstmt.setString(5, regiao);
-            pstmt.setString(6, email);
-            pstmt.setString(7, senha);
-            //executa comando
-            pstmt.executeUpdate();
-            
-            //fecha conexão
-            conn.close();
-        }
-    }    
-    
+
+         
 }
