@@ -9,15 +9,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import br.com.fatec.controller.Cinetec_cadastroController;
 
 /**
  *
  * @author Leonardo
  */
 public class Database {
-    private static final String url = "jdbc:postgresql://ep-divine-bonus-64985368.us-east-2.aws.neon.tech/cinetec";
-    private static final String user = "larissa";
-    private static final String password = "aQM26xyNgVns";
+    private static final String url = "jdbc:postgresql://localhost:5433/cinetec";
+    private static final String user = "postgres";
+    private static final String password = "postgres";
     
     public static Connection connect() {
         Connection conn = null;
@@ -71,6 +72,33 @@ public class Database {
             //fecha conexão
             conn.close();
         }
+        
     }
+        
+    public static void insertCadastro(String nome, String apelido, String cpf, String celular, String regiao, String email, String senha) throws SQLException{
+        try (Connection conn = connect()) {
+             
+            
+            String SQL = "INSERT INTO TBL_CADASTRO (nome, apelido, cpf, celular, regiao, email, senha) "
+                    + "VALUES(?, ?, ?, ?, ?, ?, ?)";
+            
+            PreparedStatement pstmt = conn.prepareStatement(SQL,
+                    Statement.RETURN_GENERATED_KEYS);
+            
+            //dados a serem inseridos
+            pstmt.setString(1, nome);
+            pstmt.setString(2, apelido);
+            pstmt.setString(3, cpf);
+            pstmt.setString(4, celular);
+            pstmt.setString(5, regiao);
+            pstmt.setString(6, email);
+            pstmt.setString(7, senha);
+            //executa comando
+            pstmt.executeUpdate();
+            
+            //fecha conexão
+            conn.close();
+        }
+    }    
     
 }

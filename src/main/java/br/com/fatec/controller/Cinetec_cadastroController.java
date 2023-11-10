@@ -117,8 +117,9 @@ public class Cinetec_cadastroController implements Initializable {
 //        
 //        
 //        }
-        
         Database.insertlogin(email, senha);
+        Database.insertCadastro(nome, apelido, cpf, celular, regiao, email, senha);
+        
     }
     
     private void msg_info(String msg){    
