@@ -3,5 +3,14 @@
  */
 
 .mainFxmlClass {
-    
+    -fx-background-color : #121214;
+    -fx-cursor: pointer;
+    -fx-align-content: center;
+    -fx-text-fill: white;
+}
+
+.placeholder {
+    -fx-border-radius : 15px;
+    -fx-background-color: transparent;
+    -fx-border-color: #313137;
 }
