@@ -173,15 +173,3 @@ public class Cinetec_cadastroController implements Initializable {
            !txt_rsenha.getText().isEmpty();
     }
 }
-
-        
-//        LoginDAO loginDAO = new LoginDAO();
-//int rowCount = loginDAO.verificaLogin(senhaDigitada, emailDigitado);
-//
-//if (rowCount > 0) {
-//    // Login bem-sucedido, redirecione para outra tela
-//    // ...
-//} else {
-//    // Login inválido, exiba uma mensagem de erro ou faça o que for necessário
-//    // ...
-//}

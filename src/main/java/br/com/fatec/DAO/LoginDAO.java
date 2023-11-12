@@ -50,14 +50,14 @@ public class LoginDAO {
         }
     }
     
-    public int verificaLogin(String senha, String email) throws SQLException {
+    public int verificaLogin(String email, String senha) throws SQLException {
         int rowCount = 0;
 
         try (Connection conn = connect()) {
-            String SQL = "SELECT COUNT(*) FROM TBL_LOGIN WHERE senha = ? AND email = ?";
+            String SQL = "SELECT COUNT(*) FROM TBL_LOGIN WHERE EMAIL = ? AND SENHA = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-                pstmt.setString(1, senha);
-                pstmt.setString(2, email);
+                pstmt.setString(1, email);
+                pstmt.setString(2, senha);
                 ResultSet rs = pstmt.executeQuery();
 
                 if (rs.next()) {
@@ -68,7 +68,7 @@ public class LoginDAO {
 
         return rowCount;
     }
-
+    
 }
 
 

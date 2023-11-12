@@ -20,7 +20,7 @@ public class Principal extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("view/Cinetec_cadastro"));
+        scene = new Scene(loadFXML("view/Cinetec_login"));
         stage.setScene(scene);
         stage.show();
     }
@@ -35,13 +35,7 @@ public class Principal extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        CadastrarDAO cadastrarDAO = new CadastrarDAO();
-        Cadastrar dado = new Cadastrar();
-        dado.setEmail("12345681");
-        var value = cadastrarDAO.contaExiste(dado);
-        System.out.println(value);
-     
-        //launch();
+        launch();
     }
 
 }
