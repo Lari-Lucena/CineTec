@@ -1,13 +1,15 @@
 package br.com.fatec;
 
+import br.com.fatec.DAO.CadastrarDAO;
 import br.com.fatec.database.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import br.com.fatec.model.Cadastrar;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * JavaFX Principal
@@ -32,8 +34,14 @@ public class Principal extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
-        launch();
+    public static void main(String[] args) throws SQLException {
+        CadastrarDAO cadastrarDAO = new CadastrarDAO();
+        Cadastrar dado = new Cadastrar();
+        dado.setEmail("12345681");
+        var value = cadastrarDAO.contaExiste(dado);
+        System.out.println(value);
+     
+        //launch();
     }
 
 }
