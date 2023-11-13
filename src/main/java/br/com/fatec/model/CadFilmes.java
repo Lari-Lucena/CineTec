@@ -11,7 +11,10 @@ package br.com.fatec.model;
 public class CadFilmes {
     private String numeroSala, codigoFilme, horarioSessao, duracaoFilme, genero, classificacao;
     
-    //CONSTRUCTOR
+    //CONSTRUCTORES
+    public CadFilmes(){
+    }
+    
     public CadFilmes(String numeroSala, String codigoFilme, String horarioSessao, String duracaoFilme, String genero, String classificacao) {
         this.numeroSala = numeroSala;
         this.codigoFilme = codigoFilme;
@@ -22,7 +25,6 @@ public class CadFilmes {
     }
     
     //GETTERS
-
     public String getNumeroSala() {
         return numeroSala;
     }
@@ -48,7 +50,6 @@ public class CadFilmes {
     }
     
     //SETTERS
-
     public void setNumeroSala(String numeroSala) {
         this.numeroSala = numeroSala;
     }

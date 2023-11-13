@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="879.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.com.fatec.controller.Cinetec_cadDistribuidoraController">
+<AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="879.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadDistribuidoraController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_caddistribuidora.css" />
     </stylesheets>
@@ -37,7 +37,7 @@
       <TextField fx:id="txt_responsavel" layoutX="459.0" layoutY="313.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <TextField fx:id="txt_cnpj" layoutX="249.0" layoutY="313.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <TextField fx:id="txt_nome" layoutX="247.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Larissa Lucena Damasceno" style="-fx-background-radius: 15px;" styleClass="placeholder" />
-      <Button fx:id="btn_cadastro" layoutX="404.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cadastro" text="CADASTRAR" />
+      <Button fx:id="btn_cadastro" layoutX="388.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cadastro" text="CADASTRAR" />
       <TextField fx:id="txt_celular" layoutX="250.0" layoutY="427.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <TextField fx:id="txt_whats" layoutX="460.0" layoutY="427.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <Label layoutX="260.0" layoutY="409.0" text="CELULAR">

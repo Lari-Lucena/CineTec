@@ -27,6 +27,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -60,6 +61,8 @@ public class Cinetec_cadastroController implements Initializable {
     
     
     private Cadastrar cadastro = new Cadastrar(); //indica nosso model
+    @FXML
+    private ImageView imgCad;
     
     /**
      * Initializes the controller class.

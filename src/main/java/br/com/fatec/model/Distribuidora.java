@@ -10,12 +10,15 @@ package br.com.fatec.model;
  */
 public class Distribuidora {
     
-    private String nome, cpf, responsavel, email, celular, whats;
+    private String nome, cnpj, responsavel, email, celular, whats;
 
-    //CONSTRUCTORS
-    public Distribuidora(String nome, String cpf, String responsavel, String email, String celular, String whats) {
+    //CONSTRUCTORES
+    public Distribuidora(){
+    }
+    
+    public Distribuidora(String nome, String cnpj, String responsavel, String email, String celular, String whats) {
         this.nome = nome;
-        this.cpf = cpf;
+        this.cnpj = cnpj;
         this.responsavel = responsavel;
         this.email = email;
         this.celular = celular;
@@ -27,8 +30,8 @@ public class Distribuidora {
         return nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCnpj() {
+        return cnpj;
     }
 
     public String getResponsavel() {
@@ -52,8 +55,8 @@ public class Distribuidora {
         this.nome = nome;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public void setResponsavel(String responsavel) {
@@ -70,10 +73,5 @@ public class Distribuidora {
 
     public void setWhats(String whats) {
         this.whats = whats;
-    }
-    
-    
-    
-    
-    
+    }    
 }
