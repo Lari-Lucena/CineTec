@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="962.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.com.fatec.controller.Cinetec_cadSessaoController">
+    <stylesheets>
+        <URL value="@/br/com/fatec/styles/cinetec_cadsessao.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="507.0" layoutY="217.0" text="CÓDIGO DO FILME">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="302.0" layoutY="216.0" text="N° DA DALA">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="301.0" layoutY="274.0" text="FILME">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_filme" layoutX="293.0" layoutY="293.0" prefHeight="31.0" prefWidth="418.0" promptText="ex: larrisa@gmail.com" styleClass="placeholder" />
+      <TextField fx:id="txt_codFilm" layoutX="502.0" layoutY="234.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
+      <TextField fx:id="txt_nsala" layoutX="292.0" layoutY="234.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
+      <Button fx:id="btn_cadastro" layoutX="409.0" layoutY="467.0" mnemonicParsing="false" onAction="#btn_cadastro" text="FINALIZAR CADASTRO" />
+      <TextField fx:id="txt_horaSessao" layoutX="291.0" layoutY="350.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
+      <TextField fx:id="txt_filmeDuracao" layoutX="501.0" layoutY="350.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
+      <Label layoutX="301.0" layoutY="332.0" text="HORÁRIO DA SESSAO">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="506.0" layoutY="333.0" text="DURAÇAO DO FILME">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="506.0" layoutY="392.0" text="CLASSIFICAÇÃO INDICATIVA">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="301.0" layoutY="391.0" text="GÊNERO ">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_classificacao" layoutX="501.0" layoutY="409.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
+      <TextField fx:id="txt_genero" layoutX="291.0" layoutY="409.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
+   </children>
+</AnchorPane>
