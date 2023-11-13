@@ -89,26 +89,25 @@ public class Cinetec_cadastroController implements Initializable {
         }
         
         //VERIFICANDO
-//        LoginDAO LogDAO = new LoginDAO();
-//        boolean contaJaExiste = LogDAO.contaExiste(cadastro);
-//        if(contaExiste){
-//            msg_alert("Já existe uma conta cadastrada com esse e-mail.");
-//        } else{
-//            //GRAVANDO
-//            CadastrarDAO CadDAO = new CadastrarDAO();
-//
-//            try {
-//                if(CadDAO.insertCadastro(cadastro)){
-//                    msg_info("Cadastro concluido com sucesso!");               
-//                    LogDAO.insertlogin(cadastro);
-//                }
-//            } catch (SQLException ex) {
-//                System.out.println("Deu erro: " + 
-//                        ex.getMessage());
-//            }
-//        }
-//        
-             
+        LoginDAO LogDAO = new LoginDAO();
+        CadastrarDAO CadDAO = new CadastrarDAO();
+
+        boolean contaJaExiste = CadDAO.contaExiste(cadastro);
+        
+        if(contaJaExiste){
+            msg_alert("Já existe uma conta cadastrada com esse e-mail.");
+        } else{
+            //GRAVANDO
+            try {
+                if(CadDAO.insertCadastro(cadastro)){
+                    msg_info("Cadastro concluido com sucesso!");               
+                    LogDAO.insertlogin(cadastro);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Deu erro: " + 
+                        ex.getMessage());
+            }
+        }               
     }     
     
     private void msg_info(String msg){    
@@ -174,15 +173,3 @@ public class Cinetec_cadastroController implements Initializable {
            !txt_rsenha.getText().isEmpty();
     }
 }
-
-        
-//        LoginDAO loginDAO = new LoginDAO();
-//int rowCount = loginDAO.verificaLogin(senhaDigitada, emailDigitado);
-//
-//if (rowCount > 0) {
-//    // Login bem-sucedido, redirecione para outra tela
-//    // ...
-//} else {
-//    // Login inválido, exiba uma mensagem de erro ou faça o que for necessário
-//    // ...
-//}

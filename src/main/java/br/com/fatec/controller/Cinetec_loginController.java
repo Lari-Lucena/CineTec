@@ -4,7 +4,9 @@
  */
 package br.com.fatec.controller;
 
+import br.com.fatec.DAO.LoginDAO;
 import br.com.fatec.Principal;
+import br.com.fatec.model.Login;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -36,6 +38,8 @@ public class Cinetec_loginController implements Initializable {
     private PasswordField txt_senha;
     @FXML
     private Hyperlink linkCadastro;
+    
+    private Login login = new Login(); //indica nosso model
     /**
      * Initializes the controller class.
      */
@@ -47,19 +51,22 @@ public class Cinetec_loginController implements Initializable {
 
     @FXML
     private void linkCad(ActionEvent event) throws IOException {
-       
+       //chamar tela de login
     }
     
     @FXML
     private void btn_login(ActionEvent event) throws SQLException {
-        String email = txt_user.getText();
-        String senha = txt_senha.getText();
+    login = moveViewToModel();
         
-        //veriicar se existe
-        //chama outra tela
-        //else
-        //msg_alert("Conta não cadastrada.");
-    
+    LoginDAO loginDAO = new LoginDAO();
+    int rowCount = loginDAO.verificaLogin(login.getEmail(), login.getSenha());
+
+        if (rowCount != 1) {
+            msg_alert("E-mail ou senha não coincidem.");
+        } else {
+            msg_info("passou");
+            //chamar outra tela
+        }
     }
     
     private void msg_info(String msg){    
@@ -78,6 +85,16 @@ public class Cinetec_loginController implements Initializable {
         //alerta.setContentText("");
                
         alerta.showAndWait(); //exibe mensagem
+    }
+    
+    private Login moveViewToModel(){     
+        //CRIA O OBJETO LOGIN - (MODEL)
+        login = new Login();
+        login.setEmail(txt_user.getText());
+        login.setSenha(txt_senha.getText());
+   
+        //Devolve o model
+        return login;     
     }
  }
 
