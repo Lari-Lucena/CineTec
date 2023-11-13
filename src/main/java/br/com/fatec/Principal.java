@@ -35,13 +35,13 @@ public class Principal extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        CadastrarDAO cadastrarDAO = new CadastrarDAO();
+     /* CadastrarDAO cadastrarDAO = new CadastrarDAO();
         Cadastrar dado = new Cadastrar();
         dado.setEmail("12345681");
         var value = cadastrarDAO.contaExiste(dado);
         System.out.println(value);
-     
-        //launch();
+     */
+        launch();
     }
 
 }
