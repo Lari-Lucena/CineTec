@@ -44,6 +44,10 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     private TextField txt_whats;
 
     private Distribuidora distribuidora = new Distribuidora();
+    @FXML
+    private Button btn_alterar;
+    @FXML
+    private Button btn_deletar;
     
     /**
      * Initializes the controller class.
