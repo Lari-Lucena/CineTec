@@ -58,11 +58,12 @@ public class Cinetec_cadastroController implements Initializable {
     private PasswordField txt_rsenha;
     @FXML
     private CheckBox chk_visualizar;
-    
-    
-    private Cadastrar cadastro = new Cadastrar(); //indica nosso model
     @FXML
     private ImageView imgCad;
+   
+    
+    private Cadastrar cadastro = new Cadastrar(); //indica nosso model
+
     
     /**
      * Initializes the controller class.
@@ -79,10 +80,8 @@ public class Cinetec_cadastroController implements Initializable {
             
         cadastro = moveViewToModel();
 
-        // Verifica se todos os campos estão preenchidos
-        if (!todosCamposPreenchidos()) {
-            msg_alert("Preencha todos os campos antes de cadastrar.");
-            return;  // Interrompe a execução do método
+        if(!todosCamposPreenchidos()){
+            return;
         }
 
         // Verifica se o e-mail é válido
@@ -163,16 +162,57 @@ public class Cinetec_cadastroController implements Initializable {
         return cadastro;     
     }
     
+    
     private boolean todosCamposPreenchidos() {
     // Adicione todos os campos que você deseja verificar
-    return !txt_nome.getText().isEmpty() &&
-           !txt_apelido.getText().isEmpty() &&
-           !txt_cpf.getText().isEmpty() &&
-           !txt_celular.getText().isEmpty() &&
-           txt_bday.getValue() != null &&  // Verifica se a data de nascimento foi selecionada
-           cb_regiao.getValue() != null &&
-           !txt_email.getText().isEmpty() &&
-           !txt_senha.getText().isEmpty() &&
-           !txt_rsenha.getText().isEmpty();
+        if (txt_nome.getText().isEmpty()) {
+            msg_alert("Preencha o campo Nome.");
+            txt_nome.requestFocus();
+            return false;
+        }
+        if (txt_apelido.getText().isEmpty()) {
+            msg_alert("Preencha o campo Apelido.");
+            txt_apelido.requestFocus();
+            return false;
+        }
+        if (txt_cpf.getText().length() != 11) {
+            msg_alert("O CPF deve ter 11 dígitos.");
+            txt_cpf.requestFocus();
+            return false;
+        }
+        if (txt_celular.getText().length() != 11) {
+            msg_alert("O número de celular deve ter 11 dígitos.");
+            txt_celular.requestFocus();
+            return false;
+        }
+        if (txt_bday.getValue() == null) {
+            msg_alert("Selecione a data de nascimento.");
+            txt_bday.requestFocus();
+            return false;
+        }
+        if (cb_regiao.getValue() == null) {
+            msg_alert("Selecione a região.");
+            cb_regiao.requestFocus();
+            return false;
+        }
+        if (txt_email.getText().isEmpty()) {
+            msg_alert("Preencha o campo E-mail.");
+            txt_email.requestFocus();
+            return false;
+        }
+        if (txt_senha.getText().isEmpty()) {
+            msg_alert("Preencha o campo Senha.");
+            txt_senha.requestFocus();
+            return false;
+        }
+        if (!txt_rsenha.getText().equals(txt_senha.getText())) {
+            msg_alert("As senhas não coincidem.");
+            txt_rsenha.requestFocus();
+            return false;
+        }
+
+        return true;
     }
+
 }
+
