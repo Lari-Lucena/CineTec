@@ -14,3 +14,10 @@
     -fx-background-color: transparent;
     -fx-border-color: #313137;
 }
+.btn{
+    -fx-background-radius : 20px;
+    -fx-border-radius : 20px;
+    -fx-background-color: #1b828f;
+    -fx-padding: 5px;
+    
+}

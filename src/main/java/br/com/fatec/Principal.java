@@ -20,7 +20,7 @@ public class Principal extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("view/Cinetec_cadDistribuidora"));
+        scene = new Scene(loadFXML("view/Cinetec_cadastro"));
         stage.setScene(scene);
         stage.show();
     }

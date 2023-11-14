@@ -59,7 +59,7 @@ public class Cinetec_cadastroController implements Initializable {
     @FXML
     private CheckBox chk_visualizar;
     @FXML
-    private ImageView imgCad;
+    private ImageView imgCadUsu;
    
     
     private Cadastrar cadastro = new Cadastrar(); //indica nosso model

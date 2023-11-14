@@ -14,7 +14,15 @@
         <URL value="@/br/com/fatec/styles/cinetec_cadastro.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btn_cadastro" layoutX="404.0" layoutY="614.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="25.0" prefWidth="84.0" text="Cadastrar" />
+      <ImageView fx:id="imgCadUsu" fitHeight="308.0" fitWidth="713.0" layoutX="177.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true" styleClass="imgCad">
+         <image>
+            <Image url="@../../../../imagens/CADC.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_cadastro" layoutX="357.0" layoutY="612.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="168.0" styleClass="btn" text="CADASTRO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <TextField fx:id="txt_nome" layoutX="240.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Larissa Lucena Damasceno" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <TextField fx:id="txt_apelido" layoutX="240.0" layoutY="310.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Larissinha" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <TextField fx:id="txt_cpf" layoutX="242.0" layoutY="367.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-fx-background-radius: 15px;" styleClass="placeholder" />
@@ -70,10 +78,5 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgCad" fitHeight="108.0" fitWidth="263.0" layoutX="311.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../imagens/CADCINE.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
