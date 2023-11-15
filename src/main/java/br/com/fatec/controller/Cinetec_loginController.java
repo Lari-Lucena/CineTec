@@ -51,7 +51,9 @@ public class Cinetec_loginController implements Initializable {
 
     @FXML
     private void linkCad(ActionEvent event) throws IOException {
-       //chamar tela de login
+       //chamar tela de cadastro      
+       cadastroTela cad = new cadastroTela();
+       cad.start(new Stage());
     }
     
     @FXML
@@ -64,10 +66,8 @@ public class Cinetec_loginController implements Initializable {
         if (rowCount != 1) {
             msg_alert("E-mail ou senha não coincidem.");
         } else {
-            //msg_info("passou");
+            msg_info("passou");
             //chamar outra tela
-            cadastroTela cad = new cadastroTela();
-            cad.start(new Stage());
         }
     }
     
