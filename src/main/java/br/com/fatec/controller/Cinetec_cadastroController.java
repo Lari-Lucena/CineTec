@@ -6,14 +6,9 @@ package br.com.fatec.controller;
 
 import br.com.fatec.DAO.CadastrarDAO;
 import br.com.fatec.DAO.LoginDAO;
-import br.com.fatec.database.Database;
 import br.com.fatec.model.Cadastrar;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
