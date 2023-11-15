@@ -55,7 +55,7 @@ public class Cinetec_loginController implements Initializable {
     }
     
     @FXML
-    private void btn_login(ActionEvent event) throws SQLException {
+    private void btn_login(ActionEvent event) throws SQLException, IOException {
     login = moveViewToModel();
         
     LoginDAO loginDAO = new LoginDAO();
@@ -64,8 +64,10 @@ public class Cinetec_loginController implements Initializable {
         if (rowCount != 1) {
             msg_alert("E-mail ou senha não coincidem.");
         } else {
-            msg_info("passou");
+            //msg_info("passou");
             //chamar outra tela
+            cadastroTela cad = new cadastroTela();
+            cad.start(new Stage());
         }
     }
     
