@@ -1,7 +1,18 @@
 /*
  * Empty Stylesheet file.
  */
-
 .mainFxmlClass {
+    -fx-background-color : #121214;
+    -fx-cursor: pointer;
+    -fx-align-content: center;
+    -fx-text-fill: white;
+    -fx-font-color: white;
+}
 
+.btn{
+    -fx-background-radius : 20px;
+    -fx-border-radius : 20px;
+    -fx-background-color: #1b828f;
+    -fx-padding: 5px;
+    
 }

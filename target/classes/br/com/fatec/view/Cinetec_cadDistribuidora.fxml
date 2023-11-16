@@ -8,17 +8,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="879.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadDistribuidoraController">
+<AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="879.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadDistribuidoraController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_caddistribuidora.css" />
     </stylesheets>
    <children>
-      <Label layoutX="464.0" layoutY="296.0" text="RESPONSÁVEL">
+      <Label layoutX="464.0" layoutY="296.0" text="RESPONSÁVEL" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="295.0" text="CNPJ">
+      <Label layoutX="259.0" layoutY="295.0" text="CNPJ" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -28,15 +28,15 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblNome" layoutX="253.0" layoutY="233.0" text="NOME DISTRIBUIDORA">
+      <Label fx:id="lblNome" layoutX="253.0" layoutY="233.0" text="NOME DISTRIBUIDORA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_email" layoutX="250.0" layoutY="372.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: larrisa@gmail.com" styleClass="placeholder" />
-      <TextField fx:id="txt_responsavel" layoutX="459.0" layoutY="313.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
+      <TextField fx:id="txt_email" layoutX="250.0" layoutY="372.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: roger@gmail.com" styleClass="placeholder" />
+      <TextField fx:id="txt_responsavel" layoutX="459.0" layoutY="313.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: Rogério" styleClass="placeholder" />
       <TextField fx:id="txt_cnpj" layoutX="249.0" layoutY="313.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" styleClass="placeholder" />
-      <TextField fx:id="txt_nome" layoutX="247.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Larissa Lucena Damasceno" styleClass="placeholder" />
+      <TextField fx:id="txt_nome" layoutX="247.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Pixar" styleClass="placeholder" />
       <Button fx:id="btn_cadastro" layoutX="394.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
