@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,56 +9,61 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="748.0" prefWidth="917.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadFilmesController">
+<AnchorPane id="AnchorPane" prefHeight="805.0" prefWidth="1048.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadFilmesController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_cadfilmes.css" />
     </stylesheets>
    <children>
-      <ComboBox fx:id="cbSelecionar" layoutX="348.0" layoutY="141.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
-      <Button fx:id="btn_deletar" layoutX="540.0" layoutY="606.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
+      <ImageView fitHeight="415.0" fitWidth="766.0" layoutX="143.0" layoutY="-52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/CADFILME.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cbSelecionar" layoutX="421.0" layoutY="645.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
+      <Button fx:id="btn_deletar" layoutX="607.0" layoutY="695.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btn_alterar" layoutX="271.0" layoutY="606.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
+      <Button fx:id="btn_alterar" layoutX="338.0" layoutY="695.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="264.0" layoutY="522.0" text="DISTRIBUIDORA" textFill="WHITE">
+      <Label layoutX="331.0" layoutY="576.0" text="DISTRIBUIDORA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_distribuidora" layoutX="260.0" layoutY="540.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Pixar" styleClass="placeholder" />
-      <Button fx:id="btn_cadastro" layoutX="404.0" layoutY="606.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
+      <TextField fx:id="txt_distribuidora" layoutX="327.0" layoutY="594.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Pixar" styleClass="placeholder" />
+      <Button fx:id="btn_cadastro" layoutX="471.0" layoutY="695.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <TextField fx:id="txt_nome" layoutX="257.0" layoutY="265.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Divertidamente" styleClass="placeholder" />
-      <TextField fx:id="txt_genero" layoutX="259.0" layoutY="323.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: Animacao" styleClass="placeholder" />
-      <TextField fx:id="txt_classificacao" layoutX="469.0" layoutY="323.0" prefHeight="31.0" prefWidth="211.0" promptText="ex: Livre" styleClass="placeholder" />
-      <Label fx:id="lblNome" layoutX="261.0" layoutY="243.0" text="NOME DO FILME" textFill="WHITE">
+      <TextField fx:id="txt_nome" layoutX="324.0" layoutY="319.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Divertidamente" styleClass="placeholder" />
+      <TextField fx:id="txt_genero" layoutX="326.0" layoutY="377.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: Animacao" styleClass="placeholder" />
+      <TextField fx:id="txt_classificacao" layoutX="536.0" layoutY="377.0" prefHeight="31.0" prefWidth="211.0" promptText="ex: Livre" styleClass="placeholder" />
+      <Label fx:id="lblNome" layoutX="328.0" layoutY="297.0" text="NOME DO FILME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="262.0" layoutY="305.0" text="GÊNERO" textFill="WHITE">
+      <Label layoutX="329.0" layoutY="359.0" text="GÊNERO" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="474.0" layoutY="306.0" text="CLASSIFICAÇÃO INDICATIVA" textFill="WHITE">
+      <Label layoutX="541.0" layoutY="360.0" text="CLASSIFICAÇÃO INDICATIVA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="265.0" layoutY="362.0" text="SINÓPSE DO FILME" textFill="WHITE">
+      <Label layoutX="332.0" layoutY="416.0" text="SINÓPSE DO FILME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextArea fx:id="txt_sinopse" layoutX="260.0" layoutY="380.0" prefHeight="132.0" prefWidth="423.0" styleClass="placeholder" />
+      <TextArea fx:id="txt_sinopse" layoutX="327.0" layoutY="434.0" prefHeight="132.0" prefWidth="423.0" styleClass="placeholder" />
    </children>
 </AnchorPane>
