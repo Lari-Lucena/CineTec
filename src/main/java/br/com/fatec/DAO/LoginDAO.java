@@ -32,8 +32,8 @@ public class LoginDAO {
         try (Connection conn = connect()) {
              
             
-            String SQL = "INSERT INTO TBL_LOGIN (email, senha) "
-                    + "VALUES(?,?)";
+            String SQL = "INSERT INTO TBL_LOGIN (email, senha, nome) "
+                    + "VALUES(?, ?, ?)";
             
             PreparedStatement pstmt = conn.prepareStatement(SQL,
                     Statement.RETURN_GENERATED_KEYS);
@@ -41,6 +41,7 @@ public class LoginDAO {
             //dados a serem inseridos
             pstmt.setString(1, dado.getEmail());
             pstmt.setString(2, dado.getSenha());
+            pstmt.setString(3, dado.getNome());
             
             //executa comando
             pstmt.executeUpdate();

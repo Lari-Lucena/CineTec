@@ -5,12 +5,16 @@
 package br.com.fatec.controller;
 
 import br.com.fatec.model.Poltronas;
+import br.com.fatec.DAO.PoltronaDAO;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,14 +30,14 @@ import javafx.scene.control.CheckBox;
 public class Cinetec_poltronasController implements Initializable {
 
     @FXML
-    private CheckBox a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, 
-                    b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, 
-                    c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, 
-                    d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, 
-                    e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, 
-                    f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, 
-                    g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, 
-                    h1, h2, h3, h4, h5, h6, h7, h8, h9, h10;
+    private CheckBox A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, 
+                    B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, 
+                    C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, 
+                    D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, 
+                    E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, 
+                    F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, 
+                    G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, 
+                    H1, H2, H3, H4, H5, H6, H7, H8, H9, H10;
 
     @FXML
     private Button btn_prosseguir;
@@ -45,29 +49,57 @@ public class Cinetec_poltronasController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        PoltronaDAO poltronas = new PoltronaDAO();
+        
+        
+        try {
+            
+            List<String> poltronasCompradas = poltronas.getPoltronasCompradas("Sala 12", "15:10");
+            List<CheckBox> checkBoxes = getCheckBoxes(); 
+              
+            System.out.println(poltronasCompradas);
+            for (CheckBox checkBox : checkBoxes) {
+                
+                String idCheckBox = checkBox.getId();
+                String poltronasString = String.join(", ", poltronasCompradas);
+                poltronasString.replace("[", "").replace("]", "");
+
+                if (poltronasString.contains(idCheckBox)) {
+                    checkBox.setDisable(true);
+                    checkBox.setStyle("-fx-background-color: #ff0000;"); // Define a cor de fundo vermelha para as que ja estao compradas
+                }
+            }
+
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Cinetec_poltronasController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }  
     
     @FXML
-    private void btn_prosseguir(ActionEvent event) {
+    private void btn_prosseguir(ActionEvent event) throws SQLException {
     moveViewToModel(poltronas);
 
     List<String> poltronasSelecionadas = getPoltronasSelecionadas();
 
         if (poltronasSelecionadas.isEmpty()) {
-            System.out.println("Nenhuma poltrona selecionada.");
+            msg_info("Você não selecionou nenhuma poltrona.");
+            
         } else {
             String poltronasConcatenadas = String.join(", ", poltronasSelecionadas);
             msg_info("Você selecionou as poltronas: " + poltronasConcatenadas);
-
-        }
-
+            
+            //GRAVANDO COMPRA
+            PoltronaDAO poltronas = new PoltronaDAO();
+            poltronas.insertVendas(poltronasConcatenadas);
+        }  
     }
-
+    
     private List<String> getPoltronasSelecionadas() {
     List<String> poltronasSelecionadas = new ArrayList<>();
     char row = 'A';
 
+    
         for (char i = row; i <= 'H'; i++) {
             for (int j = 1; j <= 10; j++) {
                 String checkBoxId = i + "" + j; 
@@ -86,21 +118,21 @@ public class Cinetec_poltronasController implements Initializable {
         // Mapeamento dos IDs para os CheckBoxes
         Map<String, CheckBox> checkBoxMap = new HashMap<>();
         
-        checkBoxMap.put("A1", a1);checkBoxMap.put("A2", a2);checkBoxMap.put("A3", a3);checkBoxMap.put("A4", a4);checkBoxMap.put("A5", a5);checkBoxMap.put("A6", a6);checkBoxMap.put("A7", a7);checkBoxMap.put("A8", a8);checkBoxMap.put("A9", a9);checkBoxMap.put("A10", a10);
+        checkBoxMap.put("A1", A1);checkBoxMap.put("A2", A2);checkBoxMap.put("A3", A3);checkBoxMap.put("A4", A4);checkBoxMap.put("A5", A5);checkBoxMap.put("A6", A6);checkBoxMap.put("A7", A7);checkBoxMap.put("A8", A8);checkBoxMap.put("A9", A9);checkBoxMap.put("A10", A10);
         
-        checkBoxMap.put("B1", b1); checkBoxMap.put("B2", b2); checkBoxMap.put("B3", b3); checkBoxMap.put("B4", b4); checkBoxMap.put("B5", b5); checkBoxMap.put("B6", b6); checkBoxMap.put("B7", b7); checkBoxMap.put("B8", b8); checkBoxMap.put("B9", b9); checkBoxMap.put("B10", b10);
+        checkBoxMap.put("B1", B1); checkBoxMap.put("B2", B2); checkBoxMap.put("B3", B3); checkBoxMap.put("B4", B4); checkBoxMap.put("B5", B5); checkBoxMap.put("B6", B6); checkBoxMap.put("B7", B7); checkBoxMap.put("B8", B8); checkBoxMap.put("B9", B9); checkBoxMap.put("B10", B10);
 
-        checkBoxMap.put("C1", c1); checkBoxMap.put("C2", c2); checkBoxMap.put("C3", c3); checkBoxMap.put("C4", c4); checkBoxMap.put("C5", c5); checkBoxMap.put("C6", c6); checkBoxMap.put("C7", c7); checkBoxMap.put("C8", c8); checkBoxMap.put("C9", c9); checkBoxMap.put("C10", c10);
+        checkBoxMap.put("C1", C1); checkBoxMap.put("C2", C2); checkBoxMap.put("C3", C3); checkBoxMap.put("C4", C4); checkBoxMap.put("C5", C5); checkBoxMap.put("C6", C6); checkBoxMap.put("C7", C7); checkBoxMap.put("C8", C8); checkBoxMap.put("C9", C9); checkBoxMap.put("C10", C10);
 
-        checkBoxMap.put("D1", d1); checkBoxMap.put("D2", d2); checkBoxMap.put("D3", d3); checkBoxMap.put("D4", d4); checkBoxMap.put("D5", d5); checkBoxMap.put("D6", d6); checkBoxMap.put("D7", d7); checkBoxMap.put("D8", d8); checkBoxMap.put("D9", d9); checkBoxMap.put("D10", d10);
+        checkBoxMap.put("D1", D1); checkBoxMap.put("D2", D2); checkBoxMap.put("D3", D3); checkBoxMap.put("D4", D4); checkBoxMap.put("D5", D5); checkBoxMap.put("D6", D6); checkBoxMap.put("D7", D7); checkBoxMap.put("D8", D8); checkBoxMap.put("D9", D9); checkBoxMap.put("D10", D10);
 
-        checkBoxMap.put("E1", e1); checkBoxMap.put("E2", e2); checkBoxMap.put("E3", e3); checkBoxMap.put("E4", e4); checkBoxMap.put("E5", e5); checkBoxMap.put("E6", e6); checkBoxMap.put("E7", e7); checkBoxMap.put("E8", e8); checkBoxMap.put("E9", e9); checkBoxMap.put("E10", e10);
+        checkBoxMap.put("E1", E1); checkBoxMap.put("E2", E2); checkBoxMap.put("E3", E3); checkBoxMap.put("E4", E4); checkBoxMap.put("E5", E5); checkBoxMap.put("E6", E6); checkBoxMap.put("E7", E7); checkBoxMap.put("E8", E8); checkBoxMap.put("E9", E9); checkBoxMap.put("E10", E10);
 
-        checkBoxMap.put("F1", f1); checkBoxMap.put("F2", f2); checkBoxMap.put("F3", f3); checkBoxMap.put("F4", f4); checkBoxMap.put("F5", f5); checkBoxMap.put("F6", f6); checkBoxMap.put("F7", f7); checkBoxMap.put("F8", f8); checkBoxMap.put("F9", f9); checkBoxMap.put("F10", f10);
+        checkBoxMap.put("F1", F1); checkBoxMap.put("F2", F2); checkBoxMap.put("F3", F3); checkBoxMap.put("F4", F4); checkBoxMap.put("F5", F5); checkBoxMap.put("F6", F6); checkBoxMap.put("F7", F7); checkBoxMap.put("F8", F8); checkBoxMap.put("F9", F9); checkBoxMap.put("F10", F10);
 
-        checkBoxMap.put("G1", g1); checkBoxMap.put("G2", g2); checkBoxMap.put("G3", g3); checkBoxMap.put("G4", g4); checkBoxMap.put("G5", g5); checkBoxMap.put("G6", g6); checkBoxMap.put("G7", g7); checkBoxMap.put("G8", g8); checkBoxMap.put("G9", g9); checkBoxMap.put("G10", g10);
+        checkBoxMap.put("G1", G1); checkBoxMap.put("G2", G2); checkBoxMap.put("G3", G3); checkBoxMap.put("G4", G4); checkBoxMap.put("G5", G5); checkBoxMap.put("G6", G6); checkBoxMap.put("G7", G7); checkBoxMap.put("G8", G8); checkBoxMap.put("G9", G9); checkBoxMap.put("G10", G10);
 
-        checkBoxMap.put("H1", h1); checkBoxMap.put("H2", h2); checkBoxMap.put("H3", h3); checkBoxMap.put("H4", h4); checkBoxMap.put("H5", h5); checkBoxMap.put("H6", h6); checkBoxMap.put("H7", h7); checkBoxMap.put("H8", h8); checkBoxMap.put("H9", h9); checkBoxMap.put("H10", h10);
+        checkBoxMap.put("H1", H1); checkBoxMap.put("H2", H2); checkBoxMap.put("H3", H3); checkBoxMap.put("H4", H4); checkBoxMap.put("H5", H5); checkBoxMap.put("H6", H6); checkBoxMap.put("H7", H7); checkBoxMap.put("H8", H8); checkBoxMap.put("H9", H9); checkBoxMap.put("H10", H10);
           
         return checkBoxMap.get(id);
     }
@@ -108,21 +140,21 @@ public class Cinetec_poltronasController implements Initializable {
     private List<CheckBox> getCheckBoxes() {
         List<CheckBox> checkBoxes = new ArrayList<>();
         
-        checkBoxes.add(a1); checkBoxes.add(a2); checkBoxes.add(a3); checkBoxes.add(a4); checkBoxes.add(a5); checkBoxes.add(a6); checkBoxes.add(a7); checkBoxes.add(a8); checkBoxes.add(a9); checkBoxes.add(a10);
+        checkBoxes.add(A1); checkBoxes.add(A2); checkBoxes.add(A3); checkBoxes.add(A4); checkBoxes.add(A5); checkBoxes.add(A6); checkBoxes.add(A7); checkBoxes.add(A8); checkBoxes.add(A9); checkBoxes.add(A10);
         
-        checkBoxes.add(b1); checkBoxes.add(b2); checkBoxes.add(b3); checkBoxes.add(b4); checkBoxes.add(b5); checkBoxes.add(b6); checkBoxes.add(b7); checkBoxes.add(b8); checkBoxes.add(b9); checkBoxes.add(b10);
+        checkBoxes.add(B1); checkBoxes.add(B2); checkBoxes.add(B3); checkBoxes.add(B4); checkBoxes.add(B5); checkBoxes.add(B6); checkBoxes.add(B7); checkBoxes.add(B8); checkBoxes.add(B9); checkBoxes.add(B10);
 
-        checkBoxes.add(c1); checkBoxes.add(c2); checkBoxes.add(c3); checkBoxes.add(c4); checkBoxes.add(c5); checkBoxes.add(c6); checkBoxes.add(c7); checkBoxes.add(c8); checkBoxes.add(c9); checkBoxes.add(c10);
+        checkBoxes.add(C1); checkBoxes.add(C2); checkBoxes.add(C3); checkBoxes.add(C4); checkBoxes.add(C5); checkBoxes.add(C6); checkBoxes.add(C7); checkBoxes.add(C8); checkBoxes.add(C9); checkBoxes.add(C10);
 
-        checkBoxes.add(d1); checkBoxes.add(d2); checkBoxes.add(d3); checkBoxes.add(d4); checkBoxes.add(d5); checkBoxes.add(d6); checkBoxes.add(d7); checkBoxes.add(d8); checkBoxes.add(d9); checkBoxes.add(d10);
+        checkBoxes.add(D1); checkBoxes.add(D2); checkBoxes.add(D3); checkBoxes.add(D4); checkBoxes.add(D5); checkBoxes.add(D6); checkBoxes.add(D7); checkBoxes.add(D8); checkBoxes.add(D9); checkBoxes.add(D10);
 
-        checkBoxes.add(e1); checkBoxes.add(e2); checkBoxes.add(e3); checkBoxes.add(e4); checkBoxes.add(e5); checkBoxes.add(e6); checkBoxes.add(e7); checkBoxes.add(e8); checkBoxes.add(e9); checkBoxes.add(e10);
+        checkBoxes.add(E1); checkBoxes.add(E2); checkBoxes.add(E3); checkBoxes.add(E4); checkBoxes.add(E5); checkBoxes.add(E6); checkBoxes.add(E7); checkBoxes.add(E8); checkBoxes.add(E9); checkBoxes.add(E10);
 
-        checkBoxes.add(f1); checkBoxes.add(f2); checkBoxes.add(f3); checkBoxes.add(f4); checkBoxes.add(f5); checkBoxes.add(f6); checkBoxes.add(f7); checkBoxes.add(f8); checkBoxes.add(f9); checkBoxes.add(f10);
+        checkBoxes.add(F1); checkBoxes.add(F2); checkBoxes.add(F3); checkBoxes.add(F4); checkBoxes.add(F5); checkBoxes.add(F6); checkBoxes.add(F7); checkBoxes.add(F8); checkBoxes.add(F9); checkBoxes.add(F10);
 
-        checkBoxes.add(g1); checkBoxes.add(g2); checkBoxes.add(g3); checkBoxes.add(g4); checkBoxes.add(g5); checkBoxes.add(g6); checkBoxes.add(g7); checkBoxes.add(g8); checkBoxes.add(g9); checkBoxes.add(g10);
+        checkBoxes.add(G1); checkBoxes.add(G2); checkBoxes.add(G3); checkBoxes.add(G4); checkBoxes.add(G5); checkBoxes.add(G6); checkBoxes.add(G7); checkBoxes.add(G8); checkBoxes.add(G9); checkBoxes.add(G10);
 
-        checkBoxes.add(h1); checkBoxes.add(h2); checkBoxes.add(h3); checkBoxes.add(h4); checkBoxes.add(h5); checkBoxes.add(h6); checkBoxes.add(h7); checkBoxes.add(h8); checkBoxes.add(h9); checkBoxes.add(h10);
+        checkBoxes.add(H1); checkBoxes.add(H2); checkBoxes.add(H3); checkBoxes.add(H4); checkBoxes.add(H5); checkBoxes.add(H6); checkBoxes.add(H7); checkBoxes.add(H8); checkBoxes.add(H9); checkBoxes.add(H10);
 
         return checkBoxes;
     }
