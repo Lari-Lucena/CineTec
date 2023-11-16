@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -48,6 +49,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     private Button btn_alterar;
     @FXML
     private Button btn_deletar;
+    @FXML
+    private ComboBox<?> cbSelecionar;
     
     /**
      * Initializes the controller class.
