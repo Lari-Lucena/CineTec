@@ -9,6 +9,7 @@ C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\sessao
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\database\Database.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\DAO\IngressoDAO.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\DAO\CadastrarDAO.java
+C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\cadFilmesTela.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\model\Login.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\reservaTela.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\DAO\DAO.java
@@ -20,6 +21,7 @@ C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\distri
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\poltronasTela.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\DAO\DistribuidoraDAO.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\Cinetec_cadastroController.java
+C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\Cinetec_cadFilmesController.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\controller\homeTela.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\DAO\CadFilmesDAO.java
 C:\Users\Leonardo\Documents\cinetec\src\main\java\br\com\fatec\DAO\PoltronaDAO.java

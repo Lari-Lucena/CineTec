@@ -23,7 +23,7 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="301.0" layoutY="274.0" text="FILME">
+      <Label layoutX="298.0" layoutY="274.0" text="FILME">
          <font>
             <Font size="12.0" />
          </font>
@@ -37,12 +37,12 @@
          </font></Button>
       <TextField fx:id="txt_horaSessao" layoutX="291.0" layoutY="350.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
       <TextField fx:id="txt_filmeDuracao" layoutX="501.0" layoutY="350.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
-      <Label layoutX="301.0" layoutY="332.0" text="HORÁRIO DA SESSAO">
+      <Label layoutX="294.0" layoutY="332.0" text="HORÁRIOS DA SESSAO">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="506.0" layoutY="333.0" text="DURAÇAO DO FILME">
+      <Label layoutX="506.0" layoutY="333.0" text="DURAÇÃO DO FILME">
          <font>
             <Font size="12.0" />
          </font>

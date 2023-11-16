@@ -44,12 +44,15 @@ public class Cinetec_menuController implements Initializable {
     }    
 
     @FXML
-    private void btnCadFilmes(ActionEvent event) {
-        
+    private void btnCadFilmes(ActionEvent event) throws IOException {
+        cadFilmesTela cad = new cadFilmesTela();
+        cad.start(new Stage());
     }
 
     @FXML
-    private void btnCadSessao(ActionEvent event) {
+    private void btnCadSessao(ActionEvent event) throws IOException {
+        sessaoTela cad = new sessaoTela();
+        cad.start(new Stage());
     }
 
     @FXML
