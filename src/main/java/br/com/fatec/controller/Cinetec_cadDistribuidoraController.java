@@ -129,4 +129,16 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
         Matcher matcher = pattern.matcher(txt_email);
         return matcher.matches();
     }
+
+    @FXML
+    private void btn_alterar(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_deletar(ActionEvent event) {
+    }
+
+    @FXML
+    private void cbSelecionar(ActionEvent event) {
+    }
 }

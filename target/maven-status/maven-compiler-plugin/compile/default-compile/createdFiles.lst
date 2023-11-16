@@ -1,6 +1,5 @@
 br\com\fatec\controller\Cinetec_cadastroController.class
 br\com\fatec\DAO\LoginDAO.class
-br\com\fatec\controller\Cinetec_ingressosController.class
 br\com\fatec\DAO\PoltronaDAO.class
 br\com\fatec\controller\Cinetec_poltronasController.class
 br\com\fatec\DAO\DAO.class

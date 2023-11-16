@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="962.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.com.fatec.controller.Cinetec_cadSessaoController">
+<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="962.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadSessaoController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_cadsessao.css" />
     </stylesheets>
@@ -31,7 +31,10 @@
       <TextField fx:id="txt_filme" layoutX="293.0" layoutY="293.0" prefHeight="31.0" prefWidth="418.0" promptText="ex: larrisa@gmail.com" styleClass="placeholder" />
       <TextField fx:id="txt_codFilm" layoutX="502.0" layoutY="234.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
       <TextField fx:id="txt_nsala" layoutX="292.0" layoutY="234.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
-      <Button fx:id="btn_cadastro" layoutX="409.0" layoutY="467.0" mnemonicParsing="false" onAction="#btn_cadastro" text="FINALIZAR CADASTRO" />
+      <Button fx:id="btn_cadastro" layoutX="394.0" layoutY="467.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="201.0" styleClass="btn" text="FINALIZAR CADASTRO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <TextField fx:id="txt_horaSessao" layoutX="291.0" layoutY="350.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
       <TextField fx:id="txt_filmeDuracao" layoutX="501.0" layoutY="350.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
       <Label layoutX="301.0" layoutY="332.0" text="HORÁRIO DA SESSAO">
@@ -56,5 +59,16 @@
       </Label>
       <TextField fx:id="txt_classificacao" layoutX="501.0" layoutY="409.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
       <TextField fx:id="txt_genero" layoutX="291.0" layoutY="409.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
+      <ComboBox fx:id="cbSelecionar" layoutX="374.0" layoutY="141.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
+      <Button fx:id="btn_deletar" layoutX="600.0" layoutY="467.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_alterar" layoutX="272.0" layoutY="467.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

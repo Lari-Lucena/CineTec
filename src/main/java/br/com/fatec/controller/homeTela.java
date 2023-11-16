@@ -24,7 +24,7 @@ public class homeTela extends Application{
     public void start(Stage tela) throws IOException {
         setStage(tela);
         
-        FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource("view/Cinetec_cadastro.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource("view/Cinetec_home.fxml"));
         Parent root = fxmlLoader.load();
        // Cinetec_cadastroController controler = fxmlLoader.getController();
         

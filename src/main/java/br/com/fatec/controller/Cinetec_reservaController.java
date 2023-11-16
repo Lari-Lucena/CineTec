@@ -6,29 +6,14 @@ package br.com.fatec.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
  * @author Leonardo
  */
-public class Cinetec_ingressosController implements Initializable {
-
-    @FXML
-    private Label lbl_inteira;
-    @FXML
-    private Label lbl_meia;
-    @FXML
-    private ComboBox<?> cmb_inteira;
-    @FXML
-    private ComboBox<?> cmb_meia;
-    @FXML
-    private Button btn_reservar;
+public class Cinetec_reservaController implements Initializable {
 
     /**
      * Initializes the controller class.

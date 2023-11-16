@@ -17,14 +17,14 @@ import javafx.stage.Stage;
  *
  * @author Leonardo
  */
-public class sessaoTela extends Application{
+public class reservaTela extends Application{
     public static Stage tela;
     
     @Override
     public void start(Stage tela) throws IOException {
         setStage(tela);
         
-        FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource("view/Cinetec_cadSessao.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource("view/Cinetec_reserva.fxml"));
         Parent root = fxmlLoader.load();
        // Cinetec_cadastroController controler = fxmlLoader.getController();
         

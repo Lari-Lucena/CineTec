@@ -6,6 +6,7 @@ package br.com.fatec.controller;
 
 import br.com.fatec.model.Poltronas;
 import br.com.fatec.DAO.PoltronaDAO;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -77,7 +79,7 @@ public class Cinetec_poltronasController implements Initializable {
     }  
     
     @FXML
-    private void btn_prosseguir(ActionEvent event) throws SQLException {
+    private void btn_prosseguir(ActionEvent event) throws SQLException, IOException {
     moveViewToModel(poltronas);
 
     List<String> poltronasSelecionadas = getPoltronasSelecionadas();
@@ -92,6 +94,11 @@ public class Cinetec_poltronasController implements Initializable {
             //GRAVANDO COMPRA
             PoltronaDAO poltronas = new PoltronaDAO();
             poltronas.insertVendas(poltronasConcatenadas);
+            
+            
+            //CHAMA TELA RESERVA EFETUADA
+            reservaTela reserva = new reservaTela();
+            reserva.start(new Stage());
         }  
     }
     

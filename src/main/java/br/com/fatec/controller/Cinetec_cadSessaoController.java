@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 /**
@@ -35,6 +36,12 @@ public class Cinetec_cadSessaoController implements Initializable {
     private TextField txt_classificacao;
     @FXML
     private TextField txt_genero;
+    @FXML
+    private ComboBox<?> cbSelecionar;
+    @FXML
+    private Button btn_deletar;
+    @FXML
+    private Button btn_alterar;
 
     /**
      * Initializes the controller class.
@@ -46,6 +53,18 @@ public class Cinetec_cadSessaoController implements Initializable {
 
     @FXML
     private void btn_cadastro(ActionEvent event) {
+    }
+
+    @FXML
+    private void cbSelecionar(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_deletar(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_alterar(ActionEvent event) {
     }
     
 }
