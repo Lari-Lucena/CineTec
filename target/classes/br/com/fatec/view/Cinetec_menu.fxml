@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,36 +9,41 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="495.0" prefWidth="728.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_menuController">
+<AnchorPane id="AnchorPane" prefHeight="641.0" prefWidth="892.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_menuController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_menu.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnCadFilmes" layoutX="140.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
+      <ImageView fitHeight="356.0" fitWidth="892.0" layoutX="143.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/MENU.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnCadFilmes" layoutX="227.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnCadSessao" layoutX="372.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
+      <Button fx:id="btnCadSessao" layoutX="459.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="bntCadCliente" layoutX="140.0" layoutY="207.0" mnemonicParsing="false" onAction="#bntCadCliente" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO CLIENTE" textFill="WHITE">
+      <Button fx:id="bntCadCliente" layoutX="227.0" layoutY="343.0" mnemonicParsing="false" onAction="#bntCadCliente" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO CLIENTE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnCadDis" layoutX="238.0" layoutY="311.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="240.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
+      <Button fx:id="btnCadDis" layoutX="325.0" layoutY="447.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="240.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="bntLogin" layoutX="139.0" layoutY="253.0" mnemonicParsing="false" onAction="#bntLogin" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="LOGIN" textFill="WHITE">
+      <Button fx:id="bntLogin" layoutX="226.0" layoutY="389.0" mnemonicParsing="false" onAction="#bntLogin" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="LOGIN" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnPoltronas" layoutX="371.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnPoltronas" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="POLTRONAS" textFill="WHITE">
+      <Button fx:id="btnPoltronas" layoutX="458.0" layoutY="389.0" mnemonicParsing="false" onAction="#btnPoltronas" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="POLTRONAS" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnFilmes" layoutX="372.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="FILMES" textFill="WHITE">
+      <Button fx:id="btnFilmes" layoutX="459.0" layoutY="343.0" mnemonicParsing="false" onAction="#btnFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="FILMES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>

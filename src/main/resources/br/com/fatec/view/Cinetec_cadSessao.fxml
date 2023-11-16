@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,12 +9,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="962.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadSessaoController">
+<AnchorPane id="AnchorPane" prefHeight="713.0" prefWidth="962.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadSessaoController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_cadsessao.css" />
     </stylesheets>
    <children>
-      <Label layoutX="507.0" layoutY="217.0" text="CÓDIGO DO FILME">
+      <Label layoutX="507.0" layoutY="217.0" text="CÓDIGO DO FILME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -22,43 +23,51 @@
          <font>
             <Font size="12.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Label layoutX="298.0" layoutY="274.0" text="FILME">
+      <Label layoutX="298.0" layoutY="274.0" text="FILME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_filme" layoutX="293.0" layoutY="293.0" prefHeight="31.0" prefWidth="418.0" promptText="ex: larrisa@gmail.com" styleClass="placeholder" />
-      <TextField fx:id="txt_codFilm" layoutX="502.0" layoutY="234.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
-      <TextField fx:id="txt_nsala" layoutX="292.0" layoutY="234.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
+      <TextField fx:id="txt_filme" layoutX="293.0" layoutY="293.0" prefHeight="31.0" prefWidth="418.0" promptText="ex: Mad Max" styleClass="placeholder" />
+      <TextField fx:id="txt_codFilm" layoutX="502.0" layoutY="234.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 229993" styleClass="placeholder" />
+      <TextField fx:id="txt_nsala" layoutX="292.0" layoutY="234.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 05" style="-: ;" styleClass="placeholder" />
       <Button fx:id="btn_cadastro" layoutX="394.0" layoutY="467.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="201.0" styleClass="btn" text="FINALIZAR CADASTRO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="txt_horaSessao" layoutX="291.0" layoutY="350.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
-      <TextField fx:id="txt_filmeDuracao" layoutX="501.0" layoutY="350.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
-      <Label layoutX="294.0" layoutY="332.0" text="HORÁRIOS DA SESSAO">
+      <TextField fx:id="txt_horaSessao" layoutX="291.0" layoutY="350.0" prefHeight="31.0" prefWidth="201.0" style="-: ;" styleClass="placeholder" />
+      <TextField fx:id="txt_filmeDuracao" layoutX="501.0" layoutY="350.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 2h30" styleClass="placeholder" />
+      <Label layoutX="294.0" layoutY="332.0" text="HORÁRIOS DA SESSAO" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="506.0" layoutY="333.0" text="DURAÇÃO DO FILME">
+      <Label layoutX="506.0" layoutY="333.0" text="DURAÇÃO DO FILME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="506.0" layoutY="392.0" text="CLASSIFICAÇÃO INDICATIVA">
+      <Label layoutX="506.0" layoutY="392.0" text="CLASSIFICAÇÃO INDICATIVA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="301.0" layoutY="391.0" text="GÊNERO ">
+      <Label layoutX="301.0" layoutY="391.0" text="GÊNERO " textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_classificacao" layoutX="501.0" layoutY="409.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
-      <TextField fx:id="txt_genero" layoutX="291.0" layoutY="409.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" style="-: ;" styleClass="placeholder" />
+      <TextField fx:id="txt_classificacao" layoutX="501.0" layoutY="409.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 16" styleClass="placeholder" />
+      <TextField fx:id="txt_genero" layoutX="291.0" layoutY="409.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: Acão" style="-: ;" styleClass="placeholder" />
       <ComboBox fx:id="cbSelecionar" layoutX="374.0" layoutY="141.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
       <Button fx:id="btn_deletar" layoutX="600.0" layoutY="467.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
          <font>
