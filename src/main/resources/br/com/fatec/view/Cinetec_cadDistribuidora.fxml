@@ -23,7 +23,7 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="258.0" layoutY="352.0" text="E-MAIL">
+      <Label layoutX="258.0" layoutY="352.0" text="E-MAIL" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -33,22 +33,22 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_email" layoutX="250.0" layoutY="372.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: roger@gmail.com" styleClass="placeholder" />
-      <TextField fx:id="txt_responsavel" layoutX="459.0" layoutY="313.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: Rogério" styleClass="placeholder" />
-      <TextField fx:id="txt_cnpj" layoutX="249.0" layoutY="313.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" styleClass="placeholder" />
-      <TextField fx:id="txt_nome" layoutX="247.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" promptText="ex: Pixar" styleClass="placeholder" />
+      <TextField fx:id="txt_email" layoutX="250.0" layoutY="372.0" prefHeight="31.0" prefWidth="423.0" styleClass="placeholder" />
+      <TextField fx:id="txt_responsavel" layoutX="459.0" layoutY="313.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
+      <TextField fx:id="txt_cnpj" layoutX="249.0" layoutY="313.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
+      <TextField fx:id="txt_nome" layoutX="247.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" styleClass="placeholder" />
       <Button fx:id="btn_cadastro" layoutX="394.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="txt_celular" layoutX="250.0" layoutY="427.0" prefHeight="31.0" prefWidth="201.0" promptText="ex: 13098712345" styleClass="placeholder" />
-      <TextField fx:id="txt_whats" layoutX="460.0" layoutY="427.0" prefHeight="31.0" prefWidth="208.0" promptText="ex: 11965789234" styleClass="placeholder" />
-      <Label layoutX="260.0" layoutY="409.0" text="CELULAR">
+      <TextField fx:id="txt_celular" layoutX="250.0" layoutY="427.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
+      <TextField fx:id="txt_whats" layoutX="460.0" layoutY="427.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
+      <Label layoutX="260.0" layoutY="409.0" text="CELULAR" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="465.0" layoutY="410.0" text="WHATSAPP">
+      <Label layoutX="465.0" layoutY="410.0" text="WHATSAPP" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>

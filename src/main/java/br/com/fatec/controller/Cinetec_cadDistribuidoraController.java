@@ -43,27 +43,31 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     private TextField txt_celular;
     @FXML
     private TextField txt_whats;
-
-    private Distribuidora distribuidora = new Distribuidora();
     @FXML
     private Button btn_alterar;
     @FXML
     private Button btn_deletar;
     @FXML
-    private ComboBox<?> cbSelecionar;
+    private ComboBox<String> cbSelecionar;
+    
+    private Distribuidora distribuidora = new Distribuidora();
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         preencherComboBoxDoDAO();
     }    
 
     @FXML
-    private void btn_cadastro(ActionEvent event) {
+    private void btn_cadastro(ActionEvent event) throws SQLException {
         
         distribuidora = moveViewToModel();
+        
+        if(!todosCamposPreenchidos()){
+            return;
+        }
         
         // Verifica se o e-mail é válido
         if (!isValidEmail(txt_email.getText())) {
@@ -71,24 +75,25 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
             return;  // Interrompe a execução do método
         }
         
+        
         //VERIFICANDO      
         DistribuidoraDAO DistriDAO = new DistribuidoraDAO();
 
-//        boolean contaJaExiste = DistriDAO.contaExiste(cadastro);
-//        
-//        if(contaJaExiste){
-//            msg_alert("Já existe uma conta cadastrada com esse e-mail.");
-//        } else{
-//            //GRAVANDO
+        boolean contaJaExiste = DistriDAO.contaExiste(distribuidora);
+        
+        if(contaJaExiste){
+            msg_alert("Já existe um fornecedor cadastrado com esse CNPJ.");
+        } else{
+            //GRAVANDO
             try {
                 if(DistriDAO.insertCadastro(distribuidora)){
-                    msg_info("Cadastro concluido com sucesso!");               
+                    msg_info("Cadastro concluido com sucesso!");  
                 }
             } catch (SQLException ex) {
                 System.out.println("Deu erro: " + 
                         ex.getMessage());
             }
-//        }          
+        }          
     }
     
     private void msg_info(String msg){    
@@ -123,22 +128,99 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
         return distribuidora;     
     }
     
+    private void moveModelToView(String nome) {
+        try {
+            DistribuidoraDAO DistriDAO = new DistribuidoraDAO();
+            Distribuidora distribuidora = DistriDAO.buscarDistribuidora(nome);
+            if (distribuidora != null) {
+                txt_nome.setText(String.valueOf(distribuidora.getNome()));
+                txt_cnpj.setText(distribuidora.getCnpj());
+                txt_responsavel.setText(String.valueOf(distribuidora.getResponsavel()));
+                txt_email.setText(distribuidora.getEmail());
+                txt_celular.setText(distribuidora.getCelular());
+                txt_whats.setText(distribuidora.getWhats());
+            } else {
+                msg_alert("Produto não encontrado.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
     public boolean isValidEmail(String txt_email) {
         String regexPattern = "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$";
         Pattern pattern = Pattern.compile(regexPattern);
         Matcher matcher = pattern.matcher(txt_email);
         return matcher.matches();
     }
+    
+    public void preencherComboBoxDoDAO() {
+        DistribuidoraDAO DistriDAO = new DistribuidoraDAO();
+        DistriDAO.preencherComboBox(cbSelecionar);
+    }
 
     @FXML
-    private void btn_alterar(ActionEvent event) {
+    private void btn_alterar(ActionEvent event) throws SQLException {
+        DistribuidoraDAO DistriDAO = new DistribuidoraDAO();
+            
+        try {
+            if(DistriDAO.alterCadastro(distribuidora)){
+                msg_info("Cadastro alterado com sucesso!");  
+            }
+        } catch (SQLException ex) {
+            System.out.println("Deu erro: " + 
+                    ex.getMessage());
+        }   
     }
 
     @FXML
     private void btn_deletar(ActionEvent event) {
+        ////////////colocar para o btn exibir dados///////////////////       
+        String nomeSelecionado = cbSelecionar.getValue();
+            if (nomeSelecionado != null) {
+                moveModelToView(nomeSelecionado);
+            }
     }
 
     @FXML
     private void cbSelecionar(ActionEvent event) {
+        
+    
+    }
+    
+    private boolean todosCamposPreenchidos() {
+    // Adicione todos os campos que você deseja verificar
+        if (txt_nome.getText().isEmpty()) {
+            msg_alert("Preencha o campo Nome.");
+            txt_nome.requestFocus();
+            return false;
+        }
+        if (txt_cnpj.getText().length() != 14) {
+            msg_alert("O CNPJ deve ter 14 dígitos.");
+            txt_cnpj.requestFocus();
+            return false;
+        }
+        if (txt_responsavel.getText().isEmpty()) {
+            msg_alert("Preencha o campo Responsável.");
+            txt_responsavel.requestFocus();
+            return false;
+        }
+        if (txt_email.getText().isEmpty()) {
+            msg_alert("Preencha o campo E-mail.");
+            txt_email.requestFocus();
+            return false;
+        }
+        if (txt_celular.getText().length() != 11) {
+            msg_alert("O número de celular deve ter 11 dígitos.");
+            txt_celular.requestFocus();
+            return false;
+        }
+        if (txt_whats.getText().length() != 11) {
+            msg_alert("O número do WhatsApp deve ter 11 dígitos.");
+            txt_whats.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 }
