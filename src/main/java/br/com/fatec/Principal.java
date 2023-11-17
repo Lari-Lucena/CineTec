@@ -14,6 +14,7 @@ import java.sql.SQLException;
 public class Principal extends Application {
 
     private static Scene scene;
+    private static Stage stage;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -30,7 +31,9 @@ public class Principal extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-
+    public static void fechar() {
+        stage.close();
+    }
     public static void main(String[] args) throws SQLException {
         launch();
     }

@@ -51,6 +51,7 @@ public class LoginDAO {
         }
     }
     
+    
     public int verificaLogin(String email, String senha) throws SQLException {
         int rowCount = 0;
 

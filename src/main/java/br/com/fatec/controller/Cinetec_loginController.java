@@ -5,7 +5,6 @@
 package br.com.fatec.controller;
 
 import br.com.fatec.DAO.LoginDAO;
-import br.com.fatec.Principal;
 import br.com.fatec.model.Login;
 import java.io.IOException;
 import java.net.URL;
@@ -14,8 +13,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -66,8 +63,18 @@ public class Cinetec_loginController implements Initializable {
         if (rowCount != 1) {
             msg_alert("E-mail ou senha não coincidem.");
         } else {
-            msg_info("passou");
-            //chamar outra tela
+            if(login.getEmail().equals("admin") && login.getSenha().equals("admin")){
+                menuTela menu = new menuTela();
+                menu.start(new Stage());
+                Stage stage = (Stage) btn_login.getScene().getWindow();
+                stage.close();
+            }
+            else{
+                homeTela filmes = new homeTela();
+                filmes.start(new Stage());
+                Stage stage = (Stage) btn_login.getScene().getWindow();
+                stage.close();
+            }
         }
     }
     
