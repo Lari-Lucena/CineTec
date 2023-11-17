@@ -9,70 +9,58 @@ package br.com.fatec.model;
  * @author Leonardo
  */
 public class CadFilmes {
-    private String numeroSala, codigoFilme, horarioSessao, duracaoFilme, genero, classificacao;
+    private String nome, genero, classificacao, sinopse, distribuidora;
     
-    //CONSTRUCTORES
-    public CadFilmes(){
+    //CONSTRUTORES
+    public CadFilmes() {
     }
     
-    public CadFilmes(String numeroSala, String codigoFilme, String horarioSessao, String duracaoFilme, String genero, String classificacao) {
-        this.numeroSala = numeroSala;
-        this.codigoFilme = codigoFilme;
-        this.horarioSessao = horarioSessao;
-        this.duracaoFilme = duracaoFilme;
+    public CadFilmes(String nome, String genero, String classificacao, String sinopse, String distribuidora) {
+        this.nome = nome;
         this.genero = genero;
         this.classificacao = classificacao;
-    }
-    
-    //GETTERS
-    public String getNumeroSala() {
-        return numeroSala;
+        this.sinopse = sinopse;
+        this.distribuidora = distribuidora;
     }
 
-    public String getCodigoFilme() {
-        return codigoFilme;
+    //GETTERS AND SETTERS
+    public String getNome() {
+        return nome;
     }
 
-    public String getHorarioSessao() {
-        return horarioSessao;
-    }
-
-    public String getDuracaoFilme() {
-        return duracaoFilme;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getGenero() {
         return genero;
     }
 
-    public String getClassificacao() {
-        return classificacao;
-    }
-    
-    //SETTERS
-    public void setNumeroSala(String numeroSala) {
-        this.numeroSala = numeroSala;
-    }
-
-    public void setCodigoFilme(String codigoFilme) {
-        this.codigoFilme = codigoFilme;
-    }
-
-    public void setHorarioSessao(String horarioSessao) {
-        this.horarioSessao = horarioSessao;
-    }
-
-    public void setDuracaoFilme(String duracaoFilme) {
-        this.duracaoFilme = duracaoFilme;
-    }
-
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public String getClassificacao() {
+        return classificacao;
     }
 
     public void setClassificacao(String classificacao) {
         this.classificacao = classificacao;
     }
-    
-    
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
+
+    public String getDistribuidora() {
+        return distribuidora;
+    }
+
+    public void setDistribuidora(String distribuidora) {
+        this.distribuidora = distribuidora;
+    }
 }

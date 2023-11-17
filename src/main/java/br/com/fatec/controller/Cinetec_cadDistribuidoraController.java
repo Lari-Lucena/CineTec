@@ -49,10 +49,12 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     private Button btn_deletar;
     @FXML
     private ComboBox<String> cbSelecionar;
-    
-    private Distribuidora distribuidora = new Distribuidora();
     @FXML
     private Button btn_exibir;
+    
+    
+    private Distribuidora distribuidora = new Distribuidora();
+
     
     /**
      * Initializes the controller class.
@@ -90,6 +92,7 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
             try {
                 if(DistriDAO.insertCadastro(distribuidora)){
                     msg_info("Cadastro concluido com sucesso!");  
+                    limparCampos();
                 }
             } catch (SQLException ex) {
                 System.out.println("Deu erro: " + 
@@ -167,7 +170,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
             
         try {
             if(DistriDAO.alterCadastro(distribuidora)){
-                msg_info("Cadastro alterado com sucesso!");  
+                msg_info("Cadastro alterado com sucesso!");
+                limparCampos();
             }
         } catch (SQLException ex) {
             System.out.println("Deu erro: " + 
@@ -177,11 +181,28 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
 
     @FXML
     private void btn_deletar(ActionEvent event) {
-        ////////////colocar para o btn exibir dados///////////////////       
-        String nomeSelecionado = cbSelecionar.getValue();
-            if (nomeSelecionado != null) {
-                moveModelToView(nomeSelecionado);
+       DistribuidoraDAO DistriDAO = new DistribuidoraDAO();
+            
+        try {
+            if(DistriDAO.removeCadastro(distribuidora)){
+                msg_info("Cadastro excluido.");
+                limparCampos();
             }
+        } catch (SQLException ex) {
+            System.out.println("Deu erro: " + 
+                    ex.getMessage());
+        } 
+    }
+    
+    @FXML
+    private void btn_exibir(ActionEvent event) {
+        String nomeSelecionado = cbSelecionar.getValue();
+        if (nomeSelecionado != null) {
+            moveModelToView(nomeSelecionado);
+        } else {
+            msg_alert("Selecione algum dado.");
+        }
+        
     }
 
     @FXML
@@ -225,8 +246,13 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
 
         return true;
     }
-
-    @FXML
-    private void btn_exibir(ActionEvent event) {
+    
+    private void limparCampos() {
+        txt_nome.clear();
+        txt_cnpj.clear();
+        txt_responsavel.clear();
+        txt_email.clear();
+        txt_celular.clear();
+        txt_whats.clear();
     }
 }

@@ -82,6 +82,21 @@ public class DistribuidoraDAO {
             return res != 0;
         } 
     }
+    
+    public boolean removeCadastro(Distribuidora dado) throws SQLException {
+        try (Connection conn = connect()) {
+            String SQL = "DELETE FROM TBL_CAD_DISTRIBUIDORA WHERE cnpj = ?"; 
+            PreparedStatement pstmt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+
+            pstmt.setString(1, dado.getCnpj());
+
+            int res = pstmt.executeUpdate(); 
+
+            conn.close();
+
+            return res != 0;
+        } 
+    }
 
     
     public boolean contaExiste(Distribuidora dado) throws SQLException {

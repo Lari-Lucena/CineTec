@@ -18,12 +18,12 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="295.0" text="CNPJ" textFill="WHITE">
+      <Label layoutX="251.0" layoutY="295.0" text="CNPJ" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="258.0" layoutY="352.0" text="E-MAIL" textFill="WHITE">
+      <Label layoutX="254.0" layoutY="352.0" text="E-MAIL" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -33,17 +33,17 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_email" layoutX="250.0" layoutY="372.0" prefHeight="31.0" prefWidth="423.0" styleClass="placeholder" />
+      <TextField fx:id="txt_email" layoutX="250.0" layoutY="372.0" prefHeight="31.0" prefWidth="417.0" styleClass="placeholder" />
       <TextField fx:id="txt_responsavel" layoutX="459.0" layoutY="313.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
       <TextField fx:id="txt_cnpj" layoutX="249.0" layoutY="313.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
       <TextField fx:id="txt_nome" layoutX="247.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" styleClass="placeholder" />
-      <Button fx:id="btn_cadastro" layoutX="394.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
+      <Button fx:id="btn_cadastro" layoutX="396.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
       <TextField fx:id="txt_celular" layoutX="250.0" layoutY="427.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
       <TextField fx:id="txt_whats" layoutX="460.0" layoutY="427.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
-      <Label layoutX="260.0" layoutY="409.0" text="CELULAR" textFill="WHITE">
+      <Label layoutX="254.0" layoutY="409.0" text="CELULAR" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -53,16 +53,16 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btn_alterar" layoutX="261.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
+      <Button fx:id="btn_alterar" layoutX="250.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btn_deletar" layoutX="530.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
+      <Button fx:id="btn_deletar" layoutX="549.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="DELETAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <ComboBox fx:id="cbSelecionar" layoutX="338.0" layoutY="131.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
-      <Button fx:id="btn_exibir" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR DADO" textFill="WHITE">
+      <ComboBox fx:id="cbSelecionar" layoutX="413.0" layoutY="542.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
+      <Button fx:id="btn_exibir" layoutX="265.0" layoutY="542.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR DADO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
