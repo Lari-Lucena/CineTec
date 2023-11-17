@@ -97,8 +97,9 @@ public class Cinetec_cadastroController implements Initializable {
             //GRAVANDO
             try {
                 if(CadDAO.insertCadastro(cadastro)){
-                    msg_info("Cadastro concluido com sucesso!");               
+                    msg_info("Cadastro concluido com sucesso! Agora você já pode se logar normalmente.");   
                     LogDAO.insertlogin(cadastro);
+                    limparCampos();
                 }
             } catch (SQLException ex) {
                 System.out.println("Deu erro: " + 
@@ -209,5 +210,15 @@ public class Cinetec_cadastroController implements Initializable {
         return true;
     }
 
+    private void limparCampos() {
+        txt_nome.clear();
+        txt_apelido.clear();
+        txt_cpf.clear();
+        txt_bday.setValue(null);
+        cb_regiao.getSelectionModel().clearSelection();
+        txt_email.clear();
+        txt_senha.clear();
+        txt_rsenha.clear();
+    }
 }
 

@@ -1,13 +1,10 @@
 package br.com.fatec;
 
-import br.com.fatec.DAO.CadastrarDAO;
-import br.com.fatec.database.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import br.com.fatec.model.Cadastrar;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -20,7 +17,7 @@ public class Principal extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("view/Cinetec_CadDistribuidora"));
+        scene = new Scene(loadFXML("view/Cinetec_CadFilmes"));
         stage.setScene(scene);
         stage.show();
     }
