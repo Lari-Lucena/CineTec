@@ -4,6 +4,7 @@
  */
 package br.com.fatec.controller;
 
+
 import br.com.fatec.Principal;
 import java.io.IOException;
 import javafx.application.Application;
@@ -16,18 +17,15 @@ import javafx.stage.Stage;
  *
  * @author Leonardo
  */
-public class loginTela extends Application{
+public class menuTela extends Application{
     public static Stage tela;
-    
-
     
     @Override
     public void start(Stage tela) throws IOException {
         setStage(tela);
         
-        FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource("view/Cinetec_login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource("view/Cinetec_menu.fxml"));
         Parent root = fxmlLoader.load();
-       // Cinetec_loginController controler = fxmlLoader.getController();
         
         Scene scene = new Scene(root);
         

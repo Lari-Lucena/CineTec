@@ -66,8 +66,18 @@ public class Cinetec_loginController implements Initializable {
         if (rowCount != 1) {
             msg_alert("E-mail ou senha não coincidem.");
         } else {
-            msg_info("passou");
-            //chamar outra tela
+            if(login.getEmail().equals("admin") && login.getSenha().equals("admin")){
+                menuTela menu = new menuTela();
+                menu.start(new Stage());
+                Stage stage = (Stage) btn_login.getScene().getWindow();
+                stage.close();
+            }
+            else{
+                homeTela filmes = new homeTela();
+                filmes.start(new Stage());
+                Stage stage = (Stage) btn_login.getScene().getWindow();
+                stage.close();
+            }
         }
     }
     
