@@ -44,8 +44,6 @@ public class Cinetec_cadFilmesController implements Initializable {
     @FXML
     private Button btn_alterar;
     @FXML
-    private TextField txt_distribuidora;
-    @FXML
     private Button btn_cadastro;
     @FXML
     private TextField txt_nome;
@@ -69,6 +67,8 @@ public class Cinetec_cadFilmesController implements Initializable {
     private String selectedImagePath;
     
     private CadFilmes cadfilmes = new CadFilmes();
+    @FXML
+    private Button btn_exibir;
 
     
     /**
@@ -265,5 +265,9 @@ public class Cinetec_cadFilmesController implements Initializable {
         txt_sinopse.clear();
         cb_distribuidora.getSelectionModel().clearSelection();
         imageView.setImage(null);
+    }
+
+    @FXML
+    private void btn_exibir(ActionEvent event) {
     }
 }

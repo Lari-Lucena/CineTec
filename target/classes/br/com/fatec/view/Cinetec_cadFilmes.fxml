@@ -20,12 +20,12 @@
          </image>
       </ImageView>
       <ComboBox fx:id="cbSelecionar" layoutX="266.0" layoutY="600.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
-      <Button fx:id="btn_deletar" layoutX="595.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
+      <Button fx:id="btn_deletar" layoutX="395.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btn_alterar" layoutX="326.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
+      <Button fx:id="btn_alterar" layoutX="268.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -35,7 +35,7 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btn_cadastro" layoutX="459.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
+      <Button fx:id="btn_cadastro" layoutX="530.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -67,6 +67,11 @@
       <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="201.0" layoutX="542.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true" style="-: ;" />
       <ComboBox fx:id="cb_distribuidora" layoutX="518.0" layoutY="383.0" onAction="#cb_distribuidora" prefHeight="25.0" prefWidth="252.0" />
       <Button id="upload" fx:id="btn_upload" layoutX="581.0" layoutY="603.0" mnemonicParsing="false" onAction="#btn_upload" prefHeight="17.0" prefWidth="124.0" style="-fx-padding: 1;" styleClass="btn" text="UPLOAD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_exibir" layoutX="663.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
