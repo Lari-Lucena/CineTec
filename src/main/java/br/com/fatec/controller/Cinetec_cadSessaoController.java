@@ -25,8 +25,6 @@ public class Cinetec_cadSessaoController implements Initializable {
     @FXML
     private TextField txt_filme;
     @FXML
-    private TextField txt_codFilm;
-    @FXML
     private TextField txt_nsala;
     @FXML
     private TextField txt_horaSessao;
@@ -42,6 +40,10 @@ public class Cinetec_cadSessaoController implements Initializable {
     private Button btn_deletar;
     @FXML
     private Button btn_alterar;
+    @FXML
+    private TextField txt_data;
+    @FXML
+    private Button btn_exibir;
 
     /**
      * Initializes the controller class.
@@ -65,6 +67,14 @@ public class Cinetec_cadSessaoController implements Initializable {
 
     @FXML
     private void btn_alterar(ActionEvent event) {
+    }
+
+    @FXML
+    private void txt_data(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_exibir(ActionEvent event) {
     }
     
 }
