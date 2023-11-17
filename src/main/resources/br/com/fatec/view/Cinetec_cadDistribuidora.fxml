@@ -62,5 +62,10 @@
             <Font name="System Bold" size="15.0" />
          </font></Button>
       <ComboBox fx:id="cbSelecionar" layoutX="338.0" layoutY="131.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
+      <Button fx:id="btn_exibir" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR DADO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -51,6 +51,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     private ComboBox<String> cbSelecionar;
     
     private Distribuidora distribuidora = new Distribuidora();
+    @FXML
+    private Button btn_exibir;
     
     /**
      * Initializes the controller class.
@@ -222,5 +224,9 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
         }
 
         return true;
+    }
+
+    @FXML
+    private void btn_exibir(ActionEvent event) {
     }
 }
