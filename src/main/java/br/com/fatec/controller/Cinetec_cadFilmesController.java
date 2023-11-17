@@ -38,11 +38,12 @@ import javafx.scene.image.WritablePixelFormat;
 public class Cinetec_cadFilmesController implements Initializable {
 
     @FXML
-    private ComboBox<?> cbSelecionar;
+    private ComboBox<String> cbSelecionar;
     @FXML
     private Button btn_deletar;
     @FXML
     private Button btn_alterar;
+    @FXML
     private TextField txt_distribuidora;
     @FXML
     private Button btn_cadastro;
@@ -58,23 +59,24 @@ public class Cinetec_cadFilmesController implements Initializable {
     private TextArea txt_sinopse;
     @FXML
     private ImageView imageView;
+    @FXML
+    private ComboBox<String> cb_distribuidora;
+    @FXML
+    private Button btn_upload;
     
     private File selectedFile;
     
-    private CadFilmes cadfilmes = new CadFilmes();
-    @FXML
-    private ComboBox<?> cb_distribuidora;
-    @FXML
-    private Button btn_upload;
-   
+    private String selectedImagePath;
     
+    private CadFilmes cadfilmes = new CadFilmes();
+
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        preencherComboBoxDoDAO();
     }    
 
     @FXML
@@ -83,30 +85,70 @@ public class Cinetec_cadFilmesController implements Initializable {
 
     @FXML
     private void btn_deletar(ActionEvent event) {
+    CadFilmesDAO filmesDAO = new CadFilmesDAO();
+            
+        try {
+            if(filmesDAO.removeFilme(cadfilmes)){
+                msg_info("Cadastro excluido.");
+                limparCampos();
+            }
+        } catch (SQLException ex) {
+            System.out.println("Deu erro: " + 
+                    ex.getMessage());
+        }
     }
 
     @FXML
     private void btn_alterar(ActionEvent event) {
-       //colocar no botao de selecionar img
-        handleUploadImage();
+        //tudo isso percente ao botao exibir dados
+        String nomeSelecionado = cbSelecionar.getValue();
+        if (nomeSelecionado != null) {
+            moveModelToView(nomeSelecionado);
+        } else {
+            msg_alert("Selecione algum dado.");
+        }  
+    }
+    
+    @FXML
+    private void cb_distribuidora(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_upload(ActionEvent event) {
+        handleUploadImage(); // Invoca apenas a função de upload
     }
 
     @FXML
     private void btn_cadastro(ActionEvent event) throws SQLException {
-        
         cadfilmes = moveViewToModel();
-        
-        if(!todosCamposPreenchidos()){
+
+        if (!todosCamposPreenchidos()) {
             return;
+        } else {
+            if (selectedImagePath != null) {
+                saveImageToDatabase(selectedImagePath);
+                msg_info("Filme cadastrado com sucesso.");
+                limparCampos();
+            } else {
+                msg_info("Nenhuma imagem selecionada.nao");
+            }
         }
-        else{
-            saveImageToDatabase();
-            limparCampos();
-        }
-        
     }
-    /////////////////////fazer a distribuidora de combobox (sendo assim nossa tela com banco e combobox)
-    private CadFilmes moveViewToModel(){
+
+    private void handleUploadImage() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image");
+        selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+            selectedImagePath = selectedFile.getAbsolutePath();
+            Image image = new Image(selectedFile.toURI().toString());
+            imageView.setImage(image);
+        }
+    }
+
+
+    private CadFilmes moveViewToModel(){ //leva da tela para o back
         //CRIA O OBJETO CADASTRO - (MODEL)
         cadfilmes = new CadFilmes();
         
@@ -114,10 +156,42 @@ public class Cinetec_cadFilmesController implements Initializable {
         cadfilmes.setGenero(txt_genero.getText());
         cadfilmes.setClassificacao(txt_classificacao.getText());
         cadfilmes.setSinopse(txt_sinopse.getText());
-        cadfilmes.setDistribuidora(txt_distribuidora.getText());
-                   
+        cadfilmes.setDistribuidora(cb_distribuidora.getValue());
+        
+        if (selectedFile != null) {
+            String imagePath = selectedFile.getAbsolutePath();
+            cadfilmes.setImage(imagePath);
+        }
+        
         //Devolve o model
         return cadfilmes;     
+    }
+    
+    private void moveModelToView(String nome) { //leva o back para a tela
+        try {
+            CadFilmesDAO filmesDAO = new CadFilmesDAO();
+            CadFilmes filmes = filmesDAO.buscarFilme(nome);
+            if (filmes != null) {
+                txt_nome.setText(String.valueOf(filmes.getNome()));
+                txt_genero.setText(filmes.getGenero());
+                txt_classificacao.setText(String.valueOf(filmes.getClassificacao()));
+                txt_sinopse.setText(filmes.getSinopse());
+                cb_distribuidora.setValue(filmes.getDistribuidora());
+                
+                // Obter o caminho da imagem do objeto CadFilmes
+                String imagePath = filmes.getImage();
+
+                // Carregar a imagem usando o caminho e definir no ImageView
+                if (imagePath != null && !imagePath.isEmpty()) {
+                    Image image = new Image("file:" + imagePath);
+                    imageView.setImage(image);
+                }
+            } else {
+                msg_alert("Produto não encontrado.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
     private void msg_info(String msg){    
@@ -137,55 +211,22 @@ public class Cinetec_cadFilmesController implements Initializable {
         alerta.showAndWait(); //exibe mensagem
     }
     
-    private void handleUploadImage() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image");
-        selectedFile = fileChooser.showOpenDialog(null);
-
-        if (selectedFile != null) {
-            Image image = new Image(selectedFile.toURI().toString());
-            imageView.setImage(image);
-        }
-    }
-
-    
-    private String convertImageToBase64(ImageView imageView) throws IOException {
-        // Extrai a imagem do ImageView
-        Image image = imageView.getImage();
-
-        if (image != null) {
-            PixelReader pixelReader = image.getPixelReader();
-
-            int width = (int) image.getWidth();
-            int height = (int) image.getHeight();
-
-            WritablePixelFormat<ByteBuffer> byteBuffer = PixelFormat.getByteBgraInstance();
-
-            ByteBuffer byteBuf = ByteBuffer.allocate(4 * width * height);
-
-            pixelReader.getPixels(0, 0, width, height, byteBuffer, byteBuf, width * 4);
-
-            byte[] pixels = byteBuf.array();
-            return Base64.getEncoder().encodeToString(pixels);
-        }
-        return null;
-    }
-
-    
     // O método para salvar a imagem no banco de dados
-    private void saveImageToDatabase() throws SQLException {
-        try {
-            String base64Image = convertImageToBase64(imageView);
-            
+    private void saveImageToDatabase(String imagePath) throws SQLException {
+        if (imagePath != null) {
             CadFilmesDAO filmesDAO = new CadFilmesDAO();
-            filmesDAO.insertFilme(cadfilmes, base64Image);
-            
-            
-        } catch (IOException e) {
-            e.printStackTrace();
+            filmesDAO.insertFilme(cadfilmes, imagePath);
+        } else {
+            // Trate aqui se nenhum arquivo foi selecionado
         }
     }
     
+    public void preencherComboBoxDoDAO() {
+        CadFilmesDAO filmesDAO = new CadFilmesDAO();
+        filmesDAO.preencherComboBoxDistribuidora(cb_distribuidora);
+        filmesDAO.preencherComboBox(cbSelecionar);
+    }
+
     private boolean todosCamposPreenchidos() {
     // Adicione todos os campos que você deseja verificar
         if (txt_nome.getText().isEmpty()) {
@@ -208,9 +249,9 @@ public class Cinetec_cadFilmesController implements Initializable {
             txt_sinopse.requestFocus();
             return false;
         }
-        if (txt_distribuidora.getText().isEmpty()) {
-            msg_alert("Preencha o campo Distribuidora.");
-            txt_distribuidora.requestFocus();
+        if (cb_distribuidora.getValue() == null) {
+            msg_alert("Escolha uma Distribuidora.");
+            cb_distribuidora.requestFocus();
             return false;
         }
 
@@ -222,14 +263,7 @@ public class Cinetec_cadFilmesController implements Initializable {
         txt_genero.clear();
         txt_classificacao.clear();
         txt_sinopse.clear();
-        txt_distribuidora.clear();
-    }
-
-    @FXML
-    private void cb_distribuidora(ActionEvent event) {
-    }
-
-    @FXML
-    private void btn_upload(ActionEvent event) {
+        cb_distribuidora.getSelectionModel().clearSelection();
+        imageView.setImage(null);
     }
 }
