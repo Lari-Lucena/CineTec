@@ -9,7 +9,7 @@ package br.com.fatec.model;
  * @author Leonardo
  */
 public class CadFilmes {
-    private String nome, genero, classificacao, sinopse, distribuidora;
+    private String nome, genero, classificacao, sinopse, distribuidora, image;
     
     //CONSTRUTORES
     public CadFilmes() {
@@ -21,6 +21,7 @@ public class CadFilmes {
         this.classificacao = classificacao;
         this.sinopse = sinopse;
         this.distribuidora = distribuidora;
+        this.image = image;
     }
 
     //GETTERS AND SETTERS
@@ -63,4 +64,12 @@ public class CadFilmes {
     public void setDistribuidora(String distribuidora) {
         this.distribuidora = distribuidora;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }    
 }
