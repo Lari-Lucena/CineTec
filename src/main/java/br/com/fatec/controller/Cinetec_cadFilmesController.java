@@ -43,7 +43,6 @@ public class Cinetec_cadFilmesController implements Initializable {
     private Button btn_deletar;
     @FXML
     private Button btn_alterar;
-    @FXML
     private TextField txt_distribuidora;
     @FXML
     private Button btn_cadastro;
@@ -63,6 +62,11 @@ public class Cinetec_cadFilmesController implements Initializable {
     private File selectedFile;
     
     private CadFilmes cadfilmes = new CadFilmes();
+    @FXML
+    private ComboBox<?> cb_distribuidora;
+    @FXML
+    private Button btn_upload;
+   
     
     
     /**
@@ -133,7 +137,6 @@ public class Cinetec_cadFilmesController implements Initializable {
         alerta.showAndWait(); //exibe mensagem
     }
     
-    @FXML
     private void handleUploadImage() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image");
@@ -220,5 +223,13 @@ public class Cinetec_cadFilmesController implements Initializable {
         txt_classificacao.clear();
         txt_sinopse.clear();
         txt_distribuidora.clear();
+    }
+
+    @FXML
+    private void cb_distribuidora(ActionEvent event) {
+    }
+
+    @FXML
+    private void btn_upload(ActionEvent event) {
     }
 }
