@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -46,37 +47,45 @@ public class Cinetec_poltronasController implements Initializable {
     
     private Poltronas poltronas = new Poltronas();
     
+    private String horaSelecionada;
+    
+    public void receberHoraSelecionada(String hora) {
+        this.horaSelecionada = hora;
+    }
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        PoltronaDAO poltronas = new PoltronaDAO();
-        
-        
+      
+    }  
+
+    public void setHoraSelecionada(String hora) {
+        this.horaSelecionada = hora;
+        mCarregaPoltronas();
+    }
+
+    private void mCarregaPoltronas() {
         try {
-            
-            List<String> poltronasCompradas = poltronas.getPoltronasCompradas( "15:10");
-            List<CheckBox> checkBoxes = getCheckBoxes(); 
-              
-            System.out.println(poltronasCompradas);
+            PoltronaDAO poltronasDAO = new PoltronaDAO();
+            List<String> poltronasCompradas = poltronasDAO.getPoltronasCompradas(this.horaSelecionada);
+            System.out.println(horaSelecionada);
+            List<CheckBox> checkBoxes = getCheckBoxes();
+
             for (CheckBox checkBox : checkBoxes) {
-                
                 String idCheckBox = checkBox.getId();
                 String poltronasString = String.join(", ", poltronasCompradas);
-                poltronasString.replace("[", "").replace("]", "");
+                poltronasString = poltronasString.replace("[", "").replace("]", "");
 
                 if (poltronasString.contains(idCheckBox)) {
                     checkBox.setDisable(true);
                     checkBox.setStyle("-fx-background-color: #ff0000;"); // Define a cor de fundo vermelha para as que ja estao compradas
                 }
             }
-
-            
         } catch (SQLException ex) {
             Logger.getLogger(Cinetec_poltronasController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }  
+    }
     
     @FXML
     private void btn_prosseguir(ActionEvent event) throws SQLException, IOException {
@@ -186,4 +195,5 @@ public class Cinetec_poltronasController implements Initializable {
     private void moveViewToModel(Poltronas poltronas) {
         poltronas.setPoltronasSelecionadas(getPoltronasSelecionadas());
     }
+
 }

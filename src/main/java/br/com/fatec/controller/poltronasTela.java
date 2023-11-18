@@ -20,23 +20,33 @@ import javafx.stage.Stage;
 public class poltronasTela extends Application{
     public static Stage tela;
     
+    private String horaSelecionada;
+
+    public void receberHoraSelecionada(String hora) {
+        this.horaSelecionada = hora;
+    }
+    
+    // Esse método inicia a cena após a definição da hora selecionada
+    public void iniciarCena() throws IOException {
+        start(new Stage());
+    }
+
     @Override
     public void start(Stage tela) throws IOException {
         setStage(tela);
-        
+
         FXMLLoader fxmlLoader = new FXMLLoader(Principal.class.getResource("view/Cinetec_poltronas.fxml"));
         Parent root = fxmlLoader.load();
-       // Cinetec_cadastroController controler = fxmlLoader.getController();
+        Cinetec_poltronasController controller = fxmlLoader.getController();
         
+        controller.setHoraSelecionada(this.horaSelecionada); // Defina a hora selecionada antes de carregar as poltronas
         Scene scene = new Scene(root);
-        
-        tela.setScene(scene);
-        tela.show();        
 
+        tela.setScene(scene);
+        tela.show();
     }
     
     public static void setStage(Stage t) {
         tela = t;
-    }
-    
+    }  
 }

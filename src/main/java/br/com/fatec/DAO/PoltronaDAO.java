@@ -26,14 +26,13 @@ public class PoltronaDAO {
                  
                 
                 String SQL = "INSERT INTO TBL_VENDAS (hora, nome_cliente, poltronas) "
-                        + "VALUES( ?, ?, ?)";
+                        + "VALUES(?, ?, ?)";
                 
                 PreparedStatement pstmt = conn.prepareStatement(SQL,
                         Statement.RETURN_GENERATED_KEYS);
                 
                 //dados a serem inseridos
-             
-                pstmt.setString(1, "15:10");
+                pstmt.setString(1, "11:00");
                 pstmt.setString(2, "Larissa Damasceno");
                 pstmt.setString(3, poltronasConcatenadas);
                 
@@ -50,7 +49,7 @@ public class PoltronaDAO {
         }
         
         
-        public List<String> getPoltronasCompradas( String hora) throws SQLException {
+        public List<String> getPoltronasCompradas(String hora) throws SQLException {
             List<String> poltronasCompradas = new ArrayList<>();
 
             try (Connection conn = connect()) {
@@ -73,5 +72,4 @@ public class PoltronaDAO {
 
             return poltronasCompradas;
         }
-
 }

@@ -44,17 +44,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="845.0" layoutY="411.0" text="Sala 6" textFill="WHITE">
+      <Label layoutX="845.0" layoutY="418.0" text="Sala 6" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnTres" layoutX="847.0" layoutY="436.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnTres" prefHeight="25.0" prefWidth="89.0" text="15:00">
+      <Button fx:id="btnTres" layoutX="847.0" layoutY="443.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnTres" prefHeight="25.0" prefWidth="89.0" text="15:00">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnCinco" layoutX="942.0" layoutY="436.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCinco" prefHeight="25.0" prefWidth="89.0" text="17:00">
+      <Button fx:id="btnCinco" layoutX="942.0" layoutY="443.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCinco" prefHeight="25.0" prefWidth="89.0" text="17:00">
          <font>
             <Font size="14.0" />
          </font>
@@ -94,17 +94,17 @@
             <Image url="@../../../../imagens/djangoLivre.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="btnUma" layoutX="470.0" layoutY="435.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnUma" prefHeight="25.0" prefWidth="89.0" text="13:00">
+      <Button fx:id="btnUma" layoutX="469.0" layoutY="439.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnUma" prefHeight="25.0" prefWidth="89.0" text="13:00">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnOnze" layoutX="375.0" layoutY="435.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnOnze" prefHeight="25.0" prefWidth="89.0" text="11:00">
+      <Button fx:id="btnOnze" layoutX="374.0" layoutY="439.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnOnze" prefHeight="25.0" prefWidth="89.0" text="11:00">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="373.0" layoutY="410.0" text="Sala 6" textFill="WHITE">
+      <Label layoutX="372.0" layoutY="414.0" text="Sala 6" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -134,37 +134,37 @@
             <Image url="@../../../../imagens/elementos.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="281.0" fitWidth="175.0" layoutX="655.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="235.0" fitWidth="175.0" layoutX="655.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../imagens/avatar.jpeg" />
          </image>
       </ImageView>
-      <Label layoutX="844.0" layoutY="519.0" text="Avatar: O Caminho da Água" textFill="WHITE">
+      <Label layoutX="844.0" layoutY="529.0" text="Avatar: O Caminho da Água" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="844.0" layoutY="542.0" text="Ficção Cientifica/Ação" textFill="WHITE">
+      <Label layoutX="844.0" layoutY="552.0" text="Ficção Cientifica/Ação" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="844.0" layoutY="562.0" text="Classificação: 14" textFill="WHITE">
+      <Label layoutX="844.0" layoutY="572.0" text="Classificação: 14" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="844.0" layoutY="582.0" text="192min" textFill="WHITE">
+      <Label layoutX="844.0" layoutY="592.0" text="192min" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="844.0" layoutY="701.0" text="Sala 6" textFill="WHITE">
+      <Label layoutX="844.0" layoutY="694.0" text="Sala 6" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnSeteEDez" layoutX="846.0" layoutY="726.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSeteEDez" prefHeight="25.0" prefWidth="89.0" text="19:10">
+      <Button fx:id="btnSeteEDez" layoutX="846.0" layoutY="719.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSeteEDez" prefHeight="25.0" prefWidth="89.0" text="19:10">
          <font>
             <Font size="14.0" />
          </font>

@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Poltronas {
     private List<String> poltronasSelecionadas;
-
+    
     //CONTRUTORES
     public Poltronas(){
     }
@@ -29,5 +29,5 @@ public class Poltronas {
 
     public void setPoltronasSelecionadas(List<String> poltronasSelecionadas) {
         this.poltronasSelecionadas = poltronasSelecionadas;
-    }   
+    }
 }
