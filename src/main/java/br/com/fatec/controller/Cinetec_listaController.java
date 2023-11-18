@@ -4,14 +4,23 @@
  */
 package br.com.fatec.controller;
 
+import br.com.fatec.DAO.CadFilmesDAO;
 import br.com.fatec.model.CadFilmes;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.Collection;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.SortEvent;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -21,30 +30,79 @@ import javafx.scene.control.TableView;
 public class Cinetec_listaController implements Initializable {
 
     @FXML
-    private TableView<?> tbLista;
+    private TableView<CadFilmes> tbLista;
     @FXML
-    private TableColumn<?, ?> colNome;
+    private TableColumn<CadFilmes, Integer> colNome;
     @FXML
-    private TableColumn<?, ?> colGenero;
+    private TableColumn<CadFilmes, String> colGenero;
     @FXML
-    private TableColumn<?, ?> colClassificacao;
+    private TableColumn<CadFilmes, String> colClassificacao;
     @FXML
-    private TableColumn<?, ?> colSinopse;
+    private TableColumn<CadFilmes, String> colSinopse;
     @FXML
-    private TableColumn<?, ?> colDistribuidora;
+    private TableColumn<CadFilmes, String> colDistribuidora;
     @FXML
-    private TableColumn<?, ?> colImagem;
+    private TableColumn<CadFilmes, String> colImagem;
 
+     private CadFilmesDAO filmesDAO;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        filmesDAO = new CadFilmesDAO(); // Inicializa o DAO
+
+        // Configura as colunas para exibição dos dados
+        colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
+        colClassificacao.setCellValueFactory(new PropertyValueFactory<>("classificacao"));
+        colSinopse.setCellValueFactory(new PropertyValueFactory<>("sinopse"));
+        colDistribuidora.setCellValueFactory(new PropertyValueFactory<>("distribuidora"));
+        colImagem.setCellFactory(column -> new ImageTableCell<>());
+        colImagem.setCellValueFactory(new PropertyValueFactory<>("image"));
+
+
+        // Chama o método para carregar os dados do banco na TableView
+        try {
+            Collection<CadFilmes> filmes = filmesDAO.lista(null); // Pode passar um critério de filtro, se necessário
+            tbLista.setItems(FXCollections.observableArrayList(filmes));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Lida com exceções, se necessário
+        }
     }    
 
+
+    public class ImageTableCell<CadFilmes> extends TableCell<CadFilmes, String> {
+        private final ImageView imageView = new ImageView();
+
+        public ImageTableCell() {
+            setGraphic(imageView);
+            setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+        }
+
+        @Override
+        protected void updateItem(String imagePath, boolean empty) {
+            super.updateItem(imagePath, empty);
+
+            if (empty || imagePath == null || imagePath.isEmpty()) {
+                imageView.setImage(null);
+                imageView.setFitWidth(50); // Define a largura da imagem
+                imageView.setFitHeight(50); // Define a altura da imagem
+            } else {
+                Image image = new Image("file:" + imagePath);
+                imageView.setImage(image);
+                imageView.setFitWidth(50); // Define a largura da imagem
+                imageView.setFitHeight(50); // Define a altura da imagem
+            }
+        }
+    }
+
+
+
+    
     @FXML
-    private void tbLista(SortEvent<C> event) {
+    private void tbLista(SortEvent<CadFilmes> event) {
     }
 
    
