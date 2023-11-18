@@ -56,6 +56,7 @@ public class Cinetec_listaController implements Initializable {
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
         colClassificacao.setCellValueFactory(new PropertyValueFactory<>("classificacao"));
+        colSinopse.setCellFactory(column -> new WrappingTextCell<>());
         colSinopse.setCellValueFactory(new PropertyValueFactory<>("sinopse"));
         colDistribuidora.setCellValueFactory(new PropertyValueFactory<>("distribuidora"));
         colImagem.setCellFactory(column -> new ImageTableCell<>());
@@ -87,17 +88,33 @@ public class Cinetec_listaController implements Initializable {
 
             if (empty || imagePath == null || imagePath.isEmpty()) {
                 imageView.setImage(null);
-                imageView.setFitWidth(50); // Define a largura da imagem
-                imageView.setFitHeight(50); // Define a altura da imagem
+                imageView.setFitWidth(60); // Define a largura da imagem
+                imageView.setFitHeight(60); // Define a altura da imagem
             } else {
                 Image image = new Image("file:" + imagePath);
                 imageView.setImage(image);
-                imageView.setFitWidth(50); // Define a largura da imagem
-                imageView.setFitHeight(50); // Define a altura da imagem
+                imageView.setFitWidth(60); // Define a largura da imagem
+                imageView.setFitHeight(60); // Define a altura da imagem
             }
         }
     }
 
+
+    public class WrappingTextCell<CadFilmes, String> extends TableCell<CadFilmes, String> {
+        @Override
+        protected void updateItem(String item, boolean empty) {
+            super.updateItem(item, empty);
+
+            if (item == null || empty) {
+                setText(null);
+                setGraphic(null);
+            } else {
+                tbLista.setFixedCellSize(80); // Define a altura fixa da célula
+                setText(item.toString());
+                setWrapText(true); // Habilita a quebra de texto
+            }
+        }
+    }
 
 
     

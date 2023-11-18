@@ -70,23 +70,35 @@ public class CadFilmesDAO {
         } 
     }
 
-        public boolean alterFilme(CadFilmes dado) throws SQLException {
+    public boolean alterFilme(CadFilmes dado) throws SQLException {
         try (Connection conn = connect()) {
-            String SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ?, image = ? WHERE nome = ? AND genero = ?"; 
+            String SQL;
+
+            if (dado.isUpdateImage()) {
+                SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ?, image = ? WHERE nome = ? AND genero = ?";
+            } else {
+                SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ? WHERE nome = ? AND genero = ?";
+            }
+
             PreparedStatement pstmt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
-            // associar os dados do objeto Distribuidora com o comando UPDATE
+            // associar os dados do objeto CadFilmes com o comando UPDATE
             pstmt.setString(1, dado.getNome());
             pstmt.setString(2, dado.getGenero());
             pstmt.setString(3, dado.getClassificacao());
             pstmt.setString(4, dado.getSinopse());
             pstmt.setString(5, dado.getDistribuidora());
-            pstmt.setString(6, dado.getImage());
-            pstmt.setString(7, dado.getNome());
-            pstmt.setString(8, dado.getGenero());
+
+            if (dado.isUpdateImage()) {
+                pstmt.setString(6, dado.getImage());
+                pstmt.setString(7, dado.getNome());
+                pstmt.setString(8, dado.getGenero());
+            } else {
+                pstmt.setString(6, dado.getNome());
+                pstmt.setString(7, dado.getGenero());
+            }
 
             int res = pstmt.executeUpdate(); 
-
             conn.close();
 
             // devolve se funcionou ou não

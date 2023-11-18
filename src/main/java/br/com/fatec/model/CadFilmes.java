@@ -10,6 +10,7 @@ public class CadFilmes {
     private final SimpleStringProperty sinopse;
     private final SimpleStringProperty distribuidora;
     private final SimpleStringProperty image;
+    private boolean updateImage;
 
     public CadFilmes() {
         this.nome = new SimpleStringProperty("");
@@ -20,6 +21,24 @@ public class CadFilmes {
         this.image = new SimpleStringProperty("");
     }
 
+    public CadFilmes(SimpleStringProperty nome, SimpleStringProperty genero, SimpleStringProperty classificacao, SimpleStringProperty sinopse, SimpleStringProperty distribuidora, SimpleStringProperty image, boolean updateImage) {
+        this.nome = nome;
+        this.genero = genero;
+        this.classificacao = classificacao;
+        this.sinopse = sinopse;
+        this.distribuidora = distribuidora;
+        this.image = image;
+        this.updateImage = updateImage;
+    }
+
+    public boolean isUpdateImage() {
+        return updateImage;
+    }
+
+    public void setUpdateImage(boolean updateImage) {
+        this.updateImage = updateImage;
+    }
+
     public CadFilmes(String nome, String genero, String classificacao, String sinopse, String distribuidora, String image) {
         this.nome = new SimpleStringProperty(nome);
         this.genero = new SimpleStringProperty(genero);
@@ -27,6 +46,7 @@ public class CadFilmes {
         this.sinopse = new SimpleStringProperty(sinopse);
         this.distribuidora = new SimpleStringProperty(distribuidora);
         this.image = new SimpleStringProperty(image);
+  
     }
 
     public SimpleStringProperty nomeProperty() {

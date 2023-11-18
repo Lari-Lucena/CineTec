@@ -14,12 +14,12 @@
    <children>
       <TableView fx:id="tbLista" layoutX="34.0" layoutY="91.0" onSort="#tbLista" prefHeight="420.0" prefWidth="840.0">
         <columns>
-          <TableColumn fx:id="colNome" prefWidth="133.0" text="NOME" />
-            <TableColumn fx:id="colGenero" prefWidth="107.0" text="GÊNERO" />
-            <TableColumn fx:id="colClassificacao" prefWidth="135.0" text="CLASSIFICAÇÃO" />
-            <TableColumn fx:id="colSinopse" prefWidth="179.0" text="SINOPSE" />
-            <TableColumn fx:id="colDistribuidora" prefWidth="159.0" text="DISTRIBUIDORA" />
-            <TableColumn fx:id="colImagem" minWidth="0.0" prefWidth="126.0" text="IMAGE" />
+          <TableColumn fx:id="colNome" prefWidth="133.0" styleClass="col" text="NOME" />
+            <TableColumn fx:id="colGenero" prefWidth="107.0" styleClass="col" text="GÊNERO" />
+            <TableColumn fx:id="colClassificacao" prefWidth="135.0" styleClass="col" text="CLASSIFICAÇÃO" />
+            <TableColumn fx:id="colSinopse" prefWidth="179.0" styleClass="col" text="SINOPSE" />
+            <TableColumn fx:id="colDistribuidora" prefWidth="159.0" styleClass="col" text="DISTRIBUIDORA" />
+            <TableColumn fx:id="colImagem" minWidth="0.0" prefWidth="126.0" styleClass="col" text="IMAGEM" />
         </columns>
       </TableView>
    </children>

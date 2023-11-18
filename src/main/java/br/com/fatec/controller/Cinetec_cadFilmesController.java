@@ -181,10 +181,12 @@ public class Cinetec_cadFilmesController implements Initializable {
         if (selectedFile != null) {
             String imagePath = selectedFile.getAbsolutePath();
             cadfilmes.setImage(imagePath);
+            cadfilmes.setUpdateImage(true); // Indica que a imagem será atualizada
+        } else {
+            cadfilmes.setUpdateImage(false); // Indica que a imagem não será atualizada
         }
-        
-        //Devolve o model
-        return cadfilmes;     
+
+        return cadfilmes;
     }
     
     private void moveModelToView(String nome) { //leva o back para a tela
