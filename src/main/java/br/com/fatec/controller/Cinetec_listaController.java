@@ -21,21 +21,21 @@ import javafx.scene.control.TableView;
 public class Cinetec_listaController implements Initializable {
 
     @FXML
-    private TableView<?> tbLista;
+    private TableView<CadFilmes> tbLista;
     @FXML
-    private TableColumn<?, ?> colID;
+    private TableColumn<CadFilmes, Integer> colID;
     @FXML
-    private TableColumn<?, ?> colNome;
+    private TableColumn<CadFilmes, String> colNome;
     @FXML
-    private TableColumn<?, ?> colGenero;
+    private TableColumn<CadFilmes, String> colGenero;
     @FXML
-    private TableColumn<?, ?> colClassificacao;
+    private TableColumn<CadFilmes, String> colClassificacao;
     @FXML
-    private TableColumn<?, ?> colSinopse;
+    private TableColumn<CadFilmes, String> colSinopse;
     @FXML
-    private TableColumn<?, ?> colDistribuidora;
+    private TableColumn<CadFilmes, String> colDistribuidora;
     @FXML
-    private TableColumn<?, ?> colImagem;
+    private TableColumn<CadFilmes, String> colImagem;
     @FXML
     private TableColumn<?, ?> colDistribuidora1;
 
@@ -47,32 +47,32 @@ public class Cinetec_listaController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void colID(TableColumn.CellEditEvent<CadFilmes, T> event) {
-    }
-
-    @FXML
-    private void colNome(TableColumn.CellEditEvent<S, T> event) {
-    }
-
-    @FXML
-    private void colGenero(TableColumn.CellEditEvent<S, T> event) {
-    }
-
-    @FXML
-    private void colClassificacao(TableColumn.CellEditEvent<S, T> event) {
-    }
-
-    @FXML
-    private void colSinopse(TableColumn.CellEditEvent<S, T> event) {
-    }
-
-    @FXML
-    private void colImagem(TableColumn.CellEditEvent<S, T> event) {
-    }
-
-    @FXML
-    private void tbLista(SortEvent<CadFilmes> event) {
-    }
+//    @FXML
+//    private void colID(TableColumn.CellEditEvent<CadFilmes, T> event) {
+//    }
+//
+//    @FXML
+//    private void colNome(TableColumn.CellEditEvent<S, T> event) {
+//    }
+//
+//    @FXML
+//    private void colGenero(TableColumn.CellEditEvent<S, T> event) {
+//    }
+//
+//    @FXML
+//    private void colClassificacao(TableColumn.CellEditEvent<S, T> event) {
+//    }
+//
+//    @FXML
+//    private void colSinopse(TableColumn.CellEditEvent<S, T> event) {
+//    }
+//
+//    @FXML
+//    private void colImagem(TableColumn.CellEditEvent<S, T> event) {
+//    }
+//
+//    @FXML
+//    private void tbLista(SortEvent<CadFilmes> event) {
+//    }
     
 }
