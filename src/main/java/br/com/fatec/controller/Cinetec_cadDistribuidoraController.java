@@ -167,7 +167,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     @FXML
     private void btn_alterar(ActionEvent event) throws SQLException {
         DistribuidoraDAO DistriDAO = new DistribuidoraDAO();
-            
+         
+        distribuidora = moveViewToModel();   
         try {
             if(DistriDAO.alterCadastro(distribuidora)){
                 msg_info("Cadastro alterado com sucesso!");
@@ -182,7 +183,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     @FXML
     private void btn_deletar(ActionEvent event) {
        DistribuidoraDAO DistriDAO = new DistribuidoraDAO();
-            
+          
+       distribuidora = moveViewToModel();
         try {
             if(DistriDAO.removeCadastro(distribuidora)){
                 msg_info("Cadastro excluido.");
@@ -254,5 +256,6 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
         txt_email.clear();
         txt_celular.clear();
         txt_whats.clear();
+        cbSelecionar.getSelectionModel().clearSelection();
     }
 }

@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collection;
 import javafx.scene.control.ComboBox;
 
 /**
@@ -53,11 +55,12 @@ public class CadFilmesDAO {
     
     public boolean removeFilme(CadFilmes dado) throws SQLException {
         try (Connection conn = connect()) {
-            String SQL = "DELETE FROM TBL_CAD_FILME WHERE nome = ? AND genero = ?"; 
+            String SQL = "DELETE FROM TBL_CAD_FILMES WHERE nome = ? AND genero = ?"; 
             PreparedStatement pstmt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
             pstmt.setString(1, dado.getNome());
-            pstmt.setString(1, dado.getGenero());
+            pstmt.setString(2, dado.getGenero());
+            //System.out.println(dado.getNome() + ", " + dado.getGenero());
 
             int res = pstmt.executeUpdate(); 
 
@@ -67,6 +70,29 @@ public class CadFilmesDAO {
         } 
     }
 
+        public boolean alterFilme(CadFilmes dado) throws SQLException {
+        try (Connection conn = connect()) {
+            String SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ?, image = ? WHERE nome = ? AND genero = ?"; 
+            PreparedStatement pstmt = conn.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+
+            // associar os dados do objeto Distribuidora com o comando UPDATE
+            pstmt.setString(1, dado.getNome());
+            pstmt.setString(2, dado.getGenero());
+            pstmt.setString(3, dado.getClassificacao());
+            pstmt.setString(4, dado.getSinopse());
+            pstmt.setString(5, dado.getDistribuidora());
+            pstmt.setString(6, dado.getImage());
+            pstmt.setString(7, dado.getNome());
+            pstmt.setString(8, dado.getGenero());
+
+            int res = pstmt.executeUpdate(); 
+
+            conn.close();
+
+            // devolve se funcionou ou não
+            return res != 0;
+        } 
+    }
 
     public CadFilmes buscarFilme(String nome) throws SQLException {
         CadFilmes filmes = null;
@@ -130,5 +156,39 @@ public class CadFilmesDAO {
             e.printStackTrace();
             // Lidar com exceções, se necessário
         }
+    }
+        
+    public Collection<CadFilmes> lista(String criterio) throws SQLException {
+        ArrayList<CadFilmes> lista = new ArrayList<>();
+        String sql = "SELECT * FROM TBL_CAD_FILMES ";
+
+        if (criterio != null && criterio.length() > 0) {
+            sql += " WHERE " + criterio;
+        }
+
+        try (Connection conn = connect()) {
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    while (rs.next()) {
+                        CadFilmes filmes = new CadFilmes();
+                        filmes.setNome(rs.getString("nome"));
+                        filmes.setGenero(rs.getString("genero"));
+                        filmes.setClassificacao(rs.getString("classificacao"));
+                        filmes.setSinopse(rs.getString("sinopse"));
+                        filmes.setDistribuidora(rs.getString("distribuidora"));
+                        filmes.setGenero(rs.getString("genero"));
+                        filmes.setImage(rs.getString("image"));
+
+
+                        lista.add(filmes);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Lidar com exceções, se necessário
+        }
+
+        return lista;
     }
 }

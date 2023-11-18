@@ -49,7 +49,7 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="txt_horaSessao" layoutX="500.0" layoutY="355.0" prefHeight="31.0" prefWidth="201.0" style="-: ;" styleClass="placeholder" />
+      <TextField fx:id="txt_horaSessao" layoutX="500.0" layoutY="355.0" onDragDropped="#carrega_horarios" prefHeight="31.0" prefWidth="201.0" style="-: ;" styleClass="placeholder" />
       <TextField fx:id="txt_filmeDuracao" layoutX="292.0" layoutY="412.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
       <Label layoutX="502.0" layoutY="337.0" text="HORÁRIOS DA SESSAO" textFill="WHITE">
          <font>
@@ -73,7 +73,7 @@
       </Label>
       <TextField fx:id="txt_classificacao" layoutX="292.0" layoutY="474.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
       <TextField fx:id="txt_genero" layoutX="501.0" layoutY="413.0" prefHeight="31.0" prefWidth="201.0" style="-: ;" styleClass="placeholder" />
-      <ComboBox fx:id="cbSelecionar" layoutX="500.0" layoutY="474.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="201.0" promptText="SELECIONAR" />
+      <ComboBox fx:id="cbSelecionar" layoutX="500.0" layoutY="474.0" prefHeight="31.0" prefWidth="201.0" promptText="SELECIONAR" />
       <Button fx:id="btn_deletar" layoutX="526.0" layoutY="535.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />

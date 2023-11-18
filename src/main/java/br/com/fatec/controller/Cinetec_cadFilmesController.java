@@ -20,14 +20,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.sql.SQLException;
-import java.util.Base64;
 import javafx.scene.control.Alert;
-import javafx.scene.image.PixelFormat;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.WritablePixelFormat;
 
 
 /**
@@ -84,9 +78,11 @@ public class Cinetec_cadFilmesController implements Initializable {
     }
 
     @FXML
-    private void btn_deletar(ActionEvent event) {
+    private void btn_deletar(ActionEvent event) throws SQLException {
     CadFilmesDAO filmesDAO = new CadFilmesDAO();
-            
+
+        cadfilmes = moveViewToModel();
+        
         try {
             if(filmesDAO.removeFilme(cadfilmes)){
                 msg_info("Cadastro excluido.");
@@ -100,14 +96,32 @@ public class Cinetec_cadFilmesController implements Initializable {
 
     @FXML
     private void btn_alterar(ActionEvent event) {
-        //tudo isso percente ao botao exibir dados
+        CadFilmesDAO filmesDAO = new CadFilmesDAO();
+
+        cadfilmes = moveViewToModel();
+        
+        try {
+            if(filmesDAO.alterFilme(cadfilmes)){
+                msg_info("Cadastro alterado com sucesso!");
+                limparCampos();
+            }
+        } catch (SQLException ex) {
+            System.out.println("Deu erro: " + 
+                    ex.getMessage());
+        }
+    }
+    
+    
+    @FXML
+    private void btn_exibir(ActionEvent event) {
         String nomeSelecionado = cbSelecionar.getValue();
         if (nomeSelecionado != null) {
             moveModelToView(nomeSelecionado);
         } else {
             msg_alert("Selecione algum dado.");
-        }  
+        } 
     }
+
     
     @FXML
     private void cb_distribuidora(ActionEvent event) {
@@ -120,23 +134,30 @@ public class Cinetec_cadFilmesController implements Initializable {
 
     @FXML
     private void btn_cadastro(ActionEvent event) throws SQLException {
-        cadfilmes = moveViewToModel();
-
         if (!todosCamposPreenchidos()) {
             return;
+        }
+
+        cadfilmes = moveViewToModel(); // Move os dados para o model somente se todos os campos estiverem preenchidos
+
+        if (selectedImagePath != null) {
+            saveImageToDatabase(selectedImagePath);
+            msg_info("Filme cadastrado com sucesso.");
+            limparCampos();
         } else {
-            if (selectedImagePath != null) {
-                saveImageToDatabase(selectedImagePath);
-                msg_info("Filme cadastrado com sucesso.");
-                limparCampos();
-            } else {
-                msg_info("Nenhuma imagem selecionada.nao");
-            }
+            msg_info("Nenhuma imagem selecionada.");
         }
     }
 
+
     private void handleUploadImage() {
         FileChooser fileChooser = new FileChooser();
+
+        // Define o diretório inicial
+        String path = "C:\\Users\\Larica\\Desktop\\cinetec\\src\\main\\resources\\imagens"; // Substitua pelo caminho desejado
+        File initialDirectory = new File(path);
+        fileChooser.setInitialDirectory(initialDirectory);
+
         fileChooser.setTitle("Select Image");
         selectedFile = fileChooser.showOpenDialog(null);
 
@@ -146,7 +167,6 @@ public class Cinetec_cadFilmesController implements Initializable {
             imageView.setImage(image);
         }
     }
-
 
     private CadFilmes moveViewToModel(){ //leva da tela para o back
         //CRIA O OBJETO CADASTRO - (MODEL)
@@ -264,10 +284,7 @@ public class Cinetec_cadFilmesController implements Initializable {
         txt_classificacao.clear();
         txt_sinopse.clear();
         cb_distribuidora.getSelectionModel().clearSelection();
+        cbSelecionar.getSelectionModel().clearSelection();
         imageView.setImage(null);
-    }
-
-    @FXML
-    private void btn_exibir(ActionEvent event) {
     }
 }
