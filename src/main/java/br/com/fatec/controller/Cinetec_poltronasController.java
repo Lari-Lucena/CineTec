@@ -56,7 +56,7 @@ public class Cinetec_poltronasController implements Initializable {
         
         try {
             
-            List<String> poltronasCompradas = poltronas.getPoltronasCompradas("Sala 12", "15:10");
+            List<String> poltronasCompradas = poltronas.getPoltronasCompradas( "15:10");
             List<CheckBox> checkBoxes = getCheckBoxes(); 
               
             System.out.println(poltronasCompradas);

@@ -9,15 +9,165 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="796.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_homeController">
+<AnchorPane id="AnchorPane" prefHeight="808.0" prefWidth="1156.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_homeController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_home.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="414.0" fitWidth="591.0" layoutX="103.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="343.0" fitWidth="606.0" layoutX="265.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../imagens/FILMES.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="248.0" fitWidth="160.0" layoutX="670.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/guerraMundialZ.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="845.0" layoutY="252.0" text="Guerra Mundial Z" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="845.0" layoutY="275.0" text="Terror/Ação" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="845.0" layoutY="295.0" text="Classificação: 14" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="845.0" layoutY="315.0" text="116min" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="845.0" layoutY="411.0" text="Sala 6" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnTres" layoutX="847.0" layoutY="436.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnTres" prefHeight="25.0" prefWidth="89.0" text="15:00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCinco" layoutX="942.0" layoutY="436.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCinco" prefHeight="25.0" prefWidth="89.0" text="17:00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDezEmeia" layoutX="367.0" layoutY="726.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDezEmeia" prefHeight="25.0" prefWidth="89.0" text="22:30">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="365.0" layoutY="701.0" text="Sala 6" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="365.0" layoutY="582.0" text="165min" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="365.0" layoutY="562.0" text="Classificação: 16" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="365.0" layoutY="542.0" text="Faroeste/Ação" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="365.0" layoutY="519.0" text="Django Livre" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="248.0" fitWidth="160.0" layoutX="191.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/djangoLivre.jpeg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnUma" layoutX="470.0" layoutY="435.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnUma" prefHeight="25.0" prefWidth="89.0" text="13:00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnOnze" layoutX="375.0" layoutY="435.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnOnze" prefHeight="25.0" prefWidth="89.0" text="11:00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="373.0" layoutY="410.0" text="Sala 6" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="315.0" text="93min" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="295.0" text="Classificação: Livre" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="275.0" text="Animação" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="252.0" text="Elementos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="219.0" fitWidth="184.0" layoutX="178.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/elementos.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="281.0" fitWidth="175.0" layoutX="655.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/avatar.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="844.0" layoutY="519.0" text="Avatar: O Caminho da Água" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="844.0" layoutY="542.0" text="Ficção Cientifica/Ação" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="844.0" layoutY="562.0" text="Classificação: 14" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="844.0" layoutY="582.0" text="192min" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="844.0" layoutY="701.0" text="Sala 6" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSeteEDez" layoutX="846.0" layoutY="726.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSeteEDez" prefHeight="25.0" prefWidth="89.0" text="19:10">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

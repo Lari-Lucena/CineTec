@@ -25,17 +25,17 @@ public class PoltronaDAO {
             try (Connection conn = connect()) {
                  
                 
-                String SQL = "INSERT INTO TBL_VENDAS (sala, hora, nome_cliente, poltronas) "
-                        + "VALUES(?, ?, ?, ?)";
+                String SQL = "INSERT INTO TBL_VENDAS (hora, nome_cliente, poltronas) "
+                        + "VALUES( ?, ?, ?)";
                 
                 PreparedStatement pstmt = conn.prepareStatement(SQL,
                         Statement.RETURN_GENERATED_KEYS);
                 
                 //dados a serem inseridos
-                pstmt.setString(1, "Sala 12");
-                pstmt.setString(2, "15:10");
-                pstmt.setString(3, "Larissa Damasceno");
-                pstmt.setString(4, poltronasConcatenadas);
+             
+                pstmt.setString(1, "15:10");
+                pstmt.setString(2, "Larissa Damasceno");
+                pstmt.setString(3, poltronasConcatenadas);
                 
                 //executa comando 
                 if(pstmt.executeUpdate() > 0)
@@ -50,15 +50,15 @@ public class PoltronaDAO {
         }
         
         
-        public List<String> getPoltronasCompradas(String sala, String hora) throws SQLException {
+        public List<String> getPoltronasCompradas( String hora) throws SQLException {
             List<String> poltronasCompradas = new ArrayList<>();
 
             try (Connection conn = connect()) {
-                String SQL = "SELECT poltronas FROM TBL_VENDAS WHERE sala = ? AND hora = ?";
+                String SQL = "SELECT poltronas FROM TBL_VENDAS WHERE hora = ?";
                 PreparedStatement pstmt = conn.prepareStatement(SQL);
 
-                pstmt.setString(1, sala);
-                pstmt.setString(2, hora);
+               
+                pstmt.setString(1, hora);
 
                 ResultSet rs = pstmt.executeQuery();
 
