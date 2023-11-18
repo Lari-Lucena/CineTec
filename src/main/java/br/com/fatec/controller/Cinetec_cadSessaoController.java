@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -59,6 +60,7 @@ public class Cinetec_cadSessaoController implements Initializable {
 
     @FXML
     private void cbSelecionar(ActionEvent event) {
+        //msg_info("aaa");
     }
 
     @FXML
@@ -77,4 +79,21 @@ public class Cinetec_cadSessaoController implements Initializable {
     private void btn_exibir(ActionEvent event) {
     }
     
+    
+    private void msg_info(String msg){    
+        Alert alerta = new Alert (Alert.AlertType.INFORMATION);
+        alerta.setTitle("Mensagem");
+        alerta.setHeaderText(msg);
+        alerta.setContentText("");
+               
+        alerta.showAndWait(); //exibe mensagem
+    }
+    
+    private void msg_alert(String msg){     
+        Alert alerta = new Alert (Alert.AlertType.WARNING);
+        alerta.setTitle("Atenção!");
+        alerta.setHeaderText(msg);
+               
+        alerta.showAndWait(); //exibe mensagem
+    }
 }
