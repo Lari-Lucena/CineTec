@@ -4,14 +4,19 @@
  */
 package br.com.fatec.controller;
 
+import br.com.fatec.DAO.CadFilmesDAO;
 import br.com.fatec.model.CadFilmes;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.Collection;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -36,16 +41,35 @@ public class Cinetec_listaController implements Initializable {
     private TableColumn<CadFilmes, String> colDistribuidora;
     @FXML
     private TableColumn<CadFilmes, String> colImagem;
-    @FXML
-    private TableColumn<?, ?> colDistribuidora1;
 
+    
+    private CadFilmesDAO filmesDAO;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+         filmesDAO = new CadFilmesDAO(); // Inicializa o DAO
+
+        // Configura as colunas para exibição dos dados
+        colID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
+        colClassificacao.setCellValueFactory(new PropertyValueFactory<>("classificacao"));
+        colSinopse.setCellValueFactory(new PropertyValueFactory<>("sinopse"));
+        colDistribuidora.setCellValueFactory(new PropertyValueFactory<>("distribuidora"));
+        colImagem.setCellValueFactory(new PropertyValueFactory<>("image"));
+
+        // Chama o método para carregar os dados do banco na TableView
+        try {
+            Collection<CadFilmes> filmes = filmesDAO.lista(null); // Pode passar um critério de filtro, se necessário
+            tbLista.setItems(FXCollections.observableArrayList(filmes));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Lida com exceções, se necessário
+        }
+    }
+        
 
 //    @FXML
 //    private void colID(TableColumn.CellEditEvent<CadFilmes, T> event) {

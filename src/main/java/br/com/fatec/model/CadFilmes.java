@@ -1,75 +1,103 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.com.fatec.model;
 
-/**
- *
- * @author Leonardo
- */
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
 public class CadFilmes {
-    private String nome, genero, classificacao, sinopse, distribuidora, image;
-    
-    //CONSTRUTORES
+    private final SimpleStringProperty nome;
+    private final SimpleStringProperty genero;
+    private final SimpleStringProperty classificacao;
+    private final SimpleStringProperty sinopse;
+    private final SimpleStringProperty distribuidora;
+    private final SimpleStringProperty image;
+
     public CadFilmes() {
-    }
-    
-    public CadFilmes(String nome, String genero, String classificacao, String sinopse, String distribuidora) {
-        this.nome = nome;
-        this.genero = genero;
-        this.classificacao = classificacao;
-        this.sinopse = sinopse;
-        this.distribuidora = distribuidora;
-        this.image = image;
+        this.nome = new SimpleStringProperty("");
+        this.genero = new SimpleStringProperty("");
+        this.classificacao = new SimpleStringProperty("");
+        this.sinopse = new SimpleStringProperty("");
+        this.distribuidora = new SimpleStringProperty("");
+        this.image = new SimpleStringProperty("");
     }
 
-    //GETTERS AND SETTERS
-    public String getNome() {
+    public CadFilmes(String nome, String genero, String classificacao, String sinopse, String distribuidora, String image) {
+        this.nome = new SimpleStringProperty(nome);
+        this.genero = new SimpleStringProperty(genero);
+        this.classificacao = new SimpleStringProperty(classificacao);
+        this.sinopse = new SimpleStringProperty(sinopse);
+        this.distribuidora = new SimpleStringProperty(distribuidora);
+        this.image = new SimpleStringProperty(image);
+    }
+
+    public SimpleStringProperty nomeProperty() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getNome() {
+        return nome.get();
     }
 
-    public String getGenero() {
+    public void setNome(String nome) {
+        this.nome.set(nome);
+    }
+
+    public SimpleStringProperty generoProperty() {
         return genero;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public String getGenero() {
+        return genero.get();
     }
 
-    public String getClassificacao() {
+    public void setGenero(String genero) {
+        this.genero.set(genero);
+    }
+
+    public SimpleStringProperty classificacaoProperty() {
         return classificacao;
     }
 
-    public void setClassificacao(String classificacao) {
-        this.classificacao = classificacao;
+    public String getClassificacao() {
+        return classificacao.get();
     }
 
-    public String getSinopse() {
+    public void setClassificacao(String classificacao) {
+        this.classificacao.set(classificacao);
+    }
+
+    public SimpleStringProperty sinopseProperty() {
         return sinopse;
     }
 
-    public void setSinopse(String sinopse) {
-        this.sinopse = sinopse;
+    public String getSinopse() {
+        return sinopse.get();
     }
 
-    public String getDistribuidora() {
+    public void setSinopse(String sinopse) {
+        this.sinopse.set(sinopse);
+    }
+
+    public SimpleStringProperty distribuidoraProperty() {
         return distribuidora;
     }
 
-    public void setDistribuidora(String distribuidora) {
-        this.distribuidora = distribuidora;
+    public String getDistribuidora() {
+        return distribuidora.get();
     }
 
-    public String getImage() {
+    public void setDistribuidora(String distribuidora) {
+        this.distribuidora.set(distribuidora);
+    }
+
+    public SimpleStringProperty imageProperty() {
         return image;
     }
 
+    public String getImage() {
+        return image.get();
+    }
+
     public void setImage(String image) {
-        this.image = image;
-    }    
+        this.image.set(image);
+    }
 }
