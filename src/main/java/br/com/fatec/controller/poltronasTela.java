@@ -21,10 +21,16 @@ public class poltronasTela extends Application{
     public static Stage tela;
     
     private String horaSelecionada;
+    private String nomeFilme;
 
     public void receberHoraSelecionada(String hora) {
         this.horaSelecionada = hora;
     }
+    
+    public void receberFilmeSelecionada(String nomeFilme) {
+        this.nomeFilme = nomeFilme;
+    }
+
     
     // Esse método inicia a cena após a definição da hora selecionada
     public void iniciarCena() throws IOException {
@@ -39,7 +45,7 @@ public class poltronasTela extends Application{
         Parent root = fxmlLoader.load();
         Cinetec_poltronasController controller = fxmlLoader.getController();
         
-        controller.setHoraSelecionada(this.horaSelecionada); // Defina a hora selecionada antes de carregar as poltronas
+        controller.setHoraSelecionada(this.horaSelecionada, this.nomeFilme); // Defina a hora selecionada antes de carregar as poltronas
         Scene scene = new Scene(root);
 
         tela.setScene(scene);

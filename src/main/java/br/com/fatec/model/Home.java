@@ -9,19 +9,21 @@ package br.com.fatec.model;
  * @author Larica
  */
 public class Home {
-    private String onze, uma, tres, cinco, sete, dez;
+    private String onze, uma, tres, cinco, sete, dez, nome_filme;
     
     //CONTRUTORES
     public Home(){
     }
     
-    public Home(String onze, String uma, String tres, String cinco, String sete, String dez) {
+
+    public Home(String onze, String uma, String tres, String cinco, String sete, String dez, String nome_filme) {
         this.onze = onze;
         this.uma = uma;
         this.tres = tres;
         this.cinco = cinco;
         this.sete = sete;
         this.dez = dez;
+        this.nome_filme = nome_filme;
     }
        
     
@@ -72,6 +74,14 @@ public class Home {
 
     public void setDez(String dez) {
         this.dez = dez;
+    }
+
+    public String getNome_filme() {
+        return nome_filme;
+    }
+
+    public void setNome_filme(String nome_filme) {
+        this.nome_filme = nome_filme;
     }
     
 }

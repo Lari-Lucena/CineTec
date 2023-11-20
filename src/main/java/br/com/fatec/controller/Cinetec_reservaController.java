@@ -4,9 +4,11 @@
  */
 package br.com.fatec.controller;
 
+import br.com.fatec.DAO.reservaDAO;
 import br.com.fatec.SendSmsBasic;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,14 +34,24 @@ public class Cinetec_reservaController implements Initializable {
     }    
 
     @FXML
-    private void btnSMS(ActionEvent event) throws IOException {
+    private void btnSMS(ActionEvent event) throws IOException, SQLException {
         
-        //consultar no banco o telefone, filme, poltrona e horario
-        
-        
-        //SendSmsBasic sendSmsBasic = new SendSmsBasic();
-       // sendSmsBasic.send("5511943195234", "A15", "Harry Potter: As reliquias da morte parte 1", "20/11/2023 as 20:30");
-        
-    }
+        reservaDAO dao = new reservaDAO();
+    
+        String[] vendaInfo = dao.getUltimaVenda();
+    
+        if (vendaInfo != null) {
+            String numeroCliente = vendaInfo[0];
+            String nomeCliente = vendaInfo[1];
+            String nomeFilme = vendaInfo[2];
+            String hora = vendaInfo[3];
+            String poltronas = vendaInfo[4];
+
+           SendSmsBasic sendSmsBasic = new SendSmsBasic();
+           sendSmsBasic.send(numeroCliente, nomeCliente, poltronas, nomeFilme, hora);
+        }
+            
+
+        }
     
 }

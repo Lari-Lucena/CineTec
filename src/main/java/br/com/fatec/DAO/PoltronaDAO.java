@@ -19,34 +19,38 @@ import java.util.List;
  */
 public class PoltronaDAO {
     
-        public boolean insertVendas(String poltronasConcatenadas, String hora) throws SQLException{
-            boolean inseriu;
-                
-            try (Connection conn = connect()) {
-                 
-                
-                String SQL = "INSERT INTO TBL_VENDAS (hora, nome_cliente, poltronas) "
-                        + "VALUES(?, ?, ?)";
-                
-                PreparedStatement pstmt = conn.prepareStatement(SQL,
-                        Statement.RETURN_GENERATED_KEYS);
-                
-                //dados a serem inseridos
-                pstmt.setString(1, hora);
-                pstmt.setString(2, "Larissa Damasceno");
-                pstmt.setString(3, poltronasConcatenadas);
-                
-                //executa comando 
-                if(pstmt.executeUpdate() > 0)
-                    inseriu = true; //tudo certo com a inserção
-                else
-                    inseriu = false; 
-                
-                //fecha conexão
-                conn.close();
-                return inseriu;
+    public boolean insertVendas(String poltronasConcatenadas, String hora, String nomeFilme) throws SQLException {
+        boolean inseriu = false;
+
+        try (Connection conn = connect()) {
+            // Busca o registro mais recente na TBL_LOG_ACESSOS
+            String logAcessosSQL = "SELECT NOME_CLIENTE, NUMERO_CLIENTE FROM TBL_LOG_ACESSOS ORDER BY DATA_LOG DESC, HORA_LOG DESC LIMIT 1";
+            try (PreparedStatement logAcessosStmt = conn.prepareStatement(logAcessosSQL)) {
+                ResultSet logAcessosRs = logAcessosStmt.executeQuery();
+
+                if (logAcessosRs.next()) {
+                    String nomeCliente = logAcessosRs.getString("NOME_CLIENTE");
+                    String numeroCliente = logAcessosRs.getString("NUMERO_CLIENTE");
+
+                    // Insere na tabela de vendas utilizando as informações mais recentes da TBL_LOG_ACESSOS
+                    String vendasSQL = "INSERT INTO TBL_VENDAS (NUMERO_CLIENTE, NOME_CLIENTE, NOME_FILME, HORA, POLTRONAS) VALUES (?, ?, ?, ?, ?)";
+                    try (PreparedStatement vendasStmt = conn.prepareStatement(vendasSQL)) {
+                        vendasStmt.setString(1, numeroCliente);
+                        vendasStmt.setString(2, nomeCliente);
+                        vendasStmt.setString(3, nomeFilme);
+                        vendasStmt.setString(4, hora);
+                        vendasStmt.setString(5, poltronasConcatenadas);
+
+                        // Executa o comando de inserção
+                        inseriu = vendasStmt.executeUpdate() > 0;
+                    }
+                }
             }
         }
+
+        return inseriu;
+    }
+
         
         
         public List<String> getPoltronasCompradas(String hora) throws SQLException {
@@ -72,5 +76,4 @@ public class PoltronaDAO {
 
             return poltronasCompradas;
         }
-        
 }

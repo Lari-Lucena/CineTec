@@ -61,23 +61,26 @@ public class Cinetec_homeController implements Initializable {
 
         return home;
     }
-
+    
     @FXML
-    private void btnUma(ActionEvent event) throws IOException {
-        String hora = btnUma.getText(); // Obtém a hora do botão clicado
+    private void btnOnze(ActionEvent event) throws IOException {
+        String hora = btnOnze.getText(); // Obtém a hora do botão clicado
+        String nomeFilme = "Elementos";
         poltronasTela p = new poltronasTela();
         p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.receberFilmeSelecionada(nomeFilme); // Definindo o nome do filme
         p.start(new Stage()); // Exibindo a tela após configurar a hora
         Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
     }
-
-
+    
     @FXML
-    private void btnOnze(ActionEvent event) throws IOException {
-        String hora = btnOnze.getText(); // Obtém a hora do botão clicado
+    private void btnUma(ActionEvent event) throws IOException {
+        String hora = btnUma.getText(); // Obtém a hora do botão clicado
+        String nomeFilme = "Elementos";// Substitua por um nome de filme específico
         poltronasTela p = new poltronasTela();
         p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.receberFilmeSelecionada(nomeFilme); // Definindo o nome do filme
         p.start(new Stage()); // Exibindo a tela após configurar a hora
         Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
@@ -86,8 +89,10 @@ public class Cinetec_homeController implements Initializable {
     @FXML
     private void btnTres(ActionEvent event) throws IOException {
         String hora = btnTres.getText(); // Obtém a hora do botão clicado
+        String nomeFilme = "Guerra Mundial Z";
         poltronasTela p = new poltronasTela();
         p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.receberFilmeSelecionada(nomeFilme); // Definindo o nome do filme
         p.start(new Stage()); // Exibindo a tela após configurar a hora
         Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
@@ -96,8 +101,10 @@ public class Cinetec_homeController implements Initializable {
     @FXML
     private void btnCinco(ActionEvent event) throws IOException {
         String hora = btnCinco.getText(); // Obtém a hora do botão clicado
+        String nomeFilme = "Guerra Mundial Z";
         poltronasTela p = new poltronasTela();
         p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.receberFilmeSelecionada(nomeFilme); // Definindo o nome do filme
         p.start(new Stage()); // Exibindo a tela após configurar a hora
         Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
@@ -107,8 +114,10 @@ public class Cinetec_homeController implements Initializable {
     @FXML
     private void btnDezEmeia(ActionEvent event) throws IOException {
         String hora = btnDezEmeia.getText(); // Obtém a hora do botão clicado
+        String nomeFilme = "Django Livre";
         poltronasTela p = new poltronasTela();
         p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.receberFilmeSelecionada(nomeFilme); // Definindo o nome do filme
         p.start(new Stage()); // Exibindo a tela após configurar a hora
         Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
@@ -117,9 +126,11 @@ public class Cinetec_homeController implements Initializable {
     @FXML
     private void btnSeteEDez(ActionEvent event) throws IOException {
         String hora = btnSeteEDez.getText(); // Obtém a hora do botão clicado
+        String nomeFilme = "Avatar: O caminho da Água";
         poltronasTela p = new poltronasTela();
         p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
-        p.start(new Stage()); // Exibindo a tela após configurar a hora
+        p.receberFilmeSelecionada(nomeFilme); // Definindo o nome do filme
+        p.start(new Stage()); 
         Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
     }

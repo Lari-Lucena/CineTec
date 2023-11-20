@@ -47,9 +47,14 @@ public class Cinetec_poltronasController implements Initializable {
     private Poltronas poltronas = new Poltronas();
     
     private String horaSelecionada;
+    private String nomeFilme;
     
     public void receberHoraSelecionada(String hora) {
         this.horaSelecionada = hora;
+    }
+    
+    public void receberFilmeSelecionada(String nomeFilme) {
+        this.nomeFilme = nomeFilme;
     }
     /**
      * Initializes the controller class.
@@ -59,16 +64,19 @@ public class Cinetec_poltronasController implements Initializable {
       
     }  
 
-    public void setHoraSelecionada(String hora) {
+    public void setHoraSelecionada(String hora, String nomeFilme) {
         this.horaSelecionada = hora;
+        this.nomeFilme = nomeFilme;
         mCarregaPoltronas();
     }
+
 
     private void mCarregaPoltronas() {
         try {
             PoltronaDAO poltronasDAO = new PoltronaDAO();
             List<String> poltronasCompradas = poltronasDAO.getPoltronasCompradas(this.horaSelecionada);
             System.out.println(horaSelecionada);
+            System.out.println(nomeFilme);
             List<CheckBox> checkBoxes = getCheckBoxes();
 
             for (CheckBox checkBox : checkBoxes) {
@@ -101,7 +109,7 @@ public class Cinetec_poltronasController implements Initializable {
             
             //GRAVANDO COMPRA
             PoltronaDAO poltronas = new PoltronaDAO();
-            poltronas.insertVendas(poltronasConcatenadas, horaSelecionada);
+            poltronas.insertVendas(poltronasConcatenadas, horaSelecionada, nomeFilme);
             
             
             //CHAMA TELA RESERVA EFETUADA

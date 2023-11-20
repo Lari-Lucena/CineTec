@@ -25,15 +25,16 @@ public class SendSmsBasic {
     private static final String SENDER = "CINETEC";
 
 
-    public void send(String phone, String cadeira, String filme, String horario) throws IOException {
+    public void send(String numeroCliente, String nomeCliente, String poltronas, String nomeFilme, String hora) throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
-        
-        String mensagem = String.format("Sessão reservada por CINETEC para o filme %s na cadeira %s na data %s", filme, cadeira, horario);
+        poltronas = poltronas.replace(",", "");
+        String mensagem = String.format("Olá, %s. Você reservou ingressos do Cinetec para ver o filme %s. \\nHora da Sessão: %s \\nPoltronas reservadas: %s", nomeCliente, nomeFilme, hora, poltronas);
+        //String mensagem = String.format("Sessão reservada por CINETEC para o filme %s na cadeira %s na data %s", filme, cadeira, horario);
  
         String bodyJson = String.format("{\"messages\":[{\"from\":\"%s\",\"destinations\":[{\"to\":\"%s\"}],\"text\":\"%s\"}]}",
                 SENDER,
-                phone,
+                numeroCliente,
                 mensagem
         );
  

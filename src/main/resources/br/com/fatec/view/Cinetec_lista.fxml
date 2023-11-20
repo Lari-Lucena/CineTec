@@ -22,6 +22,6 @@
             <TableColumn fx:id="colImagem" minWidth="0.0" prefWidth="126.0" styleClass="col" text="IMAGEM" />
         </columns>
       </TableView>
-      <TextField fx:id="txtBusca" layoutX="34.0" layoutY="50.0" prefHeight="25.0" prefWidth="155.0" promptText="Buscar por nome do filme" />
+      <TextField fx:id="txtBusca" layoutX="34.0" layoutY="50.0" prefHeight="25.0" prefWidth="180.0" promptText="Buscar por nome do filme" />
    </children>
 </AnchorPane>

@@ -71,6 +71,33 @@ public class LoginDAO {
         return rowCount;
     }
     
+    public void selectNomeCelular(String email) throws SQLException {
+        try (Connection conn = connect()) {
+            String SQL = "SELECT nome, celular FROM TBL_CADASTRO WHERE EMAIL = ?";
+            try (PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+                pstmt.setString(1, email);
+                ResultSet rs = pstmt.executeQuery();
+
+                if (rs.next()) {
+                    String nome = rs.getString("nome");
+                    String celular = rs.getString("celular");
+
+                    // Realiza a inserção na tabela TBL_LOG_ACESSOS
+                    insertIntoLogAcessos(conn, email, nome, celular);
+                }
+            }
+        }
+    }
+
+    private void insertIntoLogAcessos(Connection conn, String email, String nome, String celular) throws SQLException {
+        String insertSQL = "INSERT INTO TBL_LOG_ACESSOS (EMAIL, NOME_CLIENTE, NUMERO_CLIENTE) VALUES (?, ?, ?)";
+        try (PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
+            pstmt.setString(1, email);
+            pstmt.setString(2, nome);
+            pstmt.setString(3, celular);
+            pstmt.executeUpdate();
+        }
+    }   
 }
 
 

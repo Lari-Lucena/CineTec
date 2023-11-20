@@ -72,6 +72,7 @@ public class Cinetec_loginController implements Initializable {
                 stage.close();
             }
             else{
+                loginDAO.selectNomeCelular(login.getEmail());
                 homeTela filmes = new homeTela();
                 filmes.start(new Stage());
                 Stage stage = (Stage) btn_login.getScene().getWindow();

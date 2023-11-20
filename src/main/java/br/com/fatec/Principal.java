@@ -39,9 +39,7 @@ public class Principal extends Application {
         stage.close();
     }
     public static void main(String[] args) throws SQLException, IOException {
-        //SendSmsBasic sendSmsBasic = new SendSmsBasic();
-        //sendSmsBasic.send("5511974597492", "A15", "Harry Potter: As reliquias da morte parte 1", "20/11/2023 as 20:30");
-        
+
        launch();
     }
 
