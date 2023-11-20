@@ -74,5 +74,8 @@ public class CadSessao {
         this.classificacao = classificacao;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Sala: " + numeroSala + " - Filme: " + codigoFilme;
+    }
 }

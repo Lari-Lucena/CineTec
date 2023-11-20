@@ -10,7 +10,10 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ContentDisplay;
@@ -18,6 +21,7 @@ import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -43,7 +47,9 @@ public class Cinetec_listaController implements Initializable {
     private TableColumn<CadFilmes, String> colDistribuidora;
     @FXML
     private TableColumn<CadFilmes, String> colImagem;
-
+    @FXML
+    private TextField txtBusca;
+    
      private CadFilmesDAO filmesDAO;
     /**
      * Initializes the controller class.
@@ -71,8 +77,25 @@ public class Cinetec_listaController implements Initializable {
             e.printStackTrace();
             // Lida com exceções, se necessário
         }
-    }    
+       
+        txtBusca.textProperty().addListener((observable, oldValue, newValue) -> {
+        try {
+            ObservableList<CadFilmes> filmes;
 
+            if (newValue == null || newValue.isEmpty()) {
+                filmes = FXCollections.observableArrayList(filmesDAO.lista("")); // Busca todos os filmes se o campo estiver vazio
+            } else {
+                filmes = FXCollections.observableArrayList(filmesDAO.lista("nome LIKE '%" + newValue + "%'")); // Busca filmes baseado no texto do campo
+            }
+
+            tbLista.setItems(filmes);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Cinetec_listaController.class.getName()).log(Level.SEVERE, "Erro ao buscar filmes", ex);
+        }
+    });
+
+    }
 
     public class ImageTableCell<CadFilmes> extends TableCell<CadFilmes, String> {
         private final ImageView imageView = new ImageView();

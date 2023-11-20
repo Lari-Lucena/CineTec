@@ -5,6 +5,11 @@
 .mainFxmlClass {
     -fx-font-size: 14px;
     -fx-font-family: "Arial";
+    -fx-background-color : #121214;
+    -fx-cursor: pointer;
+    -fx-align-content: center;
+    -fx-text-fill: white;
+    -fx-font-color: white;
 }
 
 .col{

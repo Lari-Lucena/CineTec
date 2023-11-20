@@ -14,38 +14,35 @@
         <URL value="@/br/com/fatec/styles/cinetec_menu.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="356.0" fitWidth="892.0" layoutX="143.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="356.0" fitWidth="892.0" layoutX="143.0" layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../imagens/MENU.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnCadFilmes" layoutX="227.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
+      <Button fx:id="btnCadFilmes" layoutX="124.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnCadSessao" layoutX="459.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
+      <Button fx:id="btnCadSessao" layoutX="124.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="bntCadCliente" layoutX="227.0" layoutY="343.0" mnemonicParsing="false" onAction="#bntCadCliente" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO CLIENTE" textFill="WHITE">
+      <Button fx:id="bntCadCliente" layoutX="124.0" layoutY="343.0" mnemonicParsing="false" onAction="#bntCadCliente" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO CLIENTE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnCadDis" layoutX="325.0" layoutY="447.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="240.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
+      <Button fx:id="btnCadDis" layoutX="124.0" layoutY="391.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnFilmes" layoutX="124.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="FILMES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="bntLogin" layoutX="226.0" layoutY="389.0" mnemonicParsing="false" onAction="#bntLogin" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="LOGIN" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Button fx:id="btnPoltronas" layoutX="458.0" layoutY="389.0" mnemonicParsing="false" onAction="#btnPoltronas" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="POLTRONAS" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Button fx:id="btnFilmes" layoutX="459.0" layoutY="343.0" mnemonicParsing="false" onAction="#btnFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="FILMES" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
+      <ImageView fitHeight="273.0" fitWidth="323.0" layoutX="472.0" layoutY="281.0">
+         <image>
+            <Image url="@../../../../imagens/img.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

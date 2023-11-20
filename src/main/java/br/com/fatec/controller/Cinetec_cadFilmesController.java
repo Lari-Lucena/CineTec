@@ -180,9 +180,9 @@ public class Cinetec_cadFilmesController implements Initializable {
         cadfilmes.setDistribuidora(cb_distribuidora.getValue());
         
         if (selectedFile != null) {
-            String imagePath = selectedFile.getAbsolutePath();
-            cadfilmes.setImage(imagePath);
-            cadfilmes.setUpdateImage(true); // Indica que a imagem será atualizada
+        String imagePath = selectedFile.getAbsolutePath();
+        cadfilmes.setImage(imagePath);
+        cadfilmes.setUpdateImage(true); // Indica que a imagem será atualizada
         } else {
             cadfilmes.setUpdateImage(false); // Indica que a imagem não será atualizada
         }
