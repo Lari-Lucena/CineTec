@@ -51,6 +51,8 @@ public class Cinetec_loginController implements Initializable {
        //chamar tela de cadastro      
        cadastroTela cad = new cadastroTela();
        cad.start(new Stage());
+       Stage stage = (Stage) linkCadastro.getScene().getWindow();
+       stage.close();
     }
     
     @FXML

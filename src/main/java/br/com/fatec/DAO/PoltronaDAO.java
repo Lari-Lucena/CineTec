@@ -72,4 +72,5 @@ public class PoltronaDAO {
 
             return poltronasCompradas;
         }
+        
 }

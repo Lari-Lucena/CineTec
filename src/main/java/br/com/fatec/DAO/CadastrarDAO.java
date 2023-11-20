@@ -46,7 +46,7 @@ public class CadastrarDAO {
             pstmt.setString(1, dado.getNome());
             pstmt.setString(2, dado.getApelido());
             pstmt.setString(3, dado.getCpf());
-            pstmt.setString(4, dado.getCelular());
+            pstmt.setString(4, "55" + dado.getCelular());
             pstmt.setString(5, dado.getRegiao());
             pstmt.setString(6, dado.getEmail());
             pstmt.setString(7, dado.getSenha());

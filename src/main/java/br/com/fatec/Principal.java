@@ -18,7 +18,7 @@ public class Principal extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("view/Cinetec_cadSessao"));
+        scene = new Scene(loadFXML("view/Cinetec_login"));
 
         stage.setScene(scene);
         //stage.setFullScreen(true);
@@ -38,8 +38,11 @@ public class Principal extends Application {
     public static void fechar() {
         stage.close();
     }
-    public static void main(String[] args) throws SQLException {
-        launch();
+    public static void main(String[] args) throws SQLException, IOException {
+        //SendSmsBasic sendSmsBasic = new SendSmsBasic();
+        //sendSmsBasic.send("5511974597492", "A15", "Harry Potter: As reliquias da morte parte 1", "20/11/2023 as 20:30");
+        
+       launch();
     }
 
 }

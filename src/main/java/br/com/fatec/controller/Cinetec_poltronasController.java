@@ -107,6 +107,8 @@ public class Cinetec_poltronasController implements Initializable {
             //CHAMA TELA RESERVA EFETUADA
             reservaTela reserva = new reservaTela();
             reserva.start(new Stage());
+            Stage stage = (Stage) btn_prosseguir.getScene().getWindow();
+            stage.close();
         }  
     }
     

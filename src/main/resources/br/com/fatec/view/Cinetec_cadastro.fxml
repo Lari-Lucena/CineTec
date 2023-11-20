@@ -19,7 +19,7 @@
             <Image url="@../../../../imagens/CADC.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_cadastro" layoutX="357.0" layoutY="612.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="168.0" styleClass="btn" text="CADASTRO" textFill="WHITE">
+      <Button fx:id="btn_cadastro" layoutX="357.0" layoutY="612.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="168.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>

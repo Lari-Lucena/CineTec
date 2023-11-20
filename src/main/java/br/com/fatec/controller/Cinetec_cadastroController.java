@@ -7,6 +7,7 @@ package br.com.fatec.controller;
 import br.com.fatec.DAO.CadastrarDAO;
 import br.com.fatec.DAO.LoginDAO;
 import br.com.fatec.model.Cadastrar;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -23,6 +24,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -71,7 +73,7 @@ public class Cinetec_cadastroController implements Initializable {
     }    
     
     @FXML
-    private void btn_cadastro(ActionEvent event) throws SQLException {
+    private void btn_cadastro(ActionEvent event) throws SQLException, IOException {
             
         cadastro = moveViewToModel();
 
@@ -100,6 +102,10 @@ public class Cinetec_cadastroController implements Initializable {
                     msg_info("Cadastro concluido com sucesso! Agora você já pode se logar normalmente.");   
                     LogDAO.insertlogin(cadastro);
                     limparCampos();
+                    loginTela login = new loginTela();
+                    login.start(new Stage());
+                    Stage stage = (Stage) btn_cadastro.getScene().getWindow();
+                    stage.close();
                 }
             } catch (SQLException ex) {
                 System.out.println("Deu erro: " + 
