@@ -4,6 +4,8 @@
  */
 package br.com.fatec.controller;
 
+
+import br.com.fatec.model.Home;
 import br.com.fatec.model.Poltronas;
 import java.io.IOException;
 import java.net.URL;
@@ -13,7 +15,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 /**
@@ -37,19 +38,44 @@ public class Cinetec_homeController implements Initializable {
     private Button btnSeteEDez;
 
     private Poltronas poltronas = new Poltronas();
-
+    private Home home = new Home();
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
+    } 
+    
+    private Home moveViewToModel(){ //leva da tela para o back
+        //CRIA O OBJETO CADASTRO - (MODEL)
+        home = new Home();
         
-    }    
+        home.setOnze(btnOnze.getText());
+        home.setUma(btnUma.getText());
+        home.setTres(btnTres.getText());
+        home.setCinco(btnCinco.getText());
+        home.setSete(btnSeteEDez.getText());
+        home.setDez(btnDezEmeia.getText());
+
+        return home;
+    }
 
     @FXML
     private void btnUma(ActionEvent event) throws IOException {
-        String hora = "11:00";
-        System.out.println(hora);// Exemplo de hora selecionada
+        String hora = btnUma.getText(); // Obtém a hora do botão clicado
+        poltronasTela p = new poltronasTela();
+        p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.start(new Stage()); // Exibindo a tela após configurar a hora
+        Stage stage = (Stage) btnUma.getScene().getWindow();
+        stage.close();
+    }
+
+
+    @FXML
+    private void btnOnze(ActionEvent event) throws IOException {
+        String hora = btnOnze.getText(); // Obtém a hora do botão clicado
         poltronasTela p = new poltronasTela();
         p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
         p.start(new Stage()); // Exibindo a tela após configurar a hora
@@ -58,48 +84,43 @@ public class Cinetec_homeController implements Initializable {
     }
 
     @FXML
-    private void btnOnze(ActionEvent event) throws IOException {
-        String hora="11:00";
-        poltronasTela p = new poltronasTela();
-        p.start(new Stage());
-        Stage stage = (Stage) btnOnze.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
     private void btnTres(ActionEvent event) throws IOException {
-        String hora="15:00";
+        String hora = btnTres.getText(); // Obtém a hora do botão clicado
         poltronasTela p = new poltronasTela();
-        p.start(new Stage());
-        Stage stage = (Stage) btnOnze.getScene().getWindow();
+        p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.start(new Stage()); // Exibindo a tela após configurar a hora
+        Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
     }
 
     @FXML
     private void btnCinco(ActionEvent event) throws IOException {
-        String hora="17:00";
+        String hora = btnCinco.getText(); // Obtém a hora do botão clicado
         poltronasTela p = new poltronasTela();
-        p.start(new Stage());
-        Stage stage = (Stage) btnOnze.getScene().getWindow();
+        p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.start(new Stage()); // Exibindo a tela após configurar a hora
+        Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
     }
 
 
     @FXML
     private void btnDezEmeia(ActionEvent event) throws IOException {
-        String hora="22:30";
+        String hora = btnDezEmeia.getText(); // Obtém a hora do botão clicado
         poltronasTela p = new poltronasTela();
-        p.start(new Stage());
-        Stage stage = (Stage) btnOnze.getScene().getWindow();
+        p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.start(new Stage()); // Exibindo a tela após configurar a hora
+        Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
     }
 
     @FXML
     private void btnSeteEDez(ActionEvent event) throws IOException {
-        String hora="19:10";
+        String hora = btnSeteEDez.getText(); // Obtém a hora do botão clicado
         poltronasTela p = new poltronasTela();
-        p.start(new Stage());
-        Stage stage = (Stage) btnOnze.getScene().getWindow();
+        p.receberHoraSelecionada(hora); // Passando a hora selecionada para o controlador das poltronas
+        p.start(new Stage()); // Exibindo a tela após configurar a hora
+        Stage stage = (Stage) btnUma.getScene().getWindow();
         stage.close();
     }
     

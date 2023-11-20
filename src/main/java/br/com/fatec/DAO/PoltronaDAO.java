@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class PoltronaDAO {
     
-        public boolean insertVendas(String poltronasConcatenadas) throws SQLException{
+        public boolean insertVendas(String poltronasConcatenadas, String hora) throws SQLException{
             boolean inseriu;
                 
             try (Connection conn = connect()) {
@@ -32,7 +32,7 @@ public class PoltronaDAO {
                         Statement.RETURN_GENERATED_KEYS);
                 
                 //dados a serem inseridos
-                pstmt.setString(1, "11:00");
+                pstmt.setString(1, hora);
                 pstmt.setString(2, "Larissa Damasceno");
                 pstmt.setString(3, poltronasConcatenadas);
                 
