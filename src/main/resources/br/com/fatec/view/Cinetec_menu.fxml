@@ -9,40 +9,40 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="641.0" prefWidth="892.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_menuController">
+<AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="986.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_menuController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_menu.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="356.0" fitWidth="892.0" layoutX="143.0" layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="356.0" fitWidth="892.0" layoutX="194.0" layoutY="-53.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../imagens/MENU.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnCadFilmes" layoutX="124.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
+      <ImageView fitHeight="375.0" fitWidth="734.0" layoutX="319.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/Brown%20and%20Orange%20Aesthetic%20Thesis%20Defense%20Presentation%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnCadFilmes" layoutX="105.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnCadSessao" layoutX="124.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
+      <Button fx:id="btnCadSessao" layoutX="105.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="bntCadCliente" layoutX="124.0" layoutY="343.0" mnemonicParsing="false" onAction="#bntCadCliente" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO CLIENTE" textFill="WHITE">
+      <Button fx:id="bntCadCliente" layoutX="105.0" layoutY="343.0" mnemonicParsing="false" onAction="#bntCadCliente" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO CLIENTE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnCadDis" layoutX="124.0" layoutY="391.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
+      <Button fx:id="btnCadDis" layoutX="105.0" layoutY="391.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="btnFilmes" layoutX="124.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="FILMES" textFill="WHITE">
+      <Button fx:id="btnFilmes" layoutX="105.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="FILMES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <ImageView fitHeight="273.0" fitWidth="323.0" layoutX="472.0" layoutY="281.0">
-         <image>
-            <Image url="@../../../../imagens/img.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

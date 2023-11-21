@@ -12,7 +12,7 @@
     -fx-border-radius : 15px;
     -fx-background-color: transparent;
     -fx-border-color: #313137;
-    -fx-text-fill: red; /* Cor do texto */
+    -fx-text-fill: whitesmoke; /* Cor do texto */
 }
 .btn{
     -fx-background-radius : 20px;
@@ -20,8 +20,4 @@
     -fx-background-color: #1b828f;
     -fx-padding: 5px;
     
-}
-
-#txt_nome {
-    -fx-text-fill: blue; /* Cor do texto */
 }

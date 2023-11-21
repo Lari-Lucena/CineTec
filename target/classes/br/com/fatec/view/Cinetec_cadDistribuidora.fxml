@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -8,63 +9,73 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="879.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadDistribuidoraController">
+<AnchorPane id="AnchorPane" prefHeight="738.0" prefWidth="908.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadDistribuidoraController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_caddistribuidora.css" />
     </stylesheets>
    <children>
-      <Label layoutX="464.0" layoutY="296.0" text="RESPONSÁVEL" textFill="WHITE">
+      <ImageView fitHeight="341.0" fitWidth="586.0" layoutX="156.0" layoutY="-29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/CADDIS.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="460.0" layoutY="342.0" text="RESPONSÁVEL" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="251.0" layoutY="295.0" text="CNPJ" textFill="WHITE">
+      <Label layoutX="247.0" layoutY="341.0" text="CNPJ" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="254.0" layoutY="352.0" text="E-MAIL" textFill="WHITE">
+      <Label layoutX="250.0" layoutY="398.0" text="E-MAIL" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblNome" layoutX="253.0" layoutY="233.0" text="NOME DISTRIBUIDORA" textFill="WHITE">
+      <Label fx:id="lblNome" layoutX="249.0" layoutY="279.0" text="NOME DISTRIBUIDORA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_email" layoutX="250.0" layoutY="372.0" prefHeight="31.0" prefWidth="417.0" styleClass="placeholder" />
-      <TextField fx:id="txt_responsavel" layoutX="459.0" layoutY="313.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
-      <TextField fx:id="txt_cnpj" layoutX="249.0" layoutY="313.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
-      <TextField fx:id="txt_nome" layoutX="247.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" styleClass="placeholder" />
-      <Button fx:id="btn_cadastro" layoutX="396.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
+      <TextField fx:id="txt_email" layoutX="246.0" layoutY="418.0" prefHeight="31.0" prefWidth="417.0" styleClass="placeholder" />
+      <TextField fx:id="txt_responsavel" layoutX="455.0" layoutY="359.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
+      <TextField fx:id="txt_cnpj" layoutX="245.0" layoutY="359.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
+      <TextField fx:id="txt_nome" layoutX="243.0" layoutY="301.0" prefHeight="31.0" prefWidth="423.0" styleClass="placeholder" />
+      <Button fx:id="btn_cadastro" layoutX="392.0" layoutY="539.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="txt_celular" layoutX="250.0" layoutY="427.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
-      <TextField fx:id="txt_whats" layoutX="460.0" layoutY="427.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
-      <Label layoutX="254.0" layoutY="409.0" text="CELULAR" textFill="WHITE">
+      <TextField fx:id="txt_celular" layoutX="246.0" layoutY="473.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
+      <TextField fx:id="txt_whats" layoutX="456.0" layoutY="473.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
+      <Label layoutX="250.0" layoutY="455.0" text="CELULAR" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="465.0" layoutY="410.0" text="WHATSAPP" textFill="WHITE">
+      <Label layoutX="461.0" layoutY="456.0" text="WHATSAPP" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btn_alterar" layoutX="250.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
+      <Button fx:id="btn_alterar" layoutX="246.0" layoutY="539.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btn_deletar" layoutX="549.0" layoutY="493.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="DELETAR" textFill="WHITE">
+      <Button fx:id="btn_deletar" layoutX="545.0" layoutY="539.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="DELETAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <ComboBox fx:id="cbSelecionar" layoutX="413.0" layoutY="542.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
-      <Button fx:id="btn_exibir" layoutX="265.0" layoutY="542.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR DADO" textFill="WHITE">
+      <ComboBox fx:id="cbSelecionar" layoutX="409.0" layoutY="588.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
+      <Button fx:id="btn_exibir" layoutX="261.0" layoutY="588.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR DADO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVoltar" layoutX="25.0" layoutY="22.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="42.0" prefWidth="62.0" styleClass="btn" text="&lt;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
          </font>
       </Button>
    </children>

@@ -77,6 +77,7 @@ public class Cinetec_cadSessaoController implements Initializable {
         CadSessao selectedSessao = cbSelecionar.getValue();
         if (selectedSessao != null) {
             CadSessao novaSessao = moveViewParaModel();
+            limparCampos();
             sessoes.set(sessoes.indexOf(selectedSessao), novaSessao);
             mensagem("Sessão alterada com sucesso!");
         } else {

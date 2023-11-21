@@ -6,6 +6,7 @@ package br.com.fatec.controller;
 
 import br.com.fatec.DAO.DistribuidoraDAO;
 import br.com.fatec.model.Distribuidora;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -19,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -54,6 +56,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     
     
     private Distribuidora distribuidora = new Distribuidora();
+    @FXML
+    private Button btnVoltar;
 
     
     /**
@@ -257,5 +261,13 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
         txt_celular.clear();
         txt_whats.clear();
         cbSelecionar.getSelectionModel().clearSelection();
+    }
+
+    @FXML
+    private void btnVoltar(ActionEvent event) throws IOException {
+        menuTela menu = new menuTela();
+        menu.start(new Stage());
+        Stage stage = (Stage) btnVoltar.getScene().getWindow();
+        stage.close();
     }
 }
