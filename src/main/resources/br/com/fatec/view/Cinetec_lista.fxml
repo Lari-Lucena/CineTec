@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,12 +9,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="925.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_listaController">
+<AnchorPane id="AnchorPane" prefHeight="751.0" prefWidth="1097.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_listaController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_lista.css" />
     </stylesheets>
    <children>
-      <TableView fx:id="tbLista" layoutX="34.0" layoutY="91.0" onSort="#tbLista" prefHeight="420.0" prefWidth="840.0">
+      <ImageView fitHeight="420.0" fitWidth="704.0" layoutX="192.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/LISTA.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tbLista" layoutX="134.0" layoutY="297.0" onSort="#tbLista" prefHeight="420.0" prefWidth="840.0" styleClass="tabela">
         <columns>
           <TableColumn fx:id="colNome" prefWidth="133.0" styleClass="col" text="NOME" />
             <TableColumn fx:id="colGenero" prefWidth="107.0" styleClass="col" text="GÊNERO" />
@@ -22,6 +29,11 @@
             <TableColumn fx:id="colImagem" minWidth="0.0" prefWidth="126.0" styleClass="col" text="IMAGEM" />
         </columns>
       </TableView>
-      <TextField fx:id="txtBusca" layoutX="34.0" layoutY="50.0" prefHeight="25.0" prefWidth="180.0" promptText="Buscar por nome do filme" />
+      <TextField fx:id="txtBusca" layoutX="134.0" layoutY="260.0" prefHeight="31.0" prefWidth="206.0" promptText="Buscar por nome do filme" />
+      <Button fx:id="btnVoltar" layoutX="35.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="31.0" prefWidth="78.0" style="-fx-padding: 3;" styleClass="btn" text="&lt;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -20,8 +20,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 
 
 /**
@@ -63,6 +65,8 @@ public class Cinetec_cadFilmesController implements Initializable {
     private CadFilmes cadfilmes = new CadFilmes();
     @FXML
     private Button btn_exibir;
+    @FXML
+    private Button btnVoltar;
 
     
     /**
@@ -289,5 +293,13 @@ public class Cinetec_cadFilmesController implements Initializable {
         cb_distribuidora.getSelectionModel().clearSelection();
         cbSelecionar.getSelectionModel().clearSelection();
         imageView.setImage(null);
+    }
+
+    @FXML
+    private void btnVoltar(ActionEvent event) throws IOException {
+        menuTela menu = new menuTela();
+        menu.start(new Stage());
+        Stage stage = (Stage) btnVoltar.getScene().getWindow();
+        stage.close();
     }
 }

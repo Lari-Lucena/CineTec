@@ -18,6 +18,13 @@
 
 .column-header {
 
-    -fx-text-fill: white; /* Cor do texto */
+    -fx-text-fill: Black; /* Cor do texto */
     -fx-font-weight: bold; /* Negrito */
+}
+.btn{
+    -fx-background-radius : 20px;
+    -fx-border-radius : 20px;
+    -fx-background-color: #1b828f;
+    -fx-padding: 5px;
+    
 }

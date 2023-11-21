@@ -6,6 +6,7 @@ package br.com.fatec.controller;
 
 import br.com.fatec.DAO.CadFilmesDAO;
 import br.com.fatec.model.CadFilmes;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Collection;
@@ -14,8 +15,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableCell;
@@ -25,6 +28,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -51,6 +55,8 @@ public class Cinetec_listaController implements Initializable {
     private TextField txtBusca;
     
      private CadFilmesDAO filmesDAO;
+    @FXML
+    private Button btnVoltar;
     /**
      * Initializes the controller class.
      */
@@ -97,6 +103,19 @@ public class Cinetec_listaController implements Initializable {
 
     }
 
+    @FXML
+    private void tbLista(SortEvent<CadFilmes> event) {
+    }
+    @FXML
+    private void btnVoltar(ActionEvent event) throws IOException {
+       menuTela menu = new menuTela();
+       menu.start(new Stage());
+       Stage stage = (Stage) btnVoltar.getScene().getWindow();
+       stage.close();
+        
+    }
+        
+
     public class ImageTableCell<CadFilmes> extends TableCell<CadFilmes, String> {
         private final ImageView imageView = new ImageView();
 
@@ -141,9 +160,6 @@ public class Cinetec_listaController implements Initializable {
 
 
     
-    @FXML
-    private void tbLista(SortEvent<CadFilmes> event) {
-    }
 
    
     

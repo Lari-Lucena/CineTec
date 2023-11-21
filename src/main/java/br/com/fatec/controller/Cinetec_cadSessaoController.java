@@ -1,6 +1,7 @@
 package br.com.fatec.controller;
 
 import br.com.fatec.model.CadSessao;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class Cinetec_cadSessaoController implements Initializable {
 
@@ -36,11 +38,11 @@ public class Cinetec_cadSessaoController implements Initializable {
     @FXML
     private Button btn_alterar;
     @FXML
-    private TextField txt_data;
-    @FXML
     private Button btn_exibir;
 
     private ObservableList<CadSessao> sessoes = FXCollections.observableArrayList();
+    @FXML
+    private Button btnVoltar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -142,5 +144,13 @@ public class Cinetec_cadSessaoController implements Initializable {
         alerta.setHeaderText(msg);
         alerta.setContentText("");
         alerta.showAndWait(); // exibe mensagem
+    }
+
+    @FXML
+    private void btnVoltar(ActionEvent event) throws IOException {
+        menuTela menu = new menuTela();
+        menu.start(new Stage());
+        Stage stage = (Stage) btnVoltar.getScene().getWindow();
+        stage.close();
     }
 }
