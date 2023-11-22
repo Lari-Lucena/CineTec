@@ -137,6 +137,9 @@ public class Cinetec_cadastroController implements Initializable {
 
     @FXML
     private void visualizar(ActionEvent event) {
+        if(chk_visualizar.isSelected()){
+    }
+        
     }
     
     public boolean isValidEmail(String txt_email) {

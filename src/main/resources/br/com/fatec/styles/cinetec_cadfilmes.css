@@ -18,6 +18,13 @@
     -fx-background-radius: 10px;
     -fx-text-fill: whitesmoke; /* Cor do texto */
 }
+.placeholder2 {
+    -fx-border-radius : 15px;
+    -fx-background-color: transparent;
+    -fx-border-color: #313137;
+    -fx-background-radius: 10px;
+    -fx-text-fill: black; /* Cor do texto */
+}
 .btn{
     -fx-background-radius : 20px;
     -fx-border-radius : 20px;

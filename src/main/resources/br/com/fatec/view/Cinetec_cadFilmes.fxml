@@ -9,69 +9,69 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="805.0" prefWidth="1048.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadFilmesController">
+<AnchorPane id="AnchorPane" prefHeight="775.0" prefWidth="1045.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_cadFilmesController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_cadfilmes.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="415.0" fitWidth="766.0" layoutX="143.0" layoutY="-52.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="415.0" fitWidth="766.0" layoutX="143.0" layoutY="-57.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../imagens/CADFILME.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="cbSelecionar" layoutX="266.0" layoutY="600.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
-      <Button fx:id="btn_deletar" layoutX="395.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
+      <ComboBox fx:id="cbSelecionar" layoutX="266.0" layoutY="595.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="241.0" promptText="SELECIONAR" />
+      <Button fx:id="btn_deletar" layoutX="395.0" layoutY="667.0" mnemonicParsing="false" onAction="#btn_deletar" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="DELETAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btn_alterar" layoutX="268.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
+      <Button fx:id="btn_alterar" layoutX="268.0" layoutY="667.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="520.0" layoutY="364.0" text="DISTRIBUIDORA" textFill="WHITE">
+      <Label layoutX="520.0" layoutY="359.0" text="DISTRIBUIDORA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btn_cadastro" layoutX="530.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
+      <Button fx:id="btn_cadastro" layoutX="530.0" layoutY="667.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <TextField fx:id="txt_nome" layoutX="264.0" layoutY="319.0" prefHeight="31.0" prefWidth="294.0" styleClass="placeholder" />
-      <TextField fx:id="txt_genero" layoutX="571.0" layoutY="319.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
-      <TextField fx:id="txt_classificacao" layoutX="264.0" layoutY="380.0" prefHeight="31.0" prefWidth="241.0" styleClass="placeholder" />
-      <Label fx:id="lblNome" layoutX="265.0" layoutY="297.0" text="NOME DO FILME" textFill="WHITE">
+      <TextField fx:id="txt_nome" layoutX="264.0" layoutY="314.0" prefHeight="31.0" prefWidth="294.0" styleClass="placeholder" />
+      <TextField fx:id="txt_genero" layoutX="571.0" layoutY="314.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
+      <TextField fx:id="txt_classificacao" layoutX="264.0" layoutY="375.0" prefHeight="31.0" prefWidth="241.0" styleClass="placeholder" />
+      <Label fx:id="lblNome" layoutX="265.0" layoutY="292.0" text="NOME DO FILME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="572.0" layoutY="297.0" text="GÊNERO" textFill="WHITE">
+      <Label layoutX="572.0" layoutY="292.0" text="GÊNERO" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="266.0" layoutY="363.0" text="CLASSIFICAÇÃO INDICATIVA" textFill="WHITE">
+      <Label layoutX="266.0" layoutY="358.0" text="CLASSIFICAÇÃO INDICATIVA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="268.0" layoutY="420.0" text="SINÓPSE DO FILME" textFill="WHITE">
+      <Label layoutX="268.0" layoutY="415.0" text="SINÓPSE DO FILME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <TextArea fx:id="txt_sinopse" layoutX="266.0" layoutY="439.0" prefHeight="150.0" prefWidth="241.0" styleClass="placeholder" />
-      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="201.0" layoutX="542.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true" style="-: ;" />
-      <ComboBox fx:id="cb_distribuidora" layoutX="518.0" layoutY="383.0" onAction="#cb_distribuidora" prefHeight="25.0" prefWidth="252.0" />
-      <Button id="upload" fx:id="btn_upload" layoutX="581.0" layoutY="603.0" mnemonicParsing="false" onAction="#btn_upload" prefHeight="17.0" prefWidth="124.0" style="-fx-padding: 1;" styleClass="btn" text="UPLOAD" textFill="WHITE">
+      <TextArea fx:id="txt_sinopse" layoutX="266.0" layoutY="434.0" prefHeight="150.0" prefWidth="241.0" styleClass="placeholder2" />
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="201.0" layoutX="542.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true" style="-: ;" />
+      <ComboBox fx:id="cb_distribuidora" layoutX="518.0" layoutY="378.0" onAction="#cb_distribuidora" prefHeight="25.0" prefWidth="252.0" />
+      <Button id="upload" fx:id="btn_upload" layoutX="581.0" layoutY="598.0" mnemonicParsing="false" onAction="#btn_upload" prefHeight="17.0" prefWidth="124.0" style="-fx-padding: 1;" styleClass="btn" text="UPLOAD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btn_exibir" layoutX="663.0" layoutY="672.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR" textFill="WHITE">
+      <Button fx:id="btn_exibir" layoutX="663.0" layoutY="667.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
