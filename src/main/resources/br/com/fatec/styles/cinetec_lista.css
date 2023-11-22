@@ -26,5 +26,5 @@
     -fx-border-radius : 20px;
     -fx-background-color: #1b828f;
     -fx-padding: 5px;
-    
+    -fx-cursor: pointer;
 }

@@ -5,3 +5,7 @@
 .mainFxmlClass {
 
 }
+
+.btn{
+    -fx-cursor: pointer;
+}

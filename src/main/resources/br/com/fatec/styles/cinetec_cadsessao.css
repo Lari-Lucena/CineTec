@@ -4,7 +4,6 @@
 
 .mainFxmlClass {
     -fx-background-color : #121214;
-    -fx-cursor: pointer;
     -fx-align-content: center;
     -fx-text-fill: white;
     -fx-font-color: white;
@@ -22,9 +21,5 @@
     -fx-border-radius : 20px;
     -fx-background-color: #1b828f;
     -fx-padding: 5px;
-    
-}
-
-#txt_filme {
-    -fx-text-fill: whitesmoke; /* Cor do texto */
+    -fx-cursor: pointer;
 }
