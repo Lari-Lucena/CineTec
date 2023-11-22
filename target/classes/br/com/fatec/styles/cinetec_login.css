@@ -12,7 +12,7 @@
 .placeholder {
     -fx-border-radius : 15px;
     -fx-background-color: transparent;
-    -fx-border-color: #313137;
+    -fx-border-color: #FFDF2B;
     -fx-background-radius: 10px;
     -fx-text-fill: whitesmoke; /* Cor do texto */
 }
@@ -22,4 +22,12 @@
     -fx-background-color: #1b828f;
     -fx-padding: 5px;
     -fx-cursor: pointer;
+}
+.btn:hover{
+    -fx-background-radius : 20px;
+    -fx-border-radius : 20px;
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+    -fx-cursor: pointer;
+    -fx-border-color:#1b828f ;
 }

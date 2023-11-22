@@ -32,7 +32,7 @@ public class sessaoTela extends Application{
         Scene scene = new Scene(root);
         Image icon = new Image(getClass().getResourceAsStream("/imagens/icon.png"));
         tela.getIcons().add(icon);
-        tela.setTitle("Cinetec");
+        tela.setTitle("Cinetec - Cadastro De Sessão");
         tela.setScene(scene);
         tela.show();        
 

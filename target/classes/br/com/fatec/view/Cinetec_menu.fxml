@@ -14,14 +14,9 @@
         <URL value="@/br/com/fatec/styles/cinetec_menu.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="356.0" fitWidth="892.0" layoutX="194.0" layoutY="-53.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="356.0" fitWidth="892.0" layoutX="386.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../imagens/MENU.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imgMovie" fitHeight="425.0" fitWidth="671.0" layoutX="290.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../imagens/MOVIE%20TIME.png" />
+            <Image url="@../../../../imagens/icon.png" />
          </image>
       </ImageView>
       <Button fx:id="btnCadFilmes" layoutX="105.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">

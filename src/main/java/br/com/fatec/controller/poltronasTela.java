@@ -50,7 +50,7 @@ public class poltronasTela extends Application{
         Scene scene = new Scene(root);
         Image icon = new Image(getClass().getResourceAsStream("/imagens/icon.png"));
         tela.getIcons().add(icon);
-        tela.setTitle("Cinetec");
+        tela.setTitle("Cinetec - Poltronas");
         tela.setScene(scene);
         tela.show();
     }

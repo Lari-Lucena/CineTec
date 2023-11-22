@@ -14,12 +14,12 @@
         <URL value="@/br/com/fatec/styles/cinetec_cadastro.css" />
     </stylesheets>
    <children>
-      <ImageView fx:id="imgCadUsu" fitHeight="308.0" fitWidth="713.0" layoutX="177.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true" styleClass="imgCad">
+      <ImageView fx:id="imgCadUsu" fitHeight="99.0" fitWidth="440.0" layoutX="240.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" styleClass="imgCad">
          <image>
-            <Image url="@../../../../imagens/CADC.png" />
+            <Image url="@../../../../imagens/cad.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_cadastro" layoutX="357.0" layoutY="612.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="168.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
+      <Button fx:id="btn_cadastro" layoutX="359.0" layoutY="612.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="168.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>

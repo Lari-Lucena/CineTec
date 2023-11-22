@@ -31,7 +31,7 @@ public class cadFilmesTela extends Application{
         Scene scene = new Scene(root);
         Image icon = new Image(getClass().getResourceAsStream("/imagens/icon.png"));
         tela.getIcons().add(icon);
-        tela.setTitle("Cinetec");
+        tela.setTitle("Cinetec - Cadastro De Filmes");
         tela.setScene(scene);
         tela.show();        
 

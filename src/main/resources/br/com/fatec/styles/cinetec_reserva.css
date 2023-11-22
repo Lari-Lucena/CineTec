@@ -16,3 +16,11 @@
     -fx-padding: 5px; 
     -fx-cursor: pointer;
 }
+.btn:hover{
+    -fx-background-radius : 20px;
+    -fx-border-radius : 20px;
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+    -fx-cursor: pointer;
+    -fx-border-color:#1b828f ;
+}
