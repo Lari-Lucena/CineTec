@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -13,7 +14,12 @@
         <URL value="@/br/com/fatec/styles/cinetec_reserva.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnSMS" layoutX="378.0" layoutY="390.0" mnemonicParsing="false" onAction="#btnSMS" styleClass="btn" text="Receber via SMS" textFill="WHITE">
+      <ImageView fitHeight="730.0" fitWidth="901.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../imagens/Brown%20and%20Orange%20Aesthetic%20Thesis%20Defense%20Presentation.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnSMS" layoutX="364.0" layoutY="614.0" mnemonicParsing="false" onAction="#btnSMS" prefHeight="39.0" prefWidth="220.0" styleClass="btn" text="Receber via SMS" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
