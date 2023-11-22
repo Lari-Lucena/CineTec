@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,12 +8,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_reservaController">
+<AnchorPane id="AnchorPane" prefHeight="657.0" prefWidth="886.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_reservaController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_reserva.css" />
     </stylesheets>
    <children>
-      <Label layoutX="244.0" layoutY="149.0" prefHeight="60.0" prefWidth="293.0" text="RESERVA EFETUADA" />
-      <Button fx:id="btnSMS" layoutX="250.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnSMS" text="Receber via SMS" />
+      <Button fx:id="btnSMS" layoutX="378.0" layoutY="390.0" mnemonicParsing="false" onAction="#btnSMS" styleClass="btn" text="Receber via SMS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
+import javafx.scene.image.Image;
 
 /**
  * JavaFX Principal
@@ -18,11 +19,14 @@ public class Principal extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("view/Cinetec_cadSessao"));
+        scene = new Scene(loadFXML("view/Cinetec_home"));
 
         stage.setScene(scene);
         //stage.setFullScreen(true);
         //stage.setResizable(false);
+       Image icon = new Image(getClass().getResourceAsStream("/imagens/icon.png"));
+       stage.getIcons().add(icon);
+       stage.setTitle("Cinetec");
   
         stage.show();
     }

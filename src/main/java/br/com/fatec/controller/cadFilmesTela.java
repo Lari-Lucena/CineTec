@@ -11,6 +11,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -28,7 +29,9 @@ public class cadFilmesTela extends Application{
         Parent root = fxmlLoader.load();
         
         Scene scene = new Scene(root);
-        
+        Image icon = new Image(getClass().getResourceAsStream("/imagens/icon.png"));
+        tela.getIcons().add(icon);
+        tela.setTitle("Cinetec");
         tela.setScene(scene);
         tela.show();        
 
