@@ -16,16 +16,16 @@
    <children>
       <ImageView fitHeight="420.0" fitWidth="704.0" layoutX="192.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../imagens/LISTA.png" />
+            <Image url="@../../../../imagens/listas.png" />
          </image>
       </ImageView>
       <TableView fx:id="tbLista" layoutX="134.0" layoutY="297.0" onSort="#tbLista" prefHeight="420.0" prefWidth="840.0" styleClass="tabela">
         <columns>
           <TableColumn fx:id="colNome" prefWidth="133.0" styleClass="col" text="NOME" />
             <TableColumn fx:id="colGenero" prefWidth="107.0" styleClass="col" text="GÊNERO" />
-            <TableColumn fx:id="colClassificacao" prefWidth="135.0" styleClass="col" text="CLASSIFICAÇÃO" />
-            <TableColumn fx:id="colSinopse" prefWidth="179.0" styleClass="col" text="SINOPSE" />
-            <TableColumn fx:id="colDistribuidora" prefWidth="159.0" styleClass="col" text="DISTRIBUIDORA" />
+            <TableColumn fx:id="colClassificacao" prefWidth="125.0" styleClass="col" text="CLASSIFICAÇÃO" />
+            <TableColumn fx:id="colSinopse" prefWidth="212.0" styleClass="col" text="SINOPSE" />
+            <TableColumn fx:id="colDistribuidora" prefWidth="136.0" styleClass="col" text="DISTRIBUIDORA" />
             <TableColumn fx:id="colImagem" minWidth="0.0" prefWidth="126.0" styleClass="col" text="IMAGEM" />
         </columns>
       </TableView>
