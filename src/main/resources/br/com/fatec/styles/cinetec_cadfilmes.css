@@ -40,3 +40,6 @@
     -fx-cursor: pointer;
     -fx-border-color:#1b828f ;
 }
+.sair:hover{
+    -fx-text-fill: #38b6ff;
+}

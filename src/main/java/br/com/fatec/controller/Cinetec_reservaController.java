@@ -14,6 +14,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -24,6 +26,8 @@ public class Cinetec_reservaController implements Initializable {
 
     @FXML
     private Button btnSMS;
+    @FXML
+    private Hyperlink btnSair;
 
     /**
      * Initializes the controller class.
@@ -53,5 +57,13 @@ public class Cinetec_reservaController implements Initializable {
             
 
         }
+
+    @FXML
+    private void btnSair(ActionEvent event) throws IOException {
+        loginTela log = new loginTela();
+        log.start(new Stage());
+        Stage stage = (Stage) btnSair.getScene().getWindow();
+        stage.close();
+    }
     
 }

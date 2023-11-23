@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -57,6 +58,8 @@ public class Cinetec_listaController implements Initializable {
      private CadFilmesDAO filmesDAO;
     @FXML
     private Button btnVoltar;
+    @FXML
+    private Hyperlink btnSair;
     /**
      * Initializes the controller class.
      */
@@ -104,15 +107,16 @@ public class Cinetec_listaController implements Initializable {
     }
 
     @FXML
-    private void tbLista(SortEvent<CadFilmes> event) {
-    }
-    @FXML
     private void btnVoltar(ActionEvent event) throws IOException {
        menuTela menu = new menuTela();
        menu.start(new Stage());
        Stage stage = (Stage) btnVoltar.getScene().getWindow();
        stage.close();
         
+    }
+
+    @FXML
+    private void tbLista(SortEvent<CadFilmes> event) {
     }
         
 
@@ -158,7 +162,13 @@ public class Cinetec_listaController implements Initializable {
         }
     }
 
-
+    @FXML
+    private void btnSair(ActionEvent event) throws IOException {
+        loginTela log = new loginTela();
+        log.start(new Stage());
+        Stage stage = (Stage) btnSair.getScene().getWindow();
+        stage.close();
+    }
     
 
    

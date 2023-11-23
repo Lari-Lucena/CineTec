@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -37,6 +38,10 @@ public class Cinetec_loginController implements Initializable {
     private Hyperlink linkCadastro;
     
     private Login login = new Login(); //indica nosso model
+    @FXML
+    private ImageView imgLog;
+    @FXML
+    private Hyperlink btnSair;
     /**
      * Initializes the controller class.
      */
@@ -44,6 +49,12 @@ public class Cinetec_loginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+     @FXML
+    private void btnSair(ActionEvent event) throws IOException {
+        System.exit(0);
+    }
+    
 
 
     @FXML

@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -58,6 +59,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
     private Distribuidora distribuidora = new Distribuidora();
     @FXML
     private Button btnVoltar;
+    @FXML
+    private Hyperlink btnSair;
 
     
     /**
@@ -270,4 +273,12 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
         Stage stage = (Stage) btnVoltar.getScene().getWindow();
         stage.close();
     }
-}
+
+  @FXML
+    private void btnSair(ActionEvent event) throws IOException {
+        loginTela log = new loginTela();
+        log.start(new Stage());
+        Stage stage = (Stage) btnSair.getScene().getWindow();
+        stage.close();
+    }
+} 

@@ -19,25 +19,26 @@
             <Image url="@../../../../imagens/icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnCadFilmes" layoutX="105.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
+      <Button fx:id="btnCadFilmes" layoutX="105.0" layoutY="340.0" mnemonicParsing="false" onAction="#btnCadFilmes" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO FILMES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnCadSessao" layoutX="105.0" layoutY="483.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
+      <Button fx:id="btnCadSessao" layoutX="105.0" layoutY="435.0" mnemonicParsing="false" onAction="#btnCadSessao" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO SESSÃO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="bntCadCliente" layoutX="105.0" layoutY="294.0" mnemonicParsing="false" onAction="#bntCadCliente" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO CLIENTE" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Button fx:id="btnCadDis" layoutX="105.0" layoutY="342.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
+      <Button fx:id="btnCadDis" layoutX="105.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnCadDis" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="CADASTRO DISTRIBUIDORA" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="btnLista" layoutX="105.0" layoutY="437.0" mnemonicParsing="false" onAction="#btnLista" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="LISTA DE FILME" textFill="WHITE">
+      <Button fx:id="btnLista" layoutX="105.0" layoutY="389.0" mnemonicParsing="false" onAction="#btnLista" prefHeight="31.0" prefWidth="207.0" styleClass="btn" text="LISTA DE FILME" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
+      <Hyperlink fx:id="btnSair" layoutX="897.0" layoutY="34.0" onAction="#btnSair" styleClass="sair" text="SAIR" textFill="#ffdf2b">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>

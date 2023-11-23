@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.stage.Stage;
 
 /**
@@ -39,6 +40,8 @@ public class Cinetec_homeController implements Initializable {
 
     private Poltronas poltronas = new Poltronas();
     private Home home = new Home();
+    @FXML
+    private Hyperlink btnSair;
     
     /**
      * Initializes the controller class.
@@ -142,5 +145,13 @@ public class Cinetec_homeController implements Initializable {
         alerta.setContentText("");
                
         alerta.showAndWait(); //exibe mensagem
+    }
+
+    @FXML
+    private void btnSair(ActionEvent event) throws IOException {
+        loginTela log = new loginTela();
+        log.start(new Stage());
+        Stage stage = (Stage) btnSair.getScene().getWindow();
+        stage.close();
     }
 }

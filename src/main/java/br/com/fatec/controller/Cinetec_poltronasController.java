@@ -22,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Hyperlink;
 import javafx.stage.Stage;
 
 /**
@@ -48,6 +49,10 @@ public class Cinetec_poltronasController implements Initializable {
     
     private String horaSelecionada;
     private String nomeFilme;
+    @FXML
+    private Button btnVoltar;
+    @FXML
+    private Hyperlink btnSair;
     
     public void receberHoraSelecionada(String hora) {
         this.horaSelecionada = hora;
@@ -203,6 +208,22 @@ public class Cinetec_poltronasController implements Initializable {
     
     private void moveViewToModel(Poltronas poltronas) {
         poltronas.setPoltronasSelecionadas(getPoltronasSelecionadas());
+    }
+
+    @FXML
+    private void btnVoltar(ActionEvent event) throws IOException {
+        homeTela home = new homeTela();
+        home.start(new Stage());
+        Stage stage = (Stage) btnVoltar.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void btnSair(ActionEvent event) throws IOException {
+        loginTela log = new loginTela();
+        log.start(new Stage());
+        Stage stage = (Stage) btnSair.getScene().getWindow();
+        stage.close();
     }
 
 }

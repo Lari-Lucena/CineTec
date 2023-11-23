@@ -44,3 +44,6 @@
     -fx-background-radius: 10px;
     -fx-text-fill: whitesmoke; /* Cor do texto */
 }
+.sair:hover{
+    -fx-text-fill: #38b6ff;
+}

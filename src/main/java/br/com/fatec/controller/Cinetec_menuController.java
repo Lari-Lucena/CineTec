@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -26,13 +27,11 @@ public class Cinetec_menuController implements Initializable {
     @FXML
     private Button btnCadSessao;
     @FXML
-    private Button bntCadCliente;
-    @FXML
     private Button btnCadDis;
     @FXML
     private Button btnLista;
     @FXML
-    private ImageView imgMovie;
+    private Hyperlink btnSair;
    
    
     /**
@@ -59,13 +58,6 @@ public class Cinetec_menuController implements Initializable {
         stage.close();
     }
 
-    @FXML
-    private void bntCadCliente(ActionEvent event) throws IOException {
-        cadastroTela cad = new cadastroTela();
-        cad.start(new Stage());
-        Stage stage = (Stage) bntCadCliente.getScene().getWindow();
-        stage.close();
-    }
 
     @FXML
     private void btnCadDis(ActionEvent event) throws IOException {
@@ -81,6 +73,14 @@ public class Cinetec_menuController implements Initializable {
         listaTela lista = new listaTela();
         lista.start(new Stage());
         Stage stage = (Stage) btnLista.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void btnSair(ActionEvent event) throws IOException {
+        loginTela log = new loginTela();
+        log.start(new Stage());
+        Stage stage = (Stage) btnSair.getScene().getWindow();
         stage.close();
     }
     

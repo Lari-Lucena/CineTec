@@ -23,5 +23,10 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
+      <Hyperlink fx:id="btnSair" layoutX="1091.0" layoutY="39.0" onAction="#btnSair" styleClass="sair" text="SAIR" textFill="#ffdf2b">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>

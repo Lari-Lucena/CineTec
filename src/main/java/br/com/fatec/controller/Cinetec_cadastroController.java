@@ -57,7 +57,8 @@ public class Cinetec_cadastroController implements Initializable {
     private CheckBox chk_visualizar;
     @FXML
     private ImageView imgCadUsu;
-   
+    @FXML
+    private Button btnVoltar;
     
     private Cadastrar cadastro = new Cadastrar(); //indica nosso model
 
@@ -228,6 +229,15 @@ public class Cinetec_cadastroController implements Initializable {
         txt_email.clear();
         txt_senha.clear();
         txt_rsenha.clear();
+    }
+    
+    @FXML
+    private void btnVoltar(ActionEvent event) throws IOException {
+       loginTela log = new loginTela();
+       log.start(new Stage());
+       Stage stage = (Stage) btnVoltar.getScene().getWindow();
+       stage.close();
+        
     }
 }
 
