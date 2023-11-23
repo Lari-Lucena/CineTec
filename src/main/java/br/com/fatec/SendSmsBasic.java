@@ -29,8 +29,8 @@ public class SendSmsBasic {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         poltronas = poltronas.replace(",", "");
-        String mensagem = String.format("Olá, %s. Você reservou ingressos do Cinetec para ver o filme %s. \\nHora da Sessão: %s \\nPoltronas reservadas: %s", nomeCliente, nomeFilme, hora, poltronas);
-        //String mensagem = String.format("Sessão reservada por CINETEC para o filme %s na cadeira %s na data %s", filme, cadeira, horario);
+        String mensagem = String.format("Oii, %s. Voce reservou ingressos do Cinetec para ver o filme %s. \\nHorário da sessão: %s \\nPoltronas reservadas: %s", nomeCliente, nomeFilme, hora, poltronas);
+        
  
         String bodyJson = String.format("{\"messages\":[{\"from\":\"%s\",\"destinations\":[{\"to\":\"%s\"}],\"text\":\"%s\"}]}",
                 SENDER,
