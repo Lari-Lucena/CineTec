@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Cinetec_cadSessaoController implements Initializable {
@@ -146,6 +147,13 @@ public class Cinetec_cadSessaoController implements Initializable {
         alerta.setTitle("Mensagem");
         alerta.setHeaderText(msg);
         alerta.setContentText("");
+        
+        // Get the Stage.
+        Stage stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+
+        // Add a custom icon.
+        stage.getIcons().add(new Image(this.getClass().getResource("/imagens/icon.png").toString()));
+                
         alerta.showAndWait(); // exibe mensagem
     }
 

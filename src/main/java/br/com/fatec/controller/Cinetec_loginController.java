@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -97,7 +98,12 @@ public class Cinetec_loginController implements Initializable {
         alerta.setTitle("Mensagem");
         alerta.setHeaderText(msg);
         alerta.setContentText("");
-               
+        // Get the Stage.
+        Stage stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+
+        // Add a custom icon.
+        stage.getIcons().add(new Image(this.getClass().getResource("/imagens/icon.png").toString()));      
+        
         alerta.showAndWait(); //exibe mensagem
     }
     
@@ -106,7 +112,13 @@ public class Cinetec_loginController implements Initializable {
         alerta.setTitle("Atenção!");
         alerta.setHeaderText(msg);
         //alerta.setContentText("");
-               
+        
+        // Get the Stage.
+        Stage stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+
+        // Add a custom icon.
+        stage.getIcons().add(new Image(this.getClass().getResource("/imagens/icon.png").toString()));
+        
         alerta.showAndWait(); //exibe mensagem
     }
     

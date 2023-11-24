@@ -152,15 +152,15 @@ public class Cinetec_cadFilmesController implements Initializable {
         boolean filmeJaExiste = filmesDAO.filmeExiste(cadfilmes);
 
         if(filmeJaExiste) {
-            msg_alert("Já existe um filme cadastrado com esse nome.");
+            msg_alert("Não é possível cadastrar mais de um filme\ncom o mesmo nome.");
             limparCampos();
         } else {
             if (selectedImagePath != null) {
                 saveImageToDatabase(selectedImagePath);
-                msg_info("Filme cadastrado com sucesso.");
+                msg_info("Filme cadastrado com sucesso!");
                 limparCampos();
             } else {
-                msg_info("Nenhuma imagem selecionada.");
+                msg_info("Selecione uma imagem para concluir o cadastro.");
             }
         }
     }
@@ -239,7 +239,13 @@ public class Cinetec_cadFilmesController implements Initializable {
         alerta.setTitle("Mensagem");
         alerta.setHeaderText(msg);
         alerta.setContentText("");
-               
+        
+        // Get the Stage.
+        Stage stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+
+        // Add a custom icon.
+        stage.getIcons().add(new Image(this.getClass().getResource("/imagens/icon.png").toString()));
+        
         alerta.showAndWait(); //exibe mensagem
     }
     
@@ -248,7 +254,13 @@ public class Cinetec_cadFilmesController implements Initializable {
         alerta.setTitle("Atenção!");
         
         alerta.setHeaderText(msg);
-               
+        
+        // Get the Stage.
+        Stage stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+
+        // Add a custom icon.
+        stage.getIcons().add(new Image(this.getClass().getResource("/imagens/icon.png").toString()));
+        
         alerta.showAndWait(); //exibe mensagem
     }
     
