@@ -170,8 +170,8 @@ public class Cinetec_cadFilmesController implements Initializable {
         FileChooser fileChooser = new FileChooser();
 
         // Define o diretório inicial
-        String path = "C:\\Users\\Larica\\Desktop\\cinetec\\src\\main\\resources\\imagens"; // Substitua pelo caminho desejado
-        //String path = "C:\\Users\\Leonardo\\cinetec\\src\\main\\resources\\imagens";
+        //String path = "C:\\Users\\Larica\\Desktop\\cinetec\\src\\main\\resources\\imagens"; // Substitua pelo caminho desejado
+        String path = "C:\\Users\\Leonardo\\cinetec\\src\\main\\resources\\imagens\\filmes";
         File initialDirectory = new File(path);
         fileChooser.setInitialDirectory(initialDirectory);
 
@@ -245,6 +245,7 @@ public class Cinetec_cadFilmesController implements Initializable {
     private void msg_alert(String msg){     
         Alert alerta = new Alert (Alert.AlertType.WARNING);
         alerta.setTitle("Atenção!");
+        
         alerta.setHeaderText(msg);
                
         alerta.showAndWait(); //exibe mensagem
