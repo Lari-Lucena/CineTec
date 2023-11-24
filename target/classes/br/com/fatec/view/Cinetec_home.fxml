@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="779.0" prefWidth="1148.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_homeController">
+<AnchorPane id="AnchorPane" prefHeight="778.0" prefWidth="1148.0" style="-fx-background-color: #121214;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controller.Cinetec_homeController">
     <stylesheets>
         <URL value="@/br/com/fatec/styles/cinetec_home.css" />
     </stylesheets>
@@ -21,7 +21,7 @@
       </ImageView>
       <ImageView fitHeight="248.0" fitWidth="160.0" layoutX="657.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../imagens/guerramundialZ.jpg" />
+            <Image url="@../../../../imagens/filmes/guerramundialZ.jpg" />
          </image>
       </ImageView>
       <Label layoutX="832.0" layoutY="235.0" text="Guerra Mundial Z" textFill="WHITE">
@@ -91,7 +91,7 @@
       </Label>
       <ImageView fitHeight="248.0" fitWidth="160.0" layoutX="178.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../imagens/djangoLivre.jpeg" />
+            <Image url="@../../../../imagens/filmes/djangoLivre.jpeg" />
          </image>
       </ImageView>
       <Button fx:id="btnUma" layoutX="456.0" layoutY="422.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnUma" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="13:00" textFill="WHITE">
@@ -131,12 +131,12 @@
       </Label>
       <ImageView fitHeight="219.0" fitWidth="184.0" layoutX="165.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../imagens/elementos.jpeg" />
+            <Image url="@../../../../imagens/filmes/elementos.jpeg" />
          </image>
       </ImageView>
       <ImageView fitHeight="235.0" fitWidth="175.0" layoutX="642.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../imagens/avatar.jpeg" />
+            <Image url="@../../../../imagens/filmes/avatar.jpeg" />
          </image>
       </ImageView>
       <Label layoutX="831.0" layoutY="512.0" text="Avatar: O Caminho da Água" textFill="WHITE">

@@ -153,6 +153,7 @@ public class Cinetec_cadFilmesController implements Initializable {
 
         if(filmeJaExiste) {
             msg_alert("Já existe um filme cadastrado com esse nome.");
+            limparCampos();
         } else {
             if (selectedImagePath != null) {
                 saveImageToDatabase(selectedImagePath);

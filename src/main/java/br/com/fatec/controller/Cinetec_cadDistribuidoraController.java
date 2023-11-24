@@ -94,6 +94,8 @@ public class Cinetec_cadDistribuidoraController implements Initializable {
         
         if(contaJaExiste){
             msg_alert("Já existe um fornecedor cadastrado com esse CNPJ.");
+            limparCampos();
+            
         } else{
             //GRAVANDO
             try {

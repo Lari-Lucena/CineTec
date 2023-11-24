@@ -27,6 +27,11 @@ public class Principal extends Application {
        Image icon = new Image(getClass().getResourceAsStream("/imagens/icon.png"));
        stage.getIcons().add(icon);
        stage.setTitle("Cinetec - Login");
+       // Get the Stage.
+       // stage.getDialogPane().getScene().getWindow();
+
+     // Add a custom icon.
+        //stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.png")));
   
         stage.show();
     }
