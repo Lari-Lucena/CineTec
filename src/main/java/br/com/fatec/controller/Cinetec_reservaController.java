@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.stage.Stage;
@@ -50,10 +51,13 @@ public class Cinetec_reservaController implements Initializable {
             String nomeFilme = vendaInfo[2];
             String hora = vendaInfo[3];
             String poltronas = vendaInfo[4];
-
+            
            SendSmsBasic sendSmsBasic = new SendSmsBasic();
            sendSmsBasic.send(numeroCliente, nomeCliente, poltronas, nomeFilme, hora);
+           msg_info("SMS enviado!");
         }
+        
+        
             
 
         }
@@ -66,4 +70,12 @@ public class Cinetec_reservaController implements Initializable {
         stage.close();
     }
     
+        private void msg_info(String msg){    
+        Alert alerta = new Alert (Alert.AlertType.INFORMATION);
+        alerta.setTitle("Mensagem");
+        alerta.setHeaderText(msg);
+        alerta.setContentText("");
+               
+        alerta.showAndWait(); //exibe mensagem
+    }
 }
