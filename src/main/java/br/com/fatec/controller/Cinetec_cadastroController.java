@@ -100,7 +100,7 @@ public class Cinetec_cadastroController implements Initializable {
             //GRAVANDO
             try {
                 if(CadDAO.insertCadastro(cadastro)){
-                    msg_info("Cadastro concluido com sucesso! Agora você já pode se logar normalmente.");   
+                    msg_info("Cadastro concluido com sucesso!\nAgora você já pode se logar normalmente.");   
                     LogDAO.insertlogin(cadastro);
                     limparCampos();
                     loginTela login = new loginTela();
