@@ -145,24 +145,33 @@ public class Cinetec_cadFilmesController implements Initializable {
             return;
         }
 
-        cadfilmes = moveViewToModel(); // Move os dados para o model somente se todos os campos estiverem preenchidos
+        cadfilmes = moveViewToModel();
 
-        if (selectedImagePath != null) {
-            saveImageToDatabase(selectedImagePath);
-            msg_info("Filme cadastrado com sucesso.");
-            limparCampos();
+        CadFilmesDAO filmesDAO = new CadFilmesDAO();
+
+        boolean filmeJaExiste = filmesDAO.filmeExiste(cadfilmes);
+
+        if(filmeJaExiste) {
+            msg_alert("Já existe um filme cadastrado com esse nome.");
         } else {
-            msg_info("Nenhuma imagem selecionada.");
+            if (selectedImagePath != null) {
+                saveImageToDatabase(selectedImagePath);
+                msg_info("Filme cadastrado com sucesso.");
+                limparCampos();
+            } else {
+                msg_info("Nenhuma imagem selecionada.");
+            }
         }
     }
+
 
 
     private void handleUploadImage() {
         FileChooser fileChooser = new FileChooser();
 
         // Define o diretório inicial
-        //String path = "C:\\Users\\Larica\\Desktop\\cinetec\\src\\main\\resources\\imagens"; // Substitua pelo caminho desejado
-        String path = "C:\\Users\\Leonardo\\cinetec\\src\\main\\resources\\imagens";
+        String path = "C:\\Users\\Larica\\Desktop\\cinetec\\src\\main\\resources\\imagens"; // Substitua pelo caminho desejado
+        //String path = "C:\\Users\\Leonardo\\cinetec\\src\\main\\resources\\imagens";
         File initialDirectory = new File(path);
         fileChooser.setInitialDirectory(initialDirectory);
 
