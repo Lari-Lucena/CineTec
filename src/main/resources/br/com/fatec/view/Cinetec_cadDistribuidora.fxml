@@ -39,27 +39,17 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_email" layoutX="246.0" layoutY="418.0" prefHeight="31.0" prefWidth="417.0" styleClass="placeholder" />
-      <TextField fx:id="txt_responsavel" layoutX="455.0" layoutY="359.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
-      <TextField fx:id="txt_cnpj" layoutX="245.0" layoutY="359.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
       <TextField fx:id="txt_nome" layoutX="243.0" layoutY="301.0" prefHeight="31.0" prefWidth="423.0" styleClass="placeholder" />
-      <Button fx:id="btn_cadastro" layoutX="392.0" layoutY="539.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
+      <TextField fx:id="txt_cnpj" layoutX="245.0" layoutY="359.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
+      <TextField fx:id="txt_responsavel" layoutX="455.0" layoutY="359.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
+      <TextField fx:id="txt_email" layoutX="246.0" layoutY="418.0" prefHeight="31.0" prefWidth="417.0" styleClass="placeholder" />
+      <TextField fx:id="txt_celular" layoutX="246.0" layoutY="473.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
+      <TextField fx:id="txt_whats" layoutX="456.0" layoutY="473.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
+      <Button fx:id="btn_alterar" layoutX="246.0" layoutY="539.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="txt_celular" layoutX="246.0" layoutY="473.0" prefHeight="31.0" prefWidth="201.0" styleClass="placeholder" />
-      <TextField fx:id="txt_whats" layoutX="456.0" layoutY="473.0" prefHeight="31.0" prefWidth="208.0" styleClass="placeholder" />
-      <Label layoutX="250.0" layoutY="455.0" text="CELULAR" textFill="WHITE">
-         <font>
-            <Font size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="461.0" layoutY="456.0" text="WHATSAPP" textFill="WHITE">
-         <font>
-            <Font size="12.0" />
-         </font>
-      </Label>
-      <Button fx:id="btn_alterar" layoutX="246.0" layoutY="539.0" mnemonicParsing="false" onAction="#btn_alterar" prefHeight="31.0" prefWidth="117.0" styleClass="btn" text="ALTERAR" textFill="WHITE">
+      <Button fx:id="btn_cadastro" layoutX="392.0" layoutY="539.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
@@ -67,12 +57,12 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <ComboBox fx:id="cbSelecionar" layoutX="390.0" layoutY="588.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="273.0" promptText="SELECIONAR" />
       <Button fx:id="btn_exibir" layoutX="243.0" layoutY="588.0" mnemonicParsing="false" onAction="#btn_exibir" prefHeight="31.0" prefWidth="124.0" styleClass="btn" text="EXIBIR DADO" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <ComboBox fx:id="cbSelecionar" layoutX="390.0" layoutY="588.0" onAction="#cbSelecionar" prefHeight="31.0" prefWidth="273.0" promptText="SELECIONAR" />
       <Button fx:id="btnVoltar" layoutX="25.0" layoutY="22.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="31.0" prefWidth="78.0" style="-fx-padding: 3;" styleClass="btn" text="🠔" textFill="WHITE">
          <font>
             <Font name="System Bold" size="19.0" />
@@ -83,6 +73,16 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Hyperlink>
+      <Label layoutX="250.0" layoutY="455.0" text="CELULAR" textFill="WHITE">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="461.0" layoutY="456.0" text="WHATSAPP" textFill="WHITE">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
    </children>
    <cursor>
       <Cursor fx:constant="S_RESIZE" />

@@ -14,6 +14,41 @@
         <URL value="@/br/com/fatec/styles/cinetec_home.css" />
     </stylesheets>
    <children>
+      <Button fx:id="btnOnze" layoutX="361.0" layoutY="422.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnOnze" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="11:00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUma" layoutX="456.0" layoutY="422.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnUma" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="13:00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnTres" layoutX="834.0" layoutY="426.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnTres" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="15:00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCinco" layoutX="929.0" layoutY="426.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCinco" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="17:00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDezEmeia" layoutX="354.0" layoutY="709.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDezEmeia" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="22:30" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSeteEDez" layoutX="833.0" layoutY="702.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSeteEDez" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="19:10" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Hyperlink fx:id="btnSair" layoutX="1054.0" layoutY="36.0" onAction="#btnSair" styleClass="sair" text="SAIR" textFill="#ffdf2b">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Hyperlink>
       <ImageView fitHeight="155.0" fitWidth="456.0" layoutX="357.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../imagens/FILMES.png" />
@@ -49,21 +84,6 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnTres" layoutX="834.0" layoutY="426.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnTres" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="15:00" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnCinco" layoutX="929.0" layoutY="426.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCinco" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="17:00" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnDezEmeia" layoutX="354.0" layoutY="709.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDezEmeia" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="22:30" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="352.0" layoutY="684.0" text="Sala 6" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -94,16 +114,6 @@
             <Image url="@../../../../imagens/filmes/djangoLivre.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="btnUma" layoutX="456.0" layoutY="422.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnUma" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="13:00" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnOnze" layoutX="361.0" layoutY="422.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnOnze" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="11:00" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="359.0" layoutY="397.0" text="Sala 6" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -164,15 +174,5 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnSeteEDez" layoutX="833.0" layoutY="702.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSeteEDez" prefHeight="25.0" prefWidth="89.0" styleClass="btn" text="19:10" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Hyperlink fx:id="btnSair" layoutX="1054.0" layoutY="36.0" onAction="#btnSair" styleClass="sair" text="SAIR" textFill="#ffdf2b">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Hyperlink>
    </children>
 </AnchorPane>

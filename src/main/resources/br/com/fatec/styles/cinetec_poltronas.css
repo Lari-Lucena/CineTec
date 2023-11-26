@@ -13,14 +13,14 @@
     -fx-background-radius : 20px;
     -fx-border-radius : 20px;
     -fx-background-color: #1b828f;
-    -fx-padding: 7px;
+    -fx-padding: 10px;
     -fx-cursor: pointer;
 }
 .btn:hover{
     -fx-background-radius : 20px;
     -fx-border-radius : 20px;
     -fx-background-color: transparent;
-    -fx-padding: 5px;
+    -fx-padding: 10px;
     -fx-cursor: pointer;
     -fx-border-color:#1b828f ;
 }
