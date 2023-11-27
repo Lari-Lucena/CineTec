@@ -103,9 +103,9 @@ public class DistribuidoraDAO {
         boolean existe = false;
 
         try (Connection conn = connect()) {
-            String SQL = "SELECT COUNT(*) FROM TBL_CAD_DISTRIBUIDORA WHERE nome = ?";
+            String SQL = "SELECT COUNT(*) FROM TBL_CAD_DISTRIBUIDORA WHERE cnpj = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-                pstmt.setString(1, dado.getNome());
+                pstmt.setString(1, dado.getCnpj());
                 try (ResultSet rs = pstmt.executeQuery()) {
                     while (rs.next()) {
                         int rowCount = rs.getInt(1);
