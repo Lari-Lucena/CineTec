@@ -70,16 +70,16 @@ public class CadFilmesDAO {
         } 
     }
 
-    public boolean alterFilme(CadFilmes dado) throws SQLException {
+    public boolean alterFilme(CadFilmes dado, int idFilme) throws SQLException {
         int res = 0; // Inicializa com valor padrão
 
         try (Connection conn = connect()) {
             String SQL;
 
             if (dado.isUpdateImage()) {
-                SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ?, image = ? WHERE nome = ? AND genero = ?";
+                SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ?, image = ? WHERE id_filmes = ?";
             } else {
-                SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ? WHERE nome = ? AND genero = ?";
+                SQL = "UPDATE TBL_CAD_FILMES SET nome = ?, genero = ?, classificacao = ?, sinopse = ?, distribuidora = ? WHERE id_filmes = ?";
             }
 
             PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -93,11 +93,9 @@ public class CadFilmesDAO {
 
             if (dado.isUpdateImage()) {
                 pstmt.setString(6, dado.getImage());
-                pstmt.setString(7, dado.getNome());
-                pstmt.setString(8, dado.getGenero());
+                pstmt.setInt(7, idFilme);
             } else {
-                pstmt.setString(6, dado.getNome());
-                pstmt.setString(7, dado.getGenero());
+             pstmt.setInt(6, idFilme);
             }
 
             res = pstmt.executeUpdate();
@@ -117,7 +115,7 @@ public class CadFilmesDAO {
         CadFilmes filmes = null;
 
         try (Connection conn = connect()) {
-            String sqlQuery = "SELECT nome, genero, classificacao, sinopse, distribuidora, image FROM TBL_CAD_FILMES WHERE nome = ?";
+            String sqlQuery = "SELECT nome, genero, classificacao, sinopse, distribuidora, image, id_filmes FROM TBL_CAD_FILMES WHERE nome = ?";
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
             pstmt.setString(1, nome);
 
@@ -131,6 +129,7 @@ public class CadFilmesDAO {
                 filmes.setSinopse(rs.getString("sinopse"));
                 filmes.setDistribuidora(rs.getString("distribuidora"));
                 filmes.setImage(rs.getString("image"));
+                filmes.setIdFilme(rs.getInt("id_filmes"));
             }
         conn.close();
         }

@@ -48,6 +48,9 @@ public class Cinetec_cadFilmesController implements Initializable {
     private TextField txt_genero;
     @FXML
     private TextField txt_classificacao;
+    
+    private int idDoFilmeAtual;
+    
     @FXML
     private Label lblNome;
     @FXML
@@ -106,9 +109,11 @@ public class Cinetec_cadFilmesController implements Initializable {
         CadFilmesDAO filmesDAO = new CadFilmesDAO();
 
         cadfilmes = moveViewToModel();
+         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<");
+         System.out.println(cadfilmes.getNome());
         
         try {
-            if(filmesDAO.alterFilme(cadfilmes)){
+            if(filmesDAO.alterFilme(cadfilmes, this.idDoFilmeAtual)){
                 msg_info("Cadastro alterado com sucesso!");
                 limparCampos();
             }
@@ -189,12 +194,20 @@ public class Cinetec_cadFilmesController implements Initializable {
     private CadFilmes moveViewToModel(){ //leva da tela para o back
         //CRIA O OBJETO CADASTRO - (MODEL)
         cadfilmes = new CadFilmes();
-        
         cadfilmes.setNome(txt_nome.getText());
         cadfilmes.setGenero(txt_genero.getText());
         cadfilmes.setClassificacao(txt_classificacao.getText());
         cadfilmes.setSinopse(txt_sinopse.getText());
         cadfilmes.setDistribuidora(cb_distribuidora.getValue());
+        
+        System.out.println(cadfilmes.getNome());
+        System.out.println(cadfilmes.getNome());
+        System.out.println(txt_genero.getText());
+        System.out.println(txt_classificacao.getText());
+        System.out.println(txt_sinopse.getText());
+        System.out.println(cb_distribuidora.getValue());
+        
+        
         
         if (selectedFile != null) {
         String imagePath = selectedFile.getAbsolutePath();
@@ -217,6 +230,7 @@ public class Cinetec_cadFilmesController implements Initializable {
                 txt_classificacao.setText(String.valueOf(filmes.getClassificacao()));
                 txt_sinopse.setText(filmes.getSinopse());
                 cb_distribuidora.setValue(filmes.getDistribuidora());
+                this.idDoFilmeAtual = filmes.getIdFilme().get();
                 
                 // Obter o caminho da imagem do objeto CadFilmes
                 String imagePath = filmes.getImage();

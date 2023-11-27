@@ -10,6 +10,7 @@ public class CadFilmes {
     private final SimpleStringProperty sinopse;
     private final SimpleStringProperty distribuidora;
     private final SimpleStringProperty image;
+    private final SimpleIntegerProperty idFilme;
     private boolean updateImage;
 
     public CadFilmes() {
@@ -19,9 +20,10 @@ public class CadFilmes {
         this.sinopse = new SimpleStringProperty("");
         this.distribuidora = new SimpleStringProperty("");
         this.image = new SimpleStringProperty("");
+        this.idFilme = new SimpleIntegerProperty(0);
     }
 
-    public CadFilmes(SimpleStringProperty nome, SimpleStringProperty genero, SimpleStringProperty classificacao, SimpleStringProperty sinopse, SimpleStringProperty distribuidora, SimpleStringProperty image, boolean updateImage) {
+    public CadFilmes(SimpleStringProperty nome, SimpleStringProperty genero, SimpleStringProperty classificacao, SimpleStringProperty sinopse, SimpleStringProperty distribuidora, SimpleStringProperty image, boolean updateImage, SimpleIntegerProperty idFilme) {
         this.nome = nome;
         this.genero = genero;
         this.classificacao = classificacao;
@@ -29,24 +31,34 @@ public class CadFilmes {
         this.distribuidora = distribuidora;
         this.image = image;
         this.updateImage = updateImage;
+        this.idFilme = idFilme;
+        
+    }
+    
+    public void setIdFilme(int idFilme) {
+        this.idFilme.set(idFilme);
     }
 
     public boolean isUpdateImage() {
         return updateImage;
     }
 
+    public SimpleIntegerProperty getIdFilme() {
+        return idFilme;
+    }
+
     public void setUpdateImage(boolean updateImage) {
         this.updateImage = updateImage;
     }
 
-    public CadFilmes(String nome, String genero, String classificacao, String sinopse, String distribuidora, String image) {
+    public CadFilmes(String nome, String genero, String classificacao, String sinopse, String distribuidora, String image, int idFilme) {
         this.nome = new SimpleStringProperty(nome);
         this.genero = new SimpleStringProperty(genero);
         this.classificacao = new SimpleStringProperty(classificacao);
         this.sinopse = new SimpleStringProperty(sinopse);
         this.distribuidora = new SimpleStringProperty(distribuidora);
         this.image = new SimpleStringProperty(image);
-  
+        this.idFilme = new SimpleIntegerProperty(idFilme);
     }
 
     public SimpleStringProperty nomeProperty() {
