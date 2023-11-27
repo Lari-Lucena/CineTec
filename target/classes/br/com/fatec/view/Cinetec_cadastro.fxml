@@ -21,14 +21,13 @@
       </ImageView>
       <TextField fx:id="txt_nome" layoutX="240.0" layoutY="255.0" prefHeight="31.0" prefWidth="423.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <TextField fx:id="txt_apelido" layoutX="240.0" layoutY="310.0" prefHeight="31.0" prefWidth="423.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
-      <TextField fx:id="txt_cpf" layoutX="242.0" layoutY="367.0" prefHeight="31.0" prefWidth="201.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
-      <TextField fx:id="txt_celular" layoutX="452.0" layoutY="367.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
+      <TextField fx:id="txt_cpf" layoutX="243.0" layoutY="367.0" prefHeight="31.0" prefWidth="201.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
+      <TextField fx:id="txt_celular" layoutX="454.0" layoutY="367.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <DatePicker id="data" fx:id="txt_bday" layoutX="245.0" layoutY="426.0" prefHeight="31.0" prefWidth="201.0" />
-      <ComboBox fx:id="cb_regiao" layoutX="455.0" layoutY="426.0" onAction="#options" prefHeight="31.0" prefWidth="208.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
+      <ComboBox fx:id="cb_regiao" layoutX="455.0" layoutY="426.0" onAction="#options" prefHeight="31.0" prefWidth="208.0" promptText="Selecionar" style="-fx-background-radius: 15px;" />
       <TextField fx:id="txt_email" layoutX="243.0" layoutY="485.0" prefHeight="31.0" prefWidth="423.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
       <PasswordField fx:id="txt_senha" layoutX="246.0" layoutY="548.0" prefHeight="31.0" prefWidth="195.0" style="-fx-background-radius: 15px;" styleClass="placeholder" />
-      <PasswordField fx:id="txt_rsenha" layoutX="450.0" layoutY="548.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-radius: ;" styleClass="placeholder" />
-      <CheckBox fx:id="chk_visualizar" layoutX="646.0" layoutY="553.0" mnemonicParsing="false" onAction="#visualizar" />
+      <PasswordField fx:id="txt_rsenha" layoutX="471.0" layoutY="548.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-radius: ;" styleClass="placeholder" />
       <Button fx:id="btn_cadastro" layoutX="359.0" layoutY="612.0" mnemonicParsing="false" onAction="#btn_cadastro" prefHeight="31.0" prefWidth="168.0" styleClass="btn" text="CADASTRAR" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -38,7 +37,7 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Button>
-      <Label layoutX="246.0" layoutY="233.0" text="NOME" textFill="WHITE">
+      <Label layoutX="246.0" layoutY="236.0" text="NOME" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -48,12 +47,12 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="253.0" layoutY="526.0" text="SENHA" textFill="WHITE">
+      <Label layoutX="253.0" layoutY="530.0" text="SENHA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="458.0" layoutY="527.0" text="REPETIR SENHA" textFill="WHITE">
+      <Label layoutX="475.0" layoutY="530.0" text="REPETIR SENHA" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
@@ -63,22 +62,22 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="245.0" layoutY="405.0" text="DATA DE NASCIMENTO" textFill="WHITE">
+      <Label layoutX="247.0" layoutY="407.0" text="DATA DE NASCIMENTO" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="466.0" layoutY="405.0" text="REGIÃO" textFill="WHITE">
+      <Label layoutX="466.0" layoutY="408.0" text="REGIÃO" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="349.0" text="CPF" textFill="WHITE">
+      <Label layoutX="250.0" layoutY="349.0" text="CPF" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="457.0" layoutY="350.0" text="CELULAR" textFill="WHITE">
+      <Label layoutX="461.0" layoutY="350.0" text="CELULAR" textFill="WHITE">
          <font>
             <Font size="12.0" />
          </font>

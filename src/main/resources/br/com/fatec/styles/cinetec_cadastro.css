@@ -32,3 +32,7 @@
     -fx-cursor: pointer;
     -fx-border-color:#1b828f ;
 }
+Label{
+    -fx-text-fill: #38b6ff;
+    -fx-font-weight: bold;
+}

@@ -10,6 +10,10 @@
     -fx-text-fill: white;
     -fx-font-color: white;
 }
+Label{
+    -fx-text-fill: #38b6ff;
+    -fx-font-weight: bold;
+}
 
 .placeholder {
     -fx-border-radius : 15px;

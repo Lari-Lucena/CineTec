@@ -33,3 +33,7 @@
 .sair:hover{
     -fx-text-fill: #38b6ff;
 }
+Label{
+    -fx-text-fill: #38b6ff;
+    -fx-font-weight: bold;
+}
